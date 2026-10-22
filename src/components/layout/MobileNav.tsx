@@ -25,13 +25,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const navItems: { id: NavigationTab; label: string; icon: React.ReactNode; desc: string }[] = [
-    { id: 'overview', label: 'Overview', icon: <LayoutDashboard className="w-4 h-4" />, desc: 'Dashboard metrics & business cards' },
+    { id: 'overview', label: 'Overview', icon: <LayoutDashboard className="w-4 h-4" />, desc: 'Summary & business models' },
     { id: 'demos', label: 'Business Demos', icon: <Layers className="w-4 h-4" />, desc: 'Interactive enquiry simulation' },
-    { id: 'assistant', label: 'AI Assistant', icon: <Bot className="w-4 h-4" />, desc: 'Sample automated Q&A responses' },
+    { id: 'assistant', label: 'AI Assistant', icon: <Bot className="w-4 h-4" />, desc: 'Automated local response engine' },
     { id: 'pipeline', label: 'Lead Pipeline', icon: <Users className="w-4 h-4" />, desc: 'CRM lead tracking & status' },
     { id: 'workflows', label: 'Workflows', icon: <Workflow className="w-4 h-4" />, desc: 'Step-by-step automation flows' },
     { id: 'impact', label: 'Business Impact', icon: <TrendingUp className="w-4 h-4" />, desc: 'Interactive ROI & time savings' },
-    { id: 'about', label: 'About BookFlow', icon: <Info className="w-4 h-4" />, desc: 'Platform principles & solution inquiry' }
+    { id: 'about', label: 'About BookFlow', icon: <Info className="w-4 h-4" />, desc: 'Philosophy & architecture' }
   ];
 
   const handleSelect = (tab: NavigationTab) => {
@@ -43,24 +43,24 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-40 lg:hidden">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-[#1A1D1C]/50 backdrop-blur-xs transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Drawer Panel */}
-      <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#0A1329] border-l border-slate-800 p-5 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#FAF8F5] border-l border-[#E2DDD5] p-5 shadow-xl flex flex-col justify-between overflow-y-auto text-[#1A1D1C]">
         <div>
-          <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div className="flex items-center justify-between pb-4 border-b border-[#E7E2DA]">
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-bold text-slate-950 text-xs">
+              <div className="w-6 h-6 rounded bg-[#1E3A2F] flex items-center justify-center font-bold text-white text-xs">
                 B
               </div>
-              <span className="font-bold text-sm text-white">BookFlow AI</span>
+              <span className="font-bold text-sm text-[#1A1D1C]">BookFlow AI</span>
             </div>
             <button
               onClick={onClose}
-              className="p-1 rounded text-slate-400 hover:text-white"
+              className="p-1 rounded text-[#6E7B76] hover:text-[#1A1D1C]"
               aria-label="Close navigation"
             >
               <X className="w-5 h-5" />
@@ -76,14 +76,14 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                   onClick={() => handleSelect(item.id)}
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors ${
                     isActive
-                      ? 'bg-cyan-500/15 text-cyan-300 font-semibold border border-cyan-500/30'
-                      : 'text-slate-300 hover:bg-slate-850 hover:text-white'
+                      ? 'bg-[#EBF1EC] text-[#1E3A2F] font-semibold border border-[#CCDCD0]'
+                      : 'text-[#48534F] hover:bg-[#F2EEE7] hover:text-[#1A1D1C]'
                   }`}
                 >
-                  <span className={isActive ? 'text-cyan-400' : 'text-slate-400'}>{item.icon}</span>
+                  <span className={isActive ? 'text-[#1E3A2F]' : 'text-[#7A8682]'}>{item.icon}</span>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm">{item.label}</div>
-                    <div className="text-[11px] text-slate-500 truncate">{item.desc}</div>
+                    <div className="text-[11px] text-[#717E79] truncate">{item.desc}</div>
                   </div>
                 </button>
               );
@@ -91,16 +91,16 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           </nav>
         </div>
 
-        <div className="pt-6 border-t border-slate-800/80 space-y-2.5">
+        <div className="pt-6 border-t border-[#E7E2DA] space-y-2.5">
           <button
             onClick={() => {
               guidedTour.startTour();
               onClose();
             }}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-cyan-950/70 border border-cyan-700/50 text-xs font-semibold text-cyan-300 hover:bg-cyan-900/60 transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#EBF1EC] border border-[#CCDCD0] text-xs font-semibold text-[#1E3A2F] hover:bg-[#DEE9E0] transition-colors"
           >
-            <Play className="w-3.5 h-3.5" />
-            <span>Launch Guided Walkthrough</span>
+            <Play className="w-3.5 h-3.5 fill-current" />
+            <span>Launch Walkthrough</span>
           </button>
 
           <button
@@ -108,7 +108,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               resetDemoData();
               onClose();
             }}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-400 hover:text-slate-200 transition-colors"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white border border-[#DDD6CB] text-xs font-medium text-[#56635F] hover:text-[#1A1D1C] transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reset Demo Data</span>
@@ -119,13 +119,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               setIsInterestModalOpen(true);
               onClose();
             }}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-300 text-slate-950 text-xs font-bold shadow transition-all"
+            className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-[#1E3A2F] text-white text-xs font-semibold hover:bg-[#2A4D3F] shadow-xs transition-all"
           >
-            <span>Discuss Solution (Demo)</span>
+            <span>Discuss Solution</span>
           </button>
 
-          <p className="text-[10px] text-slate-500 text-center pt-1 font-mono">
-            FICTIONAL CLIENT DEMO
+          <p className="text-[10px] text-[#86928E] text-center pt-1 font-mono">
+            LOCAL BROWSER DEMO
           </p>
         </div>
       </div>

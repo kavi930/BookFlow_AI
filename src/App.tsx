@@ -20,14 +20,14 @@ function MainAppContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#070C18] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1D1C] flex flex-col font-sans selection:bg-[#1E3A2F]/15 selection:text-[#1E3A2F]">
       {/* 1. Persistent Unobtrusive Disclaimer Banner */}
       <DisclaimerBanner />
 
       {/* 2. Optional Guided Tour Bar */}
       <GuidedTourBar />
 
-      {/* 3. Top Navigation Bar (Adheres to Top Bar Contract) */}
+      {/* 3. Top Navigation Bar */}
       <Navbar
         isMobileMenuOpen={isMobileMenuOpen}
         onToggleMobileMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -45,7 +45,7 @@ function MainAppContent() {
         <Sidebar />
 
         {/* Primary Viewport */}
-        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full">
+        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full bg-[#FAF8F5]">
           {activeTab === 'overview' && <OverviewView />}
           {activeTab === 'demos' && <BusinessDemosView />}
           {activeTab === 'assistant' && <AIAssistantView />}
@@ -55,31 +55,31 @@ function MainAppContent() {
           {activeTab === 'about' && <AboutView />}
 
           {/* Clean Quiet Footer */}
-          <footer className="mt-16 pt-6 border-t border-slate-800/80 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <footer className="mt-16 pt-6 border-t border-[#E7E2DA] text-xs text-[#6C7A75] flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-slate-400">BookFlow AI</span>
-              <span className="text-slate-600">·</span>
-              <span>Interactive Demonstration Sandbox</span>
-              <span className="text-slate-600">·</span>
-              <span className="font-mono text-cyan-400 text-[10px]">FICTIONAL DATA</span>
+              <span className="font-semibold text-[#1A1D1C]">BookFlow AI</span>
+              <span className="text-[#C6BEB2]">·</span>
+              <span>Local Demonstration Sandbox</span>
+              <span className="text-[#C6BEB2]">·</span>
+              <span className="font-mono text-[#2D5A43] text-[10px]">FICTIONAL DATA</span>
             </div>
 
-            <div className="flex items-center gap-4 text-slate-400">
+            <div className="flex items-center gap-4 text-[#55635F]">
               <button
                 onClick={() => setActiveTab('about')}
-                className="hover:text-cyan-300 transition-colors"
+                className="hover:text-[#1E3A2F] transition-colors"
               >
                 About Platform
               </button>
               <button
                 onClick={() => setIsInterestModalOpen(true)}
-                className="hover:text-cyan-300 transition-colors"
+                className="hover:text-[#1E3A2F] transition-colors"
               >
                 Discuss Solution
               </button>
               <button
                 onClick={resetDemoData}
-                className="hover:text-cyan-300 transition-colors"
+                className="hover:text-[#1E3A2F] transition-colors"
               >
                 Reset Demo
               </button>

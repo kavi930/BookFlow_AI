@@ -3,12 +3,12 @@ import { ArrowRight, ArrowLeft, X, Sparkles } from 'lucide-react';
 import { useDemo } from '../../context/DemoContext';
 
 const STEPS = [
-  { step: 1, title: '1. Overview', desc: 'Choose a business & inspect metrics' },
-  { step: 2, title: '2. AI Assistant', desc: 'Test instant customer Q&A' },
+  { step: 1, title: '1. Overview', desc: 'Summary & business models' },
+  { step: 2, title: '2. AI Assistant', desc: 'Sample automated Q&A' },
   { step: 3, title: '3. Enquiry Demo', desc: 'Submit a sample customer request' },
-  { step: 4, title: '4. Lead Pipeline', desc: 'Track live captured lead record' },
-  { step: 5, title: '5. Workflows', desc: 'Inspect backend trigger flow' },
-  { step: 6, title: '6. Business ROI', desc: 'Calculate staff hours & cost saved' }
+  { step: 4, title: '4. Lead Pipeline', desc: 'Track captured lead record' },
+  { step: 5, title: '5. Workflows', desc: 'Inspect automation flow' },
+  { step: 6, title: '6. Impact', desc: 'Calculate time & cost saved' }
 ];
 
 export const GuidedTourBar: React.FC = () => {
@@ -20,17 +20,17 @@ export const GuidedTourBar: React.FC = () => {
     <div
       role="region"
       aria-label="Guided demo walkthrough"
-      className="bg-[#0C172E] border-b border-cyan-500/20 px-4 py-2.5 transition-all"
+      className="bg-[#EBF1ED] border-b border-[#D5E1D8] px-4 py-2.5 transition-all text-[#1A1D1C]"
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-xs font-semibold text-cyan-300">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-[#1E3A2F]">
+            <Sparkles className="w-3.5 h-3.5 text-[#2D5A43]" />
             <span>Guided Walkthrough</span>
-            <span className="text-slate-500">·</span>
-            <span className="text-slate-300">Step {guidedTour.currentStep} of 6</span>
+            <span className="text-[#8B9892]">·</span>
+            <span className="text-[#3A4A42] font-normal">Step {guidedTour.currentStep} of 6</span>
           </div>
-          <span className="hidden sm:inline text-xs text-slate-400">
+          <span className="hidden sm:inline text-xs text-[#52635B]">
             {STEPS[guidedTour.currentStep - 1]?.desc}
           </span>
         </div>
@@ -45,12 +45,12 @@ export const GuidedTourBar: React.FC = () => {
               <button
                 key={s.step}
                 onClick={() => guidedTour.goToStep(s.step)}
-                className={`text-xs px-2.5 py-1 rounded transition-colors whitespace-nowrap ${
+                className={`text-xs px-2.5 py-1 rounded-md transition-colors whitespace-nowrap ${
                   isCurrent
-                    ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 font-medium'
+                    ? 'bg-[#1E3A2F] text-white font-medium shadow-xs'
                     : isPast
-                    ? 'text-slate-300 hover:text-white bg-slate-800/60'
-                    : 'text-slate-500 hover:text-slate-300'
+                    ? 'text-[#2D5A43] bg-[#DEE9E0] hover:bg-[#D4E2D7]'
+                    : 'text-[#64756D] hover:text-[#1A1D1C] hover:bg-[#DEE9E0]'
                 }`}
                 aria-current={isCurrent ? 'step' : undefined}
               >
@@ -65,7 +65,7 @@ export const GuidedTourBar: React.FC = () => {
           <button
             onClick={guidedTour.prevStep}
             disabled={guidedTour.currentStep === 1}
-            className="flex items-center gap-1 text-xs px-2.5 py-1 rounded border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 disabled:opacity-40 disabled:pointer-events-none transition-colors"
+            className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-md border border-[#C5D4C9] text-[#2F3D36] hover:bg-white disabled:opacity-40 disabled:pointer-events-none transition-colors"
             aria-label="Previous step"
           >
             <ArrowLeft className="w-3 h-3" />
@@ -74,7 +74,7 @@ export const GuidedTourBar: React.FC = () => {
 
           <button
             onClick={guidedTour.nextStep}
-            className="flex items-center gap-1 text-xs px-3 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-white font-medium shadow-sm transition-colors"
+            className="flex items-center gap-1 text-xs px-3 py-1 rounded-md bg-[#1E3A2F] hover:bg-[#2A4D3F] text-white font-medium shadow-xs transition-colors"
             aria-label="Next step"
           >
             <span>{guidedTour.currentStep === 6 ? 'Finish' : 'Next Step'}</span>
@@ -83,7 +83,7 @@ export const GuidedTourBar: React.FC = () => {
 
           <button
             onClick={guidedTour.dismissTour}
-            className="text-slate-400 hover:text-slate-200 p-1 rounded hover:bg-slate-800/80 transition-colors"
+            className="text-[#5F7168] hover:text-[#1A1D1C] p-1 rounded-md hover:bg-[#DEE9E0] transition-colors"
             aria-label="Close guided walkthrough"
             title="Exit Walkthrough"
           >

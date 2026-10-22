@@ -5,11 +5,8 @@ import {
   Play,
   RotateCcw,
   CheckCircle2,
-  Clock,
   Layers,
   Code2,
-  FileCode,
-  Sparkles,
   Stethoscope,
   UtensilsCrossed,
   Dumbbell,
@@ -44,7 +41,7 @@ export const AutomationWorkflowsView: React.FC = () => {
     setActiveRunningStep(0);
     setSelectedStepIndex(0);
 
-    const stepDuration = 700;
+    const stepDuration = 600;
     steps.forEach((_, idx) => {
       setTimeout(() => {
         setActiveRunningStep(idx);
@@ -60,30 +57,26 @@ export const AutomationWorkflowsView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div className="space-y-6 max-w-6xl mx-auto text-[#1A1D1C]">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-[#E7E2DA]">
         <div>
-          <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-1">
-            <Workflow className="w-3.5 h-3.5" />
-            <span>ORCHESTRATION ARCHITECTURE</span>
-          </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Automation Workflows & Triggers
+          <h1 className="text-2xl font-bold text-[#1A1D1C] tracking-tight">
+            Automation Workflows & Rules
           </h1>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Inspect the 5-step automated lifecycle connecting public front-ends, business rules, and staff queues.
+          <p className="text-xs sm:text-sm text-[#5D6B66] mt-0.5">
+            Step-by-step logic connecting inbound customer enquiries with your front-desk follow-up queue.
           </p>
         </div>
 
         {/* Business Category Switcher */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-900/90 border border-slate-800 rounded-lg overflow-x-auto">
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E3DDD3] rounded-lg overflow-x-auto shadow-xs">
           <button
             onClick={() => handleCategorySwitch('clinics')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'clinics'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Stethoscope className="w-3.5 h-3.5" />
@@ -93,8 +86,8 @@ export const AutomationWorkflowsView: React.FC = () => {
             onClick={() => handleCategorySwitch('restaurants')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'restaurants'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <UtensilsCrossed className="w-3.5 h-3.5" />
@@ -104,8 +97,8 @@ export const AutomationWorkflowsView: React.FC = () => {
             onClick={() => handleCategorySwitch('gyms')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'gyms'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Dumbbell className="w-3.5 h-3.5" />
@@ -115,8 +108,8 @@ export const AutomationWorkflowsView: React.FC = () => {
             onClick={() => handleCategorySwitch('salons')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'salons'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Sparkle className="w-3.5 h-3.5" />
@@ -125,23 +118,23 @@ export const AutomationWorkflowsView: React.FC = () => {
         </div>
       </div>
 
-      {/* Blueprint Control Bar */}
-      <div className="bg-[#0B142A] border border-cyan-900/30 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      {/* Control Bar */}
+      <div className="bg-white border border-[#E3DDD3] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-cyan-950 border border-cyan-800/60 flex items-center justify-center text-cyan-400 shrink-0">
+          <div className="w-9 h-9 rounded-lg bg-[#EBF1EC] border border-[#D2E2D6] flex items-center justify-center text-[#1E3A2F] shrink-0">
             <Layers className="w-4 h-4" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-bold text-white">
-                {profile.businessName} Flow
+              <span className="text-sm font-bold text-[#1A1D1C]">
+                {profile.businessName} Workflow
               </span>
-              <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/70 border border-cyan-800/50 px-2 py-0.5 rounded">
-                5 STAGES
+              <span className="text-[10px] font-mono text-[#2D5A43] bg-[#EBF1EC] px-2 py-0.5 rounded border border-[#CCDCD0]">
+                5 STEPS
               </span>
             </div>
-            <p className="text-xs text-slate-400">
-              Interactive diagram: click any step to inspect the logic and simulated payload.
+            <p className="text-xs text-[#5C6A65]">
+              Click any step to inspect the logic, trigger condition, and simulated payload.
             </p>
           </div>
         </div>
@@ -149,16 +142,16 @@ export const AutomationWorkflowsView: React.FC = () => {
         <button
           onClick={handleSimulateExecution}
           disabled={isSimulatingRun}
-          className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 text-slate-950 font-bold text-xs rounded-lg shadow-sm transition-all disabled:opacity-50"
+          className="flex items-center justify-center gap-2 px-4 py-2 bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-xs rounded-lg shadow-xs transition-colors disabled:opacity-50"
         >
           {isSimulatingRun ? (
             <>
-              <RotateCcw className="w-3.5 h-3.5 animate-spin text-slate-950" />
-              <span>Simulating Pipeline Execution...</span>
+              <RotateCcw className="w-3.5 h-3.5 animate-spin text-white" />
+              <span>Simulating Execution...</span>
             </>
           ) : (
             <>
-              <Play className="w-3.5 h-3.5 text-slate-950 fill-current" />
+              <Play className="w-3.5 h-3.5 text-white fill-current" />
               <span>Simulate Live Execution</span>
             </>
           )}
@@ -177,10 +170,10 @@ export const AutomationWorkflowsView: React.FC = () => {
               onClick={() => setSelectedStepIndex(idx)}
               className={`p-4 rounded-xl border cursor-pointer transition-all relative flex flex-col justify-between ${
                 isCurrentlyRunning
-                  ? 'bg-cyan-950/90 border-cyan-400 shadow-lg shadow-cyan-500/20 scale-[1.02]'
+                  ? 'bg-[#EBF1EC] border-[#1E3A2F] shadow-sm'
                   : isSelected
-                  ? 'bg-[#0E1B38] border-cyan-500/60 shadow-md'
-                  : 'bg-[#0B142A] border-slate-800 hover:border-slate-700 hover:bg-slate-850'
+                  ? 'bg-white border-[#1E3A2F] shadow-xs'
+                  : 'bg-white border-[#E5E0D6] hover:border-[#D5CFC5] hover:bg-[#FAF8F5]'
               }`}
             >
               <div>
@@ -188,35 +181,35 @@ export const AutomationWorkflowsView: React.FC = () => {
                   <span
                     className={`font-mono text-[10px] font-bold px-2 py-0.5 rounded ${
                       isSelected
-                        ? 'bg-cyan-500 text-slate-950'
-                        : 'bg-slate-800 text-slate-400'
+                        ? 'bg-[#1E3A2F] text-white'
+                        : 'bg-[#F2EEE7] text-[#55625E]'
                     }`}
                   >
                     STEP 0{step.stepNumber}
                   </span>
                   {isCurrentlyRunning ? (
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#1E3A2F] animate-ping" />
                   ) : (
                     <CheckCircle2
                       className={`w-3.5 h-3.5 ${
-                        isSelected ? 'text-cyan-400' : 'text-slate-600'
+                        isSelected ? 'text-[#1E3A2F]' : 'text-[#A4B3AC]'
                       }`}
                     />
                   )}
                 </div>
 
-                <h3 className="text-xs font-bold text-white leading-snug line-clamp-2">
+                <h3 className="text-xs font-bold text-[#1A1D1C] leading-snug line-clamp-2">
                   {step.title}
                 </h3>
 
-                <p className="text-[11px] text-slate-400 mt-1 line-clamp-3 leading-relaxed">
+                <p className="text-[11px] text-[#5A6863] mt-1 line-clamp-3 leading-relaxed">
                   {step.trigger}
                 </p>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-[10px] text-cyan-400 font-mono">
+              <div className="mt-3 pt-2 border-t border-[#EFEBE4] flex items-center justify-between text-[10px] text-[#2D5A43] font-mono">
                 <span>{step.highlightKey}</span>
-                <ArrowRight className="w-3 h-3 text-slate-600" />
+                <ArrowRight className="w-3 h-3 text-[#A4B3AC]" />
               </div>
             </div>
           );
@@ -225,77 +218,77 @@ export const AutomationWorkflowsView: React.FC = () => {
 
       {/* Step Inspector Detail Box */}
       <section
-        className="bg-[#0B142A] border border-slate-800/90 rounded-xl p-6 space-y-5"
+        className="bg-white border border-[#E3DDD3] rounded-xl p-6 space-y-5 shadow-xs"
         aria-label="Workflow step inspector"
       >
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#EFEBE4]">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
-              <span>INSPECTOR: STAGE {activeStep.stepNumber} OF 5</span>
-              <span className="text-slate-600">·</span>
-              <span className="text-slate-300 font-semibold">{activeStep.highlightKey}</span>
+            <div className="flex items-center gap-2 text-xs font-mono text-[#2D5A43]">
+              <span>STAGE {activeStep.stepNumber} OF 5</span>
+              <span className="text-[#CCD5D1]">·</span>
+              <span className="text-[#1A1D1C] font-semibold">{activeStep.highlightKey}</span>
             </div>
-            <h2 className="text-lg font-bold text-white mt-1">{activeStep.title}</h2>
+            <h2 className="text-lg font-bold text-[#1A1D1C] mt-1">{activeStep.title}</h2>
           </div>
 
-          <div className="text-[11px] font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded">
+          <div className="text-[11px] font-mono text-[#586661] bg-[#FAF8F5] border border-[#E5E0D6] px-3 py-1 rounded-md">
             Trigger: Client Inbound Event
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left Sub-column: Trigger & Business Action */}
+          {/* Left Column: Trigger & Business Action */}
           <div className="space-y-4">
             <div>
-              <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+              <span className="text-xs font-mono uppercase text-[#6E7D77] font-semibold block mb-1">
                 Trigger Event
               </span>
-              <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-200 leading-relaxed">
+              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#2A3531] leading-relaxed">
                 {activeStep.trigger}
               </div>
             </div>
 
             <div>
-              <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+              <span className="text-xs font-mono uppercase text-[#6E7D77] font-semibold block mb-1">
                 Orchestration Logic
               </span>
-              <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-200 leading-relaxed">
+              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#2A3531] leading-relaxed">
                 {activeStep.action}
               </div>
             </div>
 
             <div>
-              <span className="text-xs font-mono uppercase text-slate-400 block mb-1">
+              <span className="text-xs font-mono uppercase text-[#6E7D77] font-semibold block mb-1">
                 Architecture Note
               </span>
-              <div className="p-3 bg-cyan-950/30 border border-cyan-800/40 rounded-lg text-xs text-cyan-300/90 leading-relaxed">
+              <div className="p-3 bg-[#EBF1EC] border border-[#CCDCD0] rounded-lg text-xs text-[#273D32] leading-relaxed">
                 {activeStep.technicalDetail}
               </div>
             </div>
           </div>
 
-          {/* Right Sub-column: Simulated Output Payload */}
+          {/* Right Column: Simulated Output Payload */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono uppercase text-slate-400 flex items-center gap-1.5">
-                <Code2 className="w-3.5 h-3.5 text-cyan-400" />
+              <span className="text-xs font-mono uppercase text-[#6E7D77] font-semibold flex items-center gap-1.5">
+                <Code2 className="w-3.5 h-3.5 text-[#2D5A43]" />
                 <span>Simulated Output Payload</span>
               </span>
-              <span className="text-[10px] font-mono text-slate-500">
-                JSON SIMULATION
+              <span className="text-[10px] font-mono text-[#8C9B95]">
+                LOCAL DEMO
               </span>
             </div>
 
-            <div className="bg-[#070D1A] border border-slate-800 rounded-lg p-4 font-mono text-xs text-cyan-300 overflow-x-auto">
+            <div className="bg-[#FAF8F5] border border-[#E5E0D6] rounded-lg p-4 font-mono text-xs text-[#1E3A2F] overflow-x-auto">
               <pre className="whitespace-pre-wrap leading-relaxed">
                 {activeStep.simulatedOutput}
               </pre>
             </div>
 
-            <div className="p-3 bg-slate-900/60 border border-slate-800/80 rounded-lg text-[11px] text-slate-400 flex items-start gap-2">
-              <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-[11px] text-[#55635E] flex items-start gap-2">
+              <ShieldAlert className="w-4 h-4 text-[#8C5E09] shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                Explanatory simulation: This workflow diagram models proposed business automation rules. No webhooks, Make.com scenarios, or external messaging APIs are invoked.
+                Explanatory simulation: This diagram models proposed business automation rules. No external webhooks or third-party messaging services are invoked.
               </p>
             </div>
           </div>

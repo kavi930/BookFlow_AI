@@ -20,29 +20,29 @@ export const ToastContainer: React.FC = () => {
         return (
           <div
             key={toast.id}
-            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-lg border shadow-xl backdrop-blur-md transition-all duration-200 ${
+            className={`pointer-events-auto flex items-start gap-3 p-3.5 rounded-xl border shadow-lg backdrop-blur-xs transition-all duration-200 ${
               isSuccess
-                ? 'bg-[#0B1A2E]/95 border-emerald-500/40 text-slate-100'
+                ? 'bg-[#EBF1EC] border-[#CCDCD0] text-[#1A1D1C]'
                 : isWarning
-                ? 'bg-[#1E1912]/95 border-amber-500/40 text-slate-100'
-                : 'bg-[#0E1B33]/95 border-cyan-500/40 text-slate-100'
+                ? 'bg-[#FFF9EE] border-[#F0E2C8] text-[#1A1D1C]'
+                : 'bg-white border-[#E3DDD3] text-[#1A1D1C]'
             }`}
           >
             <div className="shrink-0 mt-0.5">
-              {isSuccess && <CheckCircle2 className="w-4 h-4 text-emerald-400" />}
-              {isWarning && <AlertTriangle className="w-4 h-4 text-amber-400" />}
-              {!isSuccess && !isWarning && <Info className="w-4 h-4 text-cyan-400" />}
+              {isSuccess && <CheckCircle2 className="w-4 h-4 text-[#2D5A43]" />}
+              {isWarning && <AlertTriangle className="w-4 h-4 text-[#8C5E09]" />}
+              {!isSuccess && !isWarning && <Info className="w-4 h-4 text-[#2D5A43]" />}
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-xs font-semibold text-slate-100 flex items-center justify-between">
+              <div className="text-xs font-semibold flex items-center justify-between text-[#1A1D1C]">
                 <span>{toast.title}</span>
-                <span className="text-[10px] text-slate-400 font-mono">SIMULATION</span>
+                <span className="text-[10px] text-[#71807A] font-mono">SIMULATION</span>
               </div>
-              <p className="text-xs text-slate-300 mt-0.5 leading-relaxed">{toast.message}</p>
+              <p className="text-xs text-[#4F5D58] mt-0.5 leading-relaxed">{toast.message}</p>
             </div>
             <button
               onClick={() => dismissToast(toast.id)}
-              className="shrink-0 text-slate-400 hover:text-slate-200 p-1 rounded transition-colors"
+              className="shrink-0 text-[#71807A] hover:text-[#1A1D1C] p-1 rounded-md transition-colors"
               aria-label="Dismiss notification"
             >
               <X className="w-3.5 h-3.5" />

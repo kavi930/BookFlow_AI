@@ -91,7 +91,6 @@ export const BusinessDemosView: React.FC = () => {
     setFormErrors([]);
     setIsSubmitting(true);
 
-    // Simulate rapid automation pipeline processing
     setTimeout(() => {
       const todayStr = new Date().toISOString().split('T')[0];
 
@@ -126,30 +125,30 @@ export const BusinessDemosView: React.FC = () => {
 
       setIsSubmitting(false);
       setLastSubmittedLeadId(newId);
-    }, 450);
+    }, 350);
   };
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto">
+    <div className="space-y-8 max-w-6xl mx-auto text-[#1A1D1C]">
       {/* Category Selection Tabs */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-[#E7E2DA]">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            Business Enquiry Demonstrations
+          <h1 className="text-2xl font-bold text-[#1A1D1C] tracking-tight">
+            Interactive Business Demos
           </h1>
-          <p className="text-xs text-slate-400 mt-0.5">
-            Switch between 4 industry archetypes to test custom enquiry forms and simulated staff follow-ups.
+          <p className="text-xs sm:text-sm text-[#5D6B66] mt-0.5">
+            Test how different trade workflows handle enquiries, preferred times, and staff hand-offs.
           </p>
         </div>
 
-        {/* Tab Pills */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-900/90 border border-slate-800 rounded-lg overflow-x-auto">
+        {/* Tab Buttons */}
+        <div className="flex items-center gap-1.5 p-1 bg-white border border-[#E3DDD3] rounded-lg overflow-x-auto shadow-xs">
           <button
             onClick={() => handleCategorySwitch('clinics')}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'clinics'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Stethoscope className="w-3.5 h-3.5" />
@@ -160,8 +159,8 @@ export const BusinessDemosView: React.FC = () => {
             onClick={() => handleCategorySwitch('restaurants')}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'restaurants'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <UtensilsCrossed className="w-3.5 h-3.5" />
@@ -172,8 +171,8 @@ export const BusinessDemosView: React.FC = () => {
             onClick={() => handleCategorySwitch('gyms')}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'gyms'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Dumbbell className="w-3.5 h-3.5" />
@@ -184,8 +183,8 @@ export const BusinessDemosView: React.FC = () => {
             onClick={() => handleCategorySwitch('salons')}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-colors whitespace-nowrap ${
               selectedCategory === 'salons'
-                ? 'bg-cyan-950 text-cyan-300 border border-cyan-800/60 font-semibold shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                ? 'bg-[#1E3A2F] text-white font-semibold shadow-xs'
+                : 'text-[#586460] hover:text-[#1A1D1C]'
             }`}
           >
             <Sparkle className="w-3.5 h-3.5" />
@@ -194,70 +193,70 @@ export const BusinessDemosView: React.FC = () => {
         </div>
       </div>
 
-      {/* Business Profile Banner */}
-      <section className="bg-[#0B142A] border border-cyan-900/30 rounded-xl p-5 space-y-3">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-800/60 flex items-center justify-center text-cyan-400 shrink-0">
-              {selectedCategory === 'clinics' && <Stethoscope className="w-6 h-6" />}
-              {selectedCategory === 'restaurants' && <UtensilsCrossed className="w-6 h-6" />}
-              {selectedCategory === 'gyms' && <Dumbbell className="w-6 h-6" />}
-              {selectedCategory === 'salons' && <Sparkle className="w-6 h-6" />}
+      {/* Business Profile Overview Banner */}
+      <section className="bg-white border border-[#E3DDD3] rounded-xl p-5 sm:p-6 space-y-3.5 shadow-xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-lg bg-[#EBF1EC] border border-[#D5E2D8] flex items-center justify-center text-[#1E3A2F] shrink-0">
+              {selectedCategory === 'clinics' && <Stethoscope className="w-5 h-5" />}
+              {selectedCategory === 'restaurants' && <UtensilsCrossed className="w-5 h-5" />}
+              {selectedCategory === 'gyms' && <Dumbbell className="w-5 h-5" />}
+              {selectedCategory === 'salons' && <Sparkle className="w-5 h-5" />}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-bold text-white">{profile.businessName}</h2>
-                <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/70 border border-cyan-800/50 px-2 py-0.5 rounded">
-                  DEMO PROFILE
+                <h2 className="text-base sm:text-lg font-bold text-[#1A1D1C]">{profile.businessName}</h2>
+                <span className="text-[10px] font-mono text-[#2D5A43] bg-[#EBF1EC] px-2 py-0.5 rounded border border-[#CCDCD0]">
+                  SAMPLE PROFILE
                 </span>
               </div>
-              <p className="text-xs text-slate-300 font-medium">{profile.tagline}</p>
+              <p className="text-xs text-[#52605B]">{profile.tagline}</p>
             </div>
           </div>
 
-          <div className="text-xs text-slate-400 md:text-right font-mono text-[11px] space-y-0.5">
+          <div className="text-xs text-[#5D6B66] md:text-right font-mono text-[11px] space-y-0.5">
             <div>Hours: {profile.fictionalHours}</div>
-            <div className="text-slate-400">{profile.fictionalLocation}</div>
+            <div className="text-[#76847F]">{profile.fictionalLocation}</div>
           </div>
         </div>
 
         {/* Safety / Simulation Notice */}
-        <div className="p-3 bg-cyan-950/30 border border-cyan-800/40 rounded-lg text-xs text-cyan-300/90 flex items-start gap-2">
-          <Info className="w-4 h-4 shrink-0 text-cyan-400 mt-0.5" />
+        <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#4F5B57] flex items-start gap-2">
+          <Info className="w-4 h-4 shrink-0 text-[#2D5A43] mt-0.5" />
           <p className="leading-relaxed">{profile.disclaimer}</p>
         </div>
       </section>
 
       {/* Main 2-Column Split: Enquiry Form + Live Simulation Pipeline Receipt */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Interactive Enquiry Form (7 cols) */}
-        <div className="lg:col-span-7 bg-[#0B142A] border border-slate-800/90 rounded-xl p-5 sm:p-6 space-y-5">
-          <div className="flex items-center justify-between">
+        <div className="lg:col-span-7 bg-white border border-[#E3DDD3] rounded-xl p-5 sm:p-6 space-y-5 shadow-xs">
+          <div className="flex items-center justify-between pb-3 border-b border-[#EFEBE4]">
             <div>
-              <h2 className="text-base font-bold text-white">
-                Simulated Inbound Enquiry
+              <h2 className="text-base font-bold text-[#1A1D1C]">
+                Simulate an Inbound Enquiry
               </h2>
-              <p className="text-xs text-slate-400">
-                Submit a realistic customer enquiry to trigger the automation flow.
+              <p className="text-xs text-[#5B6763]">
+                Submit a sample enquiry to trigger the qualification flow and pipeline update.
               </p>
             </div>
 
             <button
               type="button"
               onClick={handlePreFillSample}
-              className="flex items-center gap-1.5 text-xs text-cyan-400 hover:text-cyan-300 bg-cyan-950/50 hover:bg-cyan-900/40 border border-cyan-800/50 px-2.5 py-1 rounded transition-colors"
+              className="flex items-center gap-1.5 text-xs text-[#2D5A43] hover:text-[#1E3A2F] bg-[#EBF1EC] hover:bg-[#DEE9E0] border border-[#CCDCD0] px-2.5 py-1 rounded-md transition-colors"
               title="Pre-fill with realistic demo persona values"
             >
               <RefreshCw className="w-3 h-3" />
-              <span>Load Sample Persona</span>
+              <span>Reset Persona</span>
             </button>
           </div>
 
           {formErrors.length > 0 && (
-            <div className="p-3 bg-red-950/40 border border-red-500/40 rounded-lg text-xs text-red-300 space-y-1">
-              <div className="flex items-center gap-1.5 font-semibold text-red-200">
-                <AlertTriangle className="w-4 h-4 text-red-400" />
-                <span>Validation required:</span>
+            <div className="p-3 bg-[#FDF2F2] border border-[#F5C2C7] rounded-lg text-xs text-[#842029] space-y-1">
+              <div className="flex items-center gap-1.5 font-semibold">
+                <AlertTriangle className="w-4 h-4 text-[#842029]" />
+                <span>Please complete required fields:</span>
               </div>
               <ul className="list-disc pl-5 space-y-0.5">
                 {formErrors.map((err, i) => (
@@ -267,12 +266,12 @@ export const BusinessDemosView: React.FC = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 text-xs">
             {/* Contact Name & Service Row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <User className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <User className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Customer Name</span>
                 </label>
                 <input
@@ -281,19 +280,19 @@ export const BusinessDemosView: React.FC = () => {
                   value={leadName}
                   onChange={(e) => setLeadName(e.target.value)}
                   placeholder="e.g. Avery Bennett"
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <FileText className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <FileText className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Requested Service</span>
                 </label>
                 <select
                   value={requestedService}
                   onChange={(e) => setRequestedService(e.target.value)}
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 >
                   {profile.services.map((svc) => (
                     <option key={svc.id} value={svc.name}>
@@ -307,8 +306,8 @@ export const BusinessDemosView: React.FC = () => {
             {/* Email & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <Mail className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <Mail className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Contact Email</span>
                 </label>
                 <input
@@ -316,13 +315,13 @@ export const BusinessDemosView: React.FC = () => {
                   value={contactEmail}
                   onChange={(e) => setContactEmail(e.target.value)}
                   placeholder="name@sample-demo.test"
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <Phone className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <Phone className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Contact Phone</span>
                 </label>
                 <input
@@ -330,7 +329,7 @@ export const BusinessDemosView: React.FC = () => {
                   value={contactPhone}
                   onChange={(e) => setContactPhone(e.target.value)}
                   placeholder="(555) 000-0000"
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 />
               </div>
             </div>
@@ -338,27 +337,27 @@ export const BusinessDemosView: React.FC = () => {
             {/* Preferred Date & Time Selection */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <Calendar className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Preferred Date</span>
                 </label>
                 <input
                   type="date"
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5 flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-cyan-400" />
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5 flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-[#2D5A43]" />
                   <span>Preferred Time Window</span>
                 </label>
                 <select
                   value={preferredTime}
                   onChange={(e) => setPreferredTime(e.target.value)}
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 >
                   <option value="Morning (9:00 AM – 11:30 AM)">Morning (9:00 AM – 11:30 AM)</option>
                   <option value="Early Afternoon (12:00 PM – 2:30 PM)">Early Afternoon (12:00 PM – 2:30 PM)</option>
@@ -368,12 +367,12 @@ export const BusinessDemosView: React.FC = () => {
               </div>
             </div>
 
-            {/* Business Specific Field 1: Restaurant Party Size */}
+            {/* Custom Business Field: Restaurant Party Size */}
             {selectedCategory === 'restaurants' && (
-              <div className="p-3 bg-slate-900/60 border border-slate-800 rounded-lg space-y-2">
+              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-slate-200">Party Size</span>
-                  <span className="text-cyan-300 font-mono font-bold tabular-nums">
+                  <span className="font-semibold text-[#2F3A36]">Party Size</span>
+                  <span className="text-[#1E3A2F] font-mono font-bold tabular-nums">
                     {partySize} {partySize === 1 ? 'Guest' : 'Guests'}
                   </span>
                 </div>
@@ -383,25 +382,25 @@ export const BusinessDemosView: React.FC = () => {
                   max={16}
                   value={partySize}
                   onChange={(e) => setPartySize(parseInt(e.target.value, 10))}
-                  className="w-full accent-cyan-400 cursor-pointer"
+                  className="w-full accent-[#1E3A2F] cursor-pointer"
                 />
-                <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+                <div className="flex items-center justify-between text-[10px] text-[#717E79] font-mono">
                   <span>1 Guest (Bar/Counter)</span>
                   <span>7–16 Guests (Mezzanine Banquet rules apply)</span>
                 </div>
               </div>
             )}
 
-            {/* Business Specific Field 2: Gym Fitness Goal */}
+            {/* Custom Business Field: Gym Fitness Goal */}
             {selectedCategory === 'gyms' && profile.fitnessGoals && (
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5">
                   Primary Fitness Focus
                 </label>
                 <select
                   value={fitnessGoal}
                   onChange={(e) => setFitnessGoal(e.target.value)}
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 >
                   {profile.fitnessGoals.map((goal, i) => (
                     <option key={i} value={goal}>
@@ -412,16 +411,16 @@ export const BusinessDemosView: React.FC = () => {
               </div>
             )}
 
-            {/* Business Specific Field 3: Salon Stylist Preference */}
+            {/* Custom Business Field: Salon Stylist Preference */}
             {selectedCategory === 'salons' && profile.staffOrProviders && (
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1.5">
+                <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5">
                   Preferred Stylist / Specialist
                 </label>
                 <select
                   value={preferredProvider}
                   onChange={(e) => setPreferredProvider(e.target.value)}
-                  className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 outline-none"
+                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none"
                 >
                   {profile.staffOrProviders.map((st, i) => (
                     <option key={i} value={st}>
@@ -435,33 +434,33 @@ export const BusinessDemosView: React.FC = () => {
               </div>
             )}
 
-            {/* Notes & Special Requests */}
+            {/* Notes */}
             <div>
-              <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                Enquiry Notes & Specific Questions
+              <label className="block text-xs font-semibold text-[#2F3A36] mb-1.5">
+                Enquiry Notes & Special Requests
               </label>
               <textarea
                 rows={2}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Specific requirements, dietary notes, or preferences..."
-                className="w-full bg-[#080E1C] border border-slate-700/80 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 rounded-lg px-3 py-2 text-xs text-slate-100 placeholder:text-slate-600 outline-none resize-none"
+                placeholder="Specific preferences, questions, or details..."
+                className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-lg px-3 py-2 text-xs text-[#1A1D1C] outline-none resize-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 text-slate-950 font-bold text-xs sm:text-sm rounded-lg shadow-sm transition-all disabled:opacity-50"
+              className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-xs sm:text-sm rounded-lg shadow-xs transition-colors disabled:opacity-50"
             >
               {isSubmitting ? (
                 <>
-                  <RefreshCw className="w-4 h-4 animate-spin text-slate-950" />
-                  <span>Processing Simulated Pipeline...</span>
+                  <RefreshCw className="w-4 h-4 animate-spin text-white" />
+                  <span>Processing Simulated Enquiry...</span>
                 </>
               ) : (
                 <>
-                  <Send className="w-4 h-4 text-slate-950" />
+                  <Send className="w-4 h-4 text-white" />
                   <span>Submit Fictional Enquiry</span>
                 </>
               )}
@@ -469,63 +468,60 @@ export const BusinessDemosView: React.FC = () => {
           </form>
         </div>
 
-        {/* Right Column: Simulated Pipeline & Staff Follow-up Preview (5 cols) */}
+        {/* Right Column: Simulation Receipt & Pipeline Output (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="bg-[#0B142A] border border-slate-800/90 rounded-xl p-5 space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-              <span className="text-xs font-mono font-semibold uppercase text-cyan-400">
-                Automated Pipeline Status
+          <div className="bg-white border border-[#E3DDD3] rounded-xl p-5 space-y-4 shadow-xs">
+            <div className="flex items-center justify-between pb-3 border-b border-[#EFEBE4]">
+              <span className="text-xs font-semibold text-[#1A1D1C]">
+                Simulated Pipeline Result
               </span>
-              <span className="text-[10px] font-mono text-slate-400">
-                CLIENT-SIDE ENGINE
+              <span className="text-[10px] font-mono text-[#73827D]">
+                LOCAL STATE
               </span>
             </div>
 
             {lastSubmittedLeadId ? (
               <div className="space-y-4">
-                <div className="p-3 bg-emerald-950/40 border border-emerald-500/40 rounded-lg text-xs space-y-2">
-                  <div className="flex items-center gap-1.5 text-emerald-300 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span>Lead Generated: {lastSubmittedLeadId}</span>
+                <div className="p-3 bg-[#EBF1EC] border border-[#CCDCD0] rounded-lg text-xs space-y-1.5">
+                  <div className="flex items-center gap-1.5 text-[#1E3A2F] font-semibold">
+                    <CheckCircle2 className="w-4 h-4 text-[#2D5A43]" />
+                    <span>Lead Created: {lastSubmittedLeadId}</span>
                   </div>
-                  <p className="text-slate-300 text-[11px] leading-relaxed">
-                    The enquiry was successfully added to your local pipeline state with status <span className="font-semibold text-white">Contact Required</span>.
+                  <p className="text-[#3A4843] text-[11px] leading-relaxed">
+                    The enquiry was added to your local demo pipeline under status <strong className="text-[#1A1D1C]">Contact Required</strong>.
                   </p>
                 </div>
 
-                {/* Simulated Customer Receipt Preview */}
-                <div className="space-y-1.5">
-                  <span className="text-[11px] font-mono text-slate-400">
+                {/* Simulated Customer Receipt */}
+                <div className="space-y-1.5 text-xs">
+                  <span className="text-[11px] font-semibold text-[#4F5B57] block">
                     1. Instant Customer Receipt (Simulated):
                   </span>
-                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-200 leading-relaxed space-y-1">
-                    <p className="font-medium text-white">
+                  <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#2A3531] leading-relaxed space-y-1">
+                    <p className="font-medium text-[#1A1D1C]">
                       "Thank you, {leadName}! We received your request for {requestedService} on {preferredDate} ({preferredTime})."
                     </p>
-                    <p className="text-[11px] text-slate-400">
+                    <p className="text-[11px] text-[#55635E]">
                       {selectedCategory === 'clinics' && 'Our intake nurse will contact you to confirm insurance and exact doctor slot.'}
                       {selectedCategory === 'restaurants' && `Our reservation coordinator is holding table space for ${partySize} guests pending final confirmation.`}
                       {selectedCategory === 'gyms' && 'Your guest pass guide has been queued. Our front desk coach will have your locker key ready.'}
                       {selectedCategory === 'salons' && `Elena & the team have reviewed your request for ${preferredProvider}.`}
                     </p>
-                    <div className="pt-1 text-[10px] font-mono text-cyan-400">
-                      [SIMULATED MESSAGE — NOT TRANSMITTED EXTERNALLY]
-                    </div>
                   </div>
                 </div>
 
-                {/* Simulated Staff Task Preview */}
-                <div className="space-y-1.5">
-                  <span className="text-[11px] font-mono text-slate-400">
-                    2. Front Desk Task Handoff (Simulated):
+                {/* Simulated Staff Task */}
+                <div className="space-y-1.5 text-xs">
+                  <span className="text-[11px] font-semibold text-[#4F5B57] block">
+                    2. Staff Task Created (Simulated):
                   </span>
-                  <div className="p-3 bg-slate-900 border border-slate-800 rounded-lg text-xs text-slate-300 space-y-1">
-                    <div className="flex items-center justify-between text-[11px] font-medium text-cyan-300">
-                      <span>Assigned: Reception Team</span>
-                      <span className="text-[10px] text-amber-300 font-mono">PRIORITY: HIGH</span>
+                  <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#2A3531] space-y-1">
+                    <div className="flex items-center justify-between text-[11px] font-semibold text-[#1E3A2F]">
+                      <span>Assigned: Front Desk Team</span>
+                      <span className="text-[10px] font-mono text-[#8C5E09]">Action Needed</span>
                     </div>
-                    <p className="text-[11px] text-slate-300">
-                      Verify slot availability and phone {contactPhone || contactEmail} to confirm.
+                    <p className="text-[11px] text-[#4E5C57]">
+                      Verify schedule availability and call {contactPhone || contactEmail} to confirm visit.
                     </p>
                   </div>
                 </div>
@@ -534,7 +530,7 @@ export const BusinessDemosView: React.FC = () => {
                 <div className="pt-2 flex flex-col gap-2">
                   <button
                     onClick={() => setActiveTab('pipeline')}
-                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs rounded-lg transition-colors"
+                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-xs rounded-lg transition-colors"
                   >
                     <span>View Lead in Pipeline</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -542,33 +538,33 @@ export const BusinessDemosView: React.FC = () => {
 
                   <button
                     onClick={() => setActiveTab('workflows')}
-                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs rounded-lg border border-slate-800 transition-colors"
+                    className="w-full flex items-center justify-center gap-1.5 py-2 px-3 bg-white hover:bg-[#FAF8F5] text-[#3A4642] text-xs rounded-lg border border-[#DCD6CC] transition-colors"
                   >
                     <span>Inspect {profile.businessName} Workflow</span>
                   </button>
                 </div>
               </div>
             ) : (
-              <div className="py-6 text-center space-y-3">
-                <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center mx-auto text-slate-400">
-                  <Clock className="w-5 h-5 text-slate-400" />
+              <div className="py-8 text-center space-y-2.5">
+                <div className="w-9 h-9 rounded-full bg-[#FAF8F5] border border-[#E3DDD3] flex items-center justify-center mx-auto text-[#798883]">
+                  <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-semibold text-slate-200">
-                    Awaiting Simulated Enquiry
+                  <h3 className="text-xs font-semibold text-[#1A1D1C]">
+                    Ready to simulate enquiry
                   </h3>
-                  <p className="text-[11px] text-slate-400 max-w-xs mx-auto mt-1 leading-relaxed">
-                    Submit the form on the left to see the instant qualification, customer receipt, and staff task generation in real time.
+                  <p className="text-[11px] text-[#697772] max-w-xs mx-auto mt-1 leading-relaxed">
+                    Submit the form on the left to see customer acknowledgment and staff task routing in real time.
                   </p>
                 </div>
               </div>
             )}
           </div>
 
-          {/* Quick Business Services Menu Preview */}
-          <div className="bg-[#0B142A] border border-slate-800/90 rounded-xl p-5 space-y-3">
-            <span className="text-xs font-mono font-semibold uppercase text-slate-400">
-              {profile.businessName} Catalog
+          {/* Catalog Preview */}
+          <div className="bg-white border border-[#E3DDD3] rounded-xl p-5 space-y-3 shadow-xs">
+            <span className="text-xs font-semibold text-[#1A1D1C]">
+              {profile.businessName} Service Catalog
             </span>
             <div className="space-y-2">
               {profile.services.map((svc) => (
@@ -577,15 +573,15 @@ export const BusinessDemosView: React.FC = () => {
                   onClick={() => setRequestedService(svc.name)}
                   className={`p-2.5 rounded-lg border text-xs cursor-pointer transition-colors ${
                     requestedService === svc.name
-                      ? 'bg-cyan-950/40 border-cyan-500/40 text-cyan-200'
-                      : 'bg-slate-900/60 border-slate-800/80 text-slate-300 hover:border-slate-700'
+                      ? 'bg-[#EBF1EC] border-[#CCDCD0] text-[#1E3A2F]'
+                      : 'bg-[#FAF8F5] border-[#E8E3DA] text-[#4B5652] hover:border-[#D5CFC5]'
                   }`}
                 >
                   <div className="flex items-center justify-between font-medium">
                     <span>{svc.name}</span>
-                    <span className="font-mono text-[11px] text-cyan-400">{svc.priceOrType}</span>
+                    <span className="font-mono text-[11px] text-[#2D5A43]">{svc.priceOrType}</span>
                   </div>
-                  <p className="text-[11px] text-slate-400 mt-0.5">{svc.description}</p>
+                  <p className="text-[11px] text-[#6E7D77] mt-0.5">{svc.description}</p>
                 </div>
               ))}
             </div>

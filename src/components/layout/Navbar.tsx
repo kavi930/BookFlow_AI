@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Play, RotateCcw, MessageSquarePlus } from 'lucide-react';
+import { Menu, X, Play, RotateCcw, MessageSquare } from 'lucide-react';
 import { useDemo } from '../../context/DemoContext';
 import { NavigationTab } from '../../types';
 
@@ -16,38 +16,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
   };
 
   return (
-    <header className="bg-[#080E1C] border-b border-slate-800/80 sticky top-0 z-20 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-8">
-        {/* Zone 1: Single text element wordmark */}
+    <header className="bg-white border-b border-[#E7E2DA] sticky top-0 z-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-15 flex items-center justify-between gap-6">
+        {/* Brand Zone */}
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={() => handleNavClick('overview')}
-            className="flex items-center gap-2 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-md py-1"
+            className="flex items-center gap-2.5 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E3A2F] rounded-md py-1"
           >
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center font-bold text-slate-950 text-sm shadow-sm shadow-cyan-500/20">
+            <div className="w-7 h-7 rounded-md bg-[#1E3A2F] flex items-center justify-center font-bold text-white text-xs">
               B
             </div>
-            <span className="text-base font-bold tracking-tight text-white whitespace-nowrap">
-              BookFlow<span className="text-cyan-400 font-semibold">AI</span>
+            <span className="text-base font-bold tracking-tight text-[#1A1D1C] whitespace-nowrap">
+              BookFlow <span className="text-[#2D5A43] font-medium text-xs ml-0.5">AI</span>
             </span>
           </button>
-
-          <span className="hidden xl:inline text-xs text-slate-500 pl-2 border-l border-slate-800">
-            Turn Every Enquiry Into an Opportunity
-          </span>
         </div>
 
-        {/* Zone 2: Clean single-line text navigation links */}
+        {/* Navigation Links */}
         <nav
-          className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300"
+          className="hidden lg:flex items-center gap-6 text-xs sm:text-sm font-medium text-[#4D5552]"
           aria-label="Main Navigation"
         >
           <button
             onClick={() => handleNavClick('overview')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'overview'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             Overview
@@ -56,8 +52,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('demos')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'demos'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             Business Demos
@@ -66,8 +62,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('assistant')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'assistant'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             AI Assistant
@@ -76,8 +72,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('pipeline')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'pipeline'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             Lead Pipeline
@@ -86,8 +82,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('workflows')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'workflows'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             Workflows
@@ -96,8 +92,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('impact')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'impact'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             Business Impact
@@ -106,49 +102,49 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             onClick={() => handleNavClick('about')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'about'
-                ? 'text-cyan-400 font-semibold border-b-2 border-cyan-400'
-                : 'text-slate-300 hover:text-white'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
             }`}
           >
             About
           </button>
         </nav>
 
-        {/* Zone 3: Primary action + secondary controls */}
+        {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {!guidedTour.isActive && (
             <button
               onClick={guidedTour.startTour}
-              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-cyan-300 bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-800/60 rounded-md transition-colors whitespace-nowrap shrink-0"
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#2D5A43] bg-[#EBF1EC] hover:bg-[#DEE9E0] border border-[#CCDCD0] rounded-md transition-colors whitespace-nowrap shrink-0"
               title="Launch step-by-step interactive demo walkthrough"
             >
-              <Play className="w-3 h-3 text-cyan-400" />
+              <Play className="w-3 h-3 text-[#2D5A43] fill-current" />
               <span>Explore Demo</span>
             </button>
           )}
 
           <button
             onClick={resetDemoData}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800/70 border border-slate-800 rounded-md transition-colors whitespace-nowrap shrink-0"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[#5C6662] hover:text-[#1A1D1C] hover:bg-[#F3EFE9] border border-[#E0D9CD] rounded-md transition-colors whitespace-nowrap shrink-0"
             title="Reset demo leads and state"
             aria-label="Reset demo leads"
           >
-            <RotateCcw className="w-3 h-3 text-slate-400" />
+            <RotateCcw className="w-3 h-3 text-[#77827E]" />
             <span className="hidden sm:inline">Reset Demo</span>
           </button>
 
           <button
             onClick={() => setIsInterestModalOpen(true)}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200 rounded-md shadow-sm transition-all whitespace-nowrap shrink-0"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-[#1E3A2F] hover:bg-[#274E3F] rounded-md shadow-xs transition-all whitespace-nowrap shrink-0"
           >
-            <MessageSquarePlus className="w-3.5 h-3.5 text-slate-950" />
+            <MessageSquare className="w-3.5 h-3.5" />
             <span>Discuss Solution</span>
           </button>
 
           {/* Mobile hamburger menu toggle */}
           <button
             onClick={onToggleMobileMenu}
-            className="lg:hidden p-1.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-md"
+            className="lg:hidden p-1.5 text-[#545E5A] hover:text-[#1A1D1C] hover:bg-[#F3EFE9] rounded-md"
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
