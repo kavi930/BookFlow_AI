@@ -8,13 +8,14 @@ import {
   TrendingUp,
   Info,
   ChevronRight,
-  ShieldCheck
+  ShieldCheck,
+  HelpCircle
 } from 'lucide-react';
 import { useDemo } from '../../context/DemoContext';
 import { NavigationTab } from '../../types';
 
 export const Sidebar: React.FC = () => {
-  const { activeTab, setActiveTab, leads } = useDemo();
+  const { activeTab, setActiveTab, leads, inquiries } = useDemo();
 
   const newLeadsCount = leads.filter((l) => l.status === 'New' || l.status === 'Contact Required').length;
 
@@ -25,8 +26,10 @@ export const Sidebar: React.FC = () => {
     { id: 'pipeline', label: 'Lead Pipeline', icon: <Users className="w-4 h-4" />, badge: `${newLeadsCount} active` },
     { id: 'workflows', label: 'Workflows', icon: <Workflow className="w-4 h-4" /> },
     { id: 'impact', label: 'Business Impact', icon: <TrendingUp className="w-4 h-4" />, badge: 'ROI Calc' },
-    { id: 'about', label: 'About BookFlow', icon: <Info className="w-4 h-4" /> }
+    { id: 'inquiries', label: 'Inquiry Desk', icon: <HelpCircle className="w-4 h-4" />, badge: `${inquiries.length} tickets` },
+    { id: 'about', label: 'About FlowPilot', icon: <Info className="w-4 h-4" /> }
   ];
+
 
   return (
     <aside
@@ -136,7 +139,7 @@ export const Sidebar: React.FC = () => {
         </div>
 
         <div className="text-[10px] text-[#75817D] flex items-center justify-between px-1 font-mono">
-          <span>BookFlow AI</span>
+          <span>FlowPilot AI</span>
           <span className="text-[#2D5A43] font-semibold">LOCAL DEMO</span>
         </div>
       </div>

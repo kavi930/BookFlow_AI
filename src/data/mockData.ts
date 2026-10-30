@@ -7,19 +7,19 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     tagline: 'Family Medicine & Preventive Wellness Care',
     description: 'A multi-provider primary health and wellness center providing routine physicals, preventative screenings, and specialist referrals.',
     fictionalHours: 'Monday – Friday: 8:00 AM – 6:00 PM | Saturday: 9:00 AM – 1:00 PM | Sunday: Closed',
-    fictionalLocation: '420 Meadowview Lane, Suite 200 (Fictional Demo Address)',
+    fictionalLocation: 'Indiranagar 100ft Road, Bengaluru (Fictional Demo Address)',
     disclaimer: 'SAFETY NOTICE: This is an illustrative simulation. No clinical diagnosis, medical advice, or real patient data is handled. Appointments require formal manual verification by clinic staff.',
     services: [
-      { id: 'c1', name: 'General Consultation', priceOrType: '$120 / self-pay or co-pay', duration: '30 mins', description: 'Comprehensive checkup for non-emergency symptoms and routine health checks.' },
-      { id: 'c2', name: 'Annual Preventive Screening', priceOrType: '$180 standard screening', duration: '45 mins', description: 'Biometric vitals, routine metabolic blood panel order, and lifestyle review.' },
-      { id: 'c3', name: 'Blood Pressure & Diabetes Review', priceOrType: '$95 monitoring visit', duration: '20 mins', description: 'Ongoing chronic condition medication checks and vitals review.' },
-      { id: 'c4', name: 'Travel Immunization Consult', priceOrType: '$85 + vaccine costs', duration: '25 mins', description: 'Destination-based advisory and vaccination scheduling advice.' },
+      { id: 'c1', name: 'General Consultation', priceOrType: '₹800 consultation', duration: '30 mins', description: 'Comprehensive checkup for non-emergency symptoms and routine health checks.' },
+      { id: 'c2', name: 'Annual Preventive Screening', priceOrType: '₹1,500 comprehensive screening', duration: '45 mins', description: 'Biometric vitals, routine metabolic blood panel order, and lifestyle review.' },
+      { id: 'c3', name: 'Blood Pressure & Diabetes Review', priceOrType: '₹600 monitoring visit', duration: '20 mins', description: 'Ongoing chronic condition medication checks and vitals review.' },
+      { id: 'c4', name: 'Travel Immunization Consult', priceOrType: '₹750 + vaccine costs', duration: '25 mins', description: 'Destination-based advisory and vaccination scheduling advice.' },
     ],
     staffOrProviders: ['Dr. Sarah Jenkins (Family Medicine)', 'Dr. Alan Morales (Internal Medicine)', 'Nurse Practitioner Rachel Vance'],
     sampleQuestions: [
       {
         question: 'What are your weekend opening hours for urgent visits?',
-        answer: 'CarePoint Clinic is open Saturdays from 9:00 AM to 1:00 PM for non-emergency routine appointments. We are closed on Sundays. If you are experiencing an acute medical emergency, please call 911 or your local emergency hospital.',
+        answer: 'CarePoint Clinic is open Saturdays from 9:00 AM to 1:00 PM for non-emergency routine appointments. We are closed on Sundays. If you are experiencing an acute medical emergency, please call 112 or your local emergency hospital.',
         intent: 'clinic_hours'
       },
       {
@@ -29,7 +29,7 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
       },
       {
         question: 'Do you accept major private insurance plans?',
-        answer: 'CarePoint Clinic works with standard regional PPO networks and Medicare. During the simulated intake follow-up, our patient coordinator cross-checks your provider details before your visit.',
+        answer: 'CarePoint Clinic works with standard regional TPA networks and private health plans. During the simulated intake follow-up, our patient coordinator cross-checks your provider details before your visit.',
         intent: 'insurance'
       },
       {
@@ -40,9 +40,9 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     ],
     sampleLeadDefaults: {
       service: 'General Consultation',
-      sampleName: 'Julian Croft',
-      sampleEmail: 'julian.croft@sample-demo.test',
-      samplePhone: '(555) 234-8910',
+      sampleName: 'Rahul Verma',
+      sampleEmail: 'rahul.verma@sample-demo.test',
+      samplePhone: '+91 98765 43210',
       sampleNotes: 'Interested in routine cholesterol screening and scheduling afternoon checkup.'
     }
   },
@@ -51,15 +51,15 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     category: 'restaurants',
     businessName: 'Urban Table',
     tagline: 'Modern Contemporary Bistro & Hearth Dining',
-    description: 'Seasonal wood-fired bistro specializing in local organic produce, craft cocktails, and intimate celebratory group dining.',
+    description: 'Seasonal wood-fired bistro specializing in regional organic produce, craft beverages, and intimate celebratory group dining.',
     fictionalHours: 'Tuesday – Thursday: 5:00 PM – 10:00 PM | Friday – Saturday: 5:00 PM – 11:30 PM | Sunday Brunch: 10:30 AM – 3:00 PM',
-    fictionalLocation: '188 Warehouse District Row (Fictional Demo Address)',
+    fictionalLocation: 'Bandra West, Mumbai (Fictional Demo Address)',
     disclaimer: 'DEMO NOTICE: This is an illustrative restaurant enquiry simulation. Submitting a request does not book a physical table or debit any card.',
     services: [
       { id: 'r1', name: 'Standard Dining Reservation', priceOrType: 'A la carte menu', duration: '90 mins dining window', description: 'Table in main dining room for couples or parties up to 6.' },
-      { id: 'r2', name: 'Chef’s Tasting Counter (5-Course)', priceOrType: '$95 per guest', duration: '2 hours', description: 'Front-row hearth seating with seasonal menu pairings.' },
-      { id: 'r3', name: 'Private Mezzanine Dining (8–18 Guests)', priceOrType: 'Custom preset menu', duration: '3 hours', description: 'Dedicated server and customized celebratory multi-course menu.' },
-      { id: 'r4', name: 'Weekend Patio Hearth Brunch', priceOrType: 'A la carte brunch', duration: '75 mins', description: 'Heated open-air terrace seating featuring specialty pastries and mimosas.' },
+      { id: 'r2', name: 'Chef’s Tasting Counter (5-Course)', priceOrType: '₹1,850 per guest', duration: '2 hours', description: 'Front-row hearth seating with seasonal menu pairings.' },
+      { id: 'r3', name: 'Private Mezzanine Dining (8–18 Guests)', priceOrType: 'Custom preset menu (from ₹2,200/guest)', duration: '3 hours', description: 'Dedicated server and customized celebratory multi-course menu.' },
+      { id: 'r4', name: 'Weekend Patio Hearth Brunch', priceOrType: 'A la carte brunch', duration: '75 mins', description: 'Open-air terrace seating featuring specialty teas, pastries, and brunch plates.' },
     ],
     sampleQuestions: [
       {
@@ -98,13 +98,13 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     tagline: 'High-Performance Functional Fitness & Conditioning',
     description: 'State-of-the-art strength lab, functional interval conditioning, and guided small-group athletic training.',
     fictionalHours: 'Monday – Friday: 5:30 AM – 9:30 PM | Saturday – Sunday: 7:00 AM – 6:00 PM',
-    fictionalLocation: '880 Olympic Boulevard (Fictional Demo Address)',
+    fictionalLocation: 'Jubilee Hills Road No. 36, Hyderabad (Fictional Demo Address)',
     disclaimer: 'DEMO NOTICE: This is a fictional fitness trial enquiry demonstration. No actual gym pass or membership contract is issued.',
     services: [
       { id: 'g1', name: 'Complimentary 3-Day Trial Pass', priceOrType: 'Free 3-Day Intro', duration: '3 Consecutive Days', description: 'Full facility access including one coach-led HIIT or conditioning class.' },
-      { id: 'g2', name: 'Unlimited Monthly All-Access', priceOrType: '$149 / month', duration: 'Month-to-month', description: 'Unlimited turf access, open gym floor, cold plunges, and recovery sauna.' },
-      { id: 'g3', name: '10-Class Athletic Punch Card', priceOrType: '$190 (valid 90 days)', duration: '10 sessions', description: 'Flexible access to all coach-guided group strength and conditioning classes.' },
-      { id: 'g4', name: 'Personal Coaching Assessment (1:1)', priceOrType: '$85 intro consult', duration: '60 mins', description: 'Movement screen, baseline biometric assessment, and custom training roadmap.' },
+      { id: 'g2', name: 'Unlimited Monthly All-Access', priceOrType: '₹2,999 / month', duration: 'Month-to-month', description: 'Unlimited turf access, open gym floor, cold plunges, and recovery sauna.' },
+      { id: 'g3', name: '10-Class Athletic Punch Card', priceOrType: '₹4,500 (10 sessions)', duration: '10 sessions', description: 'Flexible access to all coach-guided group strength and conditioning classes.' },
+      { id: 'g4', name: 'Personal Coaching Assessment (1:1)', priceOrType: '₹999 intro consult', duration: '60 mins', description: 'Movement screen, baseline biometric assessment, and custom training roadmap.' },
     ],
     fitnessGoals: [
       'Functional Strength & Muscle Tone',
@@ -130,15 +130,15 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
       },
       {
         question: 'Do you have shower facilities and locker rooms?',
-        answer: 'Yes, our locker rooms feature rainfall private showers, towel service, Malin+Goetz toiletries, dry eucalyptus saunas, and daily keyless lockers.',
+        answer: 'Yes, our locker rooms feature rainfall private showers, towel service, premium organic toiletries, dry eucalyptus saunas, and daily keyless lockers.',
         intent: 'amenities'
       }
     ],
     sampleLeadDefaults: {
       service: 'Complimentary 3-Day Trial Pass',
-      sampleName: 'Marcus Bradley',
-      sampleEmail: 'marcus.b@sample-demo.test',
-      samplePhone: '(555) 456-7891',
+      sampleName: 'Arjun Mehta',
+      sampleEmail: 'arjun.m@sample-demo.test',
+      samplePhone: '+91 98201 54321',
       sampleNotes: 'Interested in early morning 6:30am group training classes.'
     }
   },
@@ -149,13 +149,13 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     tagline: 'Artisanal Color, Hair Care & Botanical Aesthetic Studio',
     description: 'Boutique hair and wellness sanctuary specializing in dimensional balayage, botanical scalp treatments, and tailored precision haircuts.',
     fictionalHours: 'Tuesday – Saturday: 9:00 AM – 7:00 PM | Sunday: 10:00 AM – 4:00 PM | Monday: Closed',
-    fictionalLocation: '52 Atelier Avenue (Fictional Demo Address)',
+    fictionalLocation: 'Koregaon Park, Pune (Fictional Demo Address)',
     disclaimer: 'DEMO NOTICE: Fictional appointment demonstration only. Submitting an enquiry does not hold real salon chair time.',
     services: [
-      { id: 's1', name: 'Dimensional Balayage & Gloss', priceOrType: 'From $240', duration: '3.0 hours', description: 'Hand-painted bespoke sunlit highlights, customized tonal gloss, and blowout.' },
-      { id: 's2', name: 'Precision Haircut & Style', priceOrType: '$95 – $120', duration: '60 mins', description: 'Tailored dry or wet precision scissor cut, botanical wash, and signature blowout.' },
-      { id: 's3', name: 'Botanical Scalp & Steam Therapy', priceOrType: '$85', duration: '45 mins', description: 'Purifying Japanese head spa massage, organic botanical oil infusion, and scalp detox.' },
-      { id: 's4', name: 'Full Single-Process Color & Trim', priceOrType: 'From $165', duration: '2.0 hours', description: 'Root retouch or all-over single tone color with nourishing moisture mask.' },
+      { id: 's1', name: 'Dimensional Balayage & Gloss', priceOrType: 'From ₹3,500', duration: '3.0 hours', description: 'Hand-painted bespoke sunlit highlights, customized tonal gloss, and blowout.' },
+      { id: 's2', name: 'Precision Haircut & Style', priceOrType: '₹1,200 – ₹1,800', duration: '60 mins', description: 'Tailored dry or wet precision scissor cut, botanical wash, and signature blowout.' },
+      { id: 's3', name: 'Botanical Scalp & Steam Therapy', priceOrType: '₹1,400', duration: '45 mins', description: 'Purifying Japanese head spa massage, organic botanical oil infusion, and scalp detox.' },
+      { id: 's4', name: 'Full Single-Process Color & Trim', priceOrType: 'From ₹2,400', duration: '2.0 hours', description: 'Root retouch or all-over single tone color with nourishing moisture mask.' },
     ],
     staffOrProviders: [
       'Elena Vance (Master Balayage Stylist)',

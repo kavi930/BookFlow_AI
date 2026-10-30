@@ -18,7 +18,7 @@ export const AboutView: React.FC = () => {
       {/* Hero Intro */}
       <section className="bg-white border border-[#E3DDD3] rounded-2xl p-6 sm:p-10 space-y-4 shadow-xs">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#EBF1EC] text-[#1E3A2F] text-xs font-medium">
-          <span>About BookFlow AI</span>
+          <span>About FlowPilot AI</span>
           <span className="text-[#A4B3AC]">·</span>
           <span>Software Philosophy</span>
         </div>
@@ -28,7 +28,7 @@ export const AboutView: React.FC = () => {
         </h1>
 
         <p className="text-sm sm:text-base text-[#4E5B56] leading-relaxed max-w-2xl">
-          BookFlow AI envisions simple, organic automation workflows that bridge the gap between inbound customer interest and busy service teams. We believe service businesses shouldn't lose prospects to unreturned messages, delayed email inquiries, or disjointed calendars.
+          FlowPilot AI envisions simple, organic automation workflows that bridge the gap between inbound customer interest and busy service teams. We believe service businesses shouldn't lose prospects to unreturned messages, delayed email inquiries, or disjointed calendars.
         </p>
 
         <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -137,7 +137,7 @@ export const AboutView: React.FC = () => {
 
         <div className="pt-3 border-t border-[#EFEBE4] flex items-center justify-between flex-wrap gap-3">
           <span className="text-xs text-[#7A8883] font-mono">
-            BookFlow AI Prototype
+            FlowPilot AI Prototype
           </span>
           <button
             onClick={() => setIsInterestModalOpen(true)}

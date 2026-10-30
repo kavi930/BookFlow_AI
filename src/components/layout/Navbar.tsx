@@ -6,10 +6,22 @@ import { NavigationTab } from '../../types';
 interface NavbarProps {
   onToggleMobileMenu: () => void;
   isMobileMenuOpen: boolean;
+  onReturnToMarketing?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenuOpen }) => {
-  const { activeTab, setActiveTab, resetDemoData, guidedTour, setIsInterestModalOpen } = useDemo();
+export const Navbar: React.FC<NavbarProps> = ({
+  onToggleMobileMenu,
+  isMobileMenuOpen,
+  onReturnToMarketing
+}) => {
+  const {
+    activeTab,
+    setActiveTab,
+    resetDemoData,
+    guidedTour,
+    setIsInterestModalOpen,
+    openAgentWidget
+  } = useDemo();
 
   const handleNavClick = (tab: NavigationTab) => {
     setActiveTab(tab);
@@ -28,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
               B
             </div>
             <span className="text-base font-bold tracking-tight text-[#1A1D1C] whitespace-nowrap">
-              BookFlow <span className="text-[#2D5A43] font-medium text-xs ml-0.5">AI</span>
+              FlowPilot <span className="text-[#2D5A43] font-medium text-xs ml-0.5">AI</span>
             </span>
           </button>
         </div>
@@ -99,6 +111,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
             Business Impact
           </button>
           <button
+            onClick={() => handleNavClick('inquiries')}
+            className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
+              activeTab === 'inquiries'
+                ? 'text-[#1E3A2F] font-semibold border-b-2 border-[#1E3A2F]'
+                : 'text-[#505A56] hover:text-[#1A1D1C]'
+            }`}
+          >
+            Inquiry Desk
+          </button>
+          <button
             onClick={() => handleNavClick('about')}
             className={`whitespace-nowrap shrink-0 transition-colors py-1 ${
               activeTab === 'about'
@@ -112,6 +134,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {onReturnToMarketing && (
+            <button
+              onClick={onReturnToMarketing}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#1E3A2F] bg-[#FAF8F5] hover:bg-[#F3EFE9] border border-[#D8D2C5] rounded-md transition-colors whitespace-nowrap shrink-0"
+              title="Return to the FlowPilot AI Marketing Website"
+            >
+              <span>← Marketing Website</span>
+            </button>
+          )}
+
           {!guidedTour.isActive && (
             <button
               onClick={guidedTour.startTour}
@@ -131,6 +163,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleMobileMenu, isMobileMenu
           >
             <RotateCcw className="w-3 h-3 text-[#77827E]" />
             <span className="hidden sm:inline">Reset Demo</span>
+          </button>
+
+          <button
+            onClick={() => openAgentWidget('whatsapp')}
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#075E54] bg-[#E7FFDB] hover:bg-[#D4F5C3] border border-[#BDE8AB] rounded-md transition-colors whitespace-nowrap shrink-0 shadow-2xs"
+            title="Open Interactive WhatsApp or Voice Agent"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+            <span>Chat / Call Agent</span>
           </button>
 
           <button

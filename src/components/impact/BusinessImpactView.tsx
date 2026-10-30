@@ -19,9 +19,9 @@ const BENCHMARK_PRESETS = [
     enquiriesPerMonth: 380,
     minutesPerEnquiry: 22,
     automationHandlingPercent: 70,
-    monthlySoftwareCost: 199,
-    hourlyLaborCost: 32,
-    note: 'Involves routine pre-screening, doctor preference checks, and insurance co-pay questions.'
+    monthlySoftwareCost: 4999,
+    hourlyLaborCost: 350,
+    note: 'Involves routine pre-screening, doctor preference checks, and insurance/TPA questions.'
   },
   {
     name: 'Urban Table',
@@ -29,9 +29,9 @@ const BENCHMARK_PRESETS = [
     enquiriesPerMonth: 550,
     minutesPerEnquiry: 12,
     automationHandlingPercent: 80,
-    monthlySoftwareCost: 149,
-    hourlyLaborCost: 22,
-    note: 'High volume table requests, brunch hours, weekend party sizes, and dietary questions.'
+    monthlySoftwareCost: 4999,
+    hourlyLaborCost: 250,
+    note: 'High volume table requests, dinner hours, weekend party sizes, and dietary questions.'
   },
   {
     name: 'FitCore Studio',
@@ -39,8 +39,8 @@ const BENCHMARK_PRESETS = [
     enquiriesPerMonth: 290,
     minutesPerEnquiry: 18,
     automationHandlingPercent: 65,
-    monthlySoftwareCost: 149,
-    hourlyLaborCost: 25,
+    monthlySoftwareCost: 4999,
+    hourlyLaborCost: 300,
     note: 'Trial pass orientation, morning class schedule checks, and month-to-month plan FAQs.'
   },
   {
@@ -49,8 +49,8 @@ const BENCHMARK_PRESETS = [
     enquiriesPerMonth: 240,
     minutesPerEnquiry: 20,
     automationHandlingPercent: 60,
-    monthlySoftwareCost: 129,
-    hourlyLaborCost: 26,
+    monthlySoftwareCost: 4999,
+    hourlyLaborCost: 280,
     note: 'Balayage time allocations, stylist availability, consultation notes, and patch testing.'
   }
 ];
@@ -62,8 +62,8 @@ export const BusinessImpactView: React.FC = () => {
     enquiriesPerMonth: 350,
     minutesPerEnquiry: 18,
     automationHandlingPercent: 65,
-    monthlySoftwareCost: 199,
-    hourlyLaborCost: 28
+    monthlySoftwareCost: 4999,
+    hourlyLaborCost: 300
   });
 
   const automatedEnquiries = Math.round(
@@ -248,7 +248,7 @@ export const BusinessImpactView: React.FC = () => {
               />
               <div className="flex justify-between text-[10px] text-[#717E79] font-mono">
                 <span>20% (basic FAQ only)</span>
-                <span>65% (typical BookFlow triage)</span>
+                <span>65% (typical FlowPilot triage)</span>
                 <span>95% (full automation)</span>
               </div>
             </div>
@@ -257,16 +257,17 @@ export const BusinessImpactView: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg space-y-1.5">
                 <label className="block text-xs font-semibold text-[#2F3A36]">
-                  4. Staff Labor Cost ($ / hr)
+                  4. Staff Labor Cost (₹ / hr)
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#73827D] text-xs font-mono">
-                    $
+                    ₹
                   </span>
                   <input
                     type="number"
-                    min={15}
-                    max={120}
+                    min={100}
+                    max={2500}
+                    step={25}
                     value={params.hourlyLaborCost}
                     onChange={(e) =>
                       setParams({
@@ -278,22 +279,23 @@ export const BusinessImpactView: React.FC = () => {
                   />
                 </div>
                 <p className="text-[10px] text-[#7A8783]">
-                  Hourly wage or loaded employee rate.
+                  Hourly wage or loaded employee rate in INR.
                 </p>
               </div>
 
               <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg space-y-1.5">
                 <label className="block text-xs font-semibold text-[#2F3A36]">
-                  5. Estimated Software Cost ($ / mo)
+                  5. Estimated Software Cost (₹ / mo)
                 </label>
                 <div className="relative">
                   <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#73827D] text-xs font-mono">
-                    $
+                    ₹
                   </span>
                   <input
                     type="number"
-                    min={49}
-                    max={1500}
+                    min={1999}
+                    max={29999}
+                    step={500}
                     value={params.monthlySoftwareCost}
                     onChange={(e) =>
                       setParams({
@@ -305,7 +307,7 @@ export const BusinessImpactView: React.FC = () => {
                   />
                 </div>
                 <p className="text-[10px] text-[#7A8783]">
-                  Hypothetical monthly software budget.
+                  Monthly FlowPilot AI plan in INR.
                 </p>
               </div>
             </div>
@@ -330,13 +332,13 @@ export const BusinessImpactView: React.FC = () => {
                 Estimated Net Monthly Value
               </span>
               <div className="text-3xl font-extrabold text-[#1E3A2F] font-mono tabular-nums">
-                ${netMonthlyValue.toLocaleString()}
+                ₹{netMonthlyValue.toLocaleString()}
                 <span className="text-xs font-normal text-[#4F5D58] font-sans ml-1">
                   / month
                 </span>
               </div>
               <div className="text-xs text-[#2D5A43] font-mono pt-1">
-                Annualized Est: ${annualNetValue.toLocaleString()} / year
+                Annualized Est: ₹{annualNetValue.toLocaleString()} / year
               </div>
             </div>
 
@@ -364,11 +366,13 @@ export const BusinessImpactView: React.FC = () => {
 
               <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[#3D4744]">
-                  <DollarSign className="w-4 h-4 text-[#2D5A43]" />
+                  <span className="w-4 h-4 rounded-full bg-[#1E3A2F] text-white flex items-center justify-center text-[10px] font-bold">
+                    ₹
+                  </span>
                   <span>Gross Labor Value Saved:</span>
                 </div>
                 <span className="text-[#1A1D1C] font-bold font-mono text-sm tabular-nums">
-                  ${monthlyLaborValueSaved.toLocaleString()}
+                  ₹{monthlyLaborValueSaved.toLocaleString()}
                 </span>
               </div>
             </div>
@@ -380,7 +384,7 @@ export const BusinessImpactView: React.FC = () => {
               </span>
               <div>• Automated inquiries: {params.enquiriesPerMonth} × {params.automationHandlingPercent}% = {automatedEnquiries}</div>
               <div>• Hours saved: ({automatedEnquiries} × {params.minutesPerEnquiry} min) ÷ 60 = {monthlyHoursSaved} hrs</div>
-              <div>• Net savings: ({monthlyHoursSaved} hrs × ${params.hourlyLaborCost}) - ${params.monthlySoftwareCost} = ${netMonthlyValue}</div>
+              <div>• Net savings: ({monthlyHoursSaved} hrs × ₹{params.hourlyLaborCost}) - ₹{params.monthlySoftwareCost} = ₹{netMonthlyValue}</div>
             </div>
           </div>
 

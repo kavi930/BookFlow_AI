@@ -10,14 +10,35 @@ import {
   UtensilsCrossed,
   Dumbbell,
   Sparkle,
-  MessageSquare
+  MessageSquare,
+  Sparkles,
+  ShieldCheck,
+  HelpCircle,
+  Play
 } from 'lucide-react';
 import { useDemo } from '../../context/DemoContext';
-import { WEEKLY_ACTIVITY_DATA, BUSINESS_PROFILES } from '../../data/mockData';
+import { WEEKLY_ACTIVITY_DATA } from '../../data/mockData';
 import { BusinessCategory } from '../../types';
+import { EcosystemSection } from './EcosystemSection';
+import { ProductVideoDemosSection } from './ProductVideoDemosSection';
+import { ProductShowcase } from './ProductShowcase';
+import { HowItWorksSection } from './HowItWorksSection';
+import { SecurityReliabilitySection } from './SecurityReliabilitySection';
+import { FinalCtaSection } from './FinalCtaSection';
+
 
 export const OverviewView: React.FC = () => {
-  const { setActiveTab, setSelectedCategory, leads, setSelectedLeadForDetail, guidedTour } = useDemo();
+  const {
+    setActiveTab,
+    setSelectedCategory,
+    leads,
+    setSelectedLeadForDetail,
+    guidedTour,
+    setIsInterestModalOpen,
+    openAgentWidget,
+    openInquiryWithQuestion
+  } = useDemo();
+
 
   // Active vertical in the business selector tab
   const [selectedVertical, setSelectedVertical] = useState<BusinessCategory>('clinics');
@@ -41,33 +62,47 @@ export const OverviewView: React.FC = () => {
     clinics: {
       title: 'Clinics & Healthcare Practices',
       businessName: 'CarePoint Clinic',
-      commonEnquiry: '"Do you have any appointments available with Dr. Jenkins this Thursday for a routine health check?"',
-      proposedWorkflow: 'Instantly checks clinic hours, verifies non-emergency status, records preferred morning/afternoon slot, and drafts an intake acknowledgment.',
-      ownerNextStep: 'Reception staff see an unconfirmed lead in the pipeline with patient notes, ready for insurance verification and final booking call.',
-      simulatedNotice: 'Simulated triage: Does not diagnose medical conditions or write directly to a real electronic health record.'
+      commonEnquiry:
+        '"Do you have any appointments available with Dr. Jenkins this Thursday for a routine health check?"',
+      proposedWorkflow:
+        'Instantly checks clinic hours, verifies non-emergency status, records preferred morning/afternoon slot, and drafts an intake acknowledgment.',
+      ownerNextStep:
+        'Reception staff see an unconfirmed lead in the pipeline with patient notes, ready for insurance verification and final booking call.',
+      simulatedNotice:
+        'Simulated triage: Does not diagnose medical conditions or write directly to a real electronic health record.'
     },
     restaurants: {
       title: 'Restaurants & Hospitality',
       businessName: 'Urban Table',
-      commonEnquiry: '"Can we reserve a table for 8 on Saturday evening around 7:30 PM? We have two vegetarians in our party."',
-      proposedWorkflow: 'Evaluates party-size thresholds (routes large parties of 8+ to private dining), logs dietary notes, and acknowledges seating availability.',
-      ownerNextStep: 'The floor manager reviews the reservation request and holds table space before calling the guest to finalize table placement.',
-      simulatedNotice: 'Simulated reservation: Does not debit credit cards or create real table holds in external POS systems.'
+      commonEnquiry:
+        '"Can we reserve a table for 8 on Saturday evening around 7:30 PM? We have two vegetarians in our party."',
+      proposedWorkflow:
+        'Evaluates party-size thresholds (routes large parties of 8+ to private dining), logs dietary notes, and acknowledges seating availability.',
+      ownerNextStep:
+        'The floor manager reviews the reservation request and holds table space before calling the guest to finalize table placement.',
+      simulatedNotice:
+        'Simulated reservation: Does not debit credit cards or create real table holds in external POS systems.'
     },
     gyms: {
       title: 'Gyms & Fitness Studios',
       businessName: 'FitCore Studio',
-      commonEnquiry: '"I want to try your morning conditioning class tomorrow. What is included in the 3-day trial pass?"',
-      proposedWorkflow: 'Captures member training goals (endurance, strength, mobility), details morning class times, and prepares a welcome guide with arrival tips.',
-      ownerNextStep: 'Head coach receives a notification to prepare a guest pass and greet the prospective member 10 minutes prior to class.',
+      commonEnquiry:
+        '"I want to try your morning conditioning class tomorrow. What is included in the 3-day trial pass?"',
+      proposedWorkflow:
+        'Captures member training goals (endurance, strength, mobility), details morning class times, and prepares a welcome guide with arrival tips.',
+      ownerNextStep:
+        'Head coach receives a notification to prepare a guest pass and greet the prospective member 10 minutes prior to class.',
       simulatedNotice: 'Simulated pass: No membership contract is created or billed.'
     },
     salons: {
       title: 'Salons & Spas',
       businessName: 'Glow & Co. Salon',
-      commonEnquiry: '"I would like to book a dimensional balayage with Elena next week. How long does the appointment take?"',
-      proposedWorkflow: 'Explains estimated 3-hour duration, checks stylist chair windows, notes 48-hour patch test guidelines, and records desired times.',
-      ownerNextStep: 'Front desk coordinator verifies chair availability on Elena’s schedule and reaches out to confirm the appointment.',
+      commonEnquiry:
+        '"I would like to book a dimensional balayage with Elena next week. How long does the appointment take?"',
+      proposedWorkflow:
+        'Explains estimated 3-hour duration, checks stylist chair windows, notes 48-hour patch test guidelines, and records desired times.',
+      ownerNextStep:
+        'Front desk coordinator verifies chair availability on Elena’s schedule and reaches out to confirm the appointment.',
       simulatedNotice: 'Simulated booking: No live salon calendar slot is altered.'
     }
   };
@@ -91,63 +126,96 @@ export const OverviewView: React.FC = () => {
   const countCompleted = leads.filter((l) => l.status === 'Completed').length;
 
   return (
-    <div className="space-y-12 max-w-6xl mx-auto text-[#1A1D1C]">
+    <div className="space-y-16 max-w-6xl mx-auto text-[#1A1D1C] pb-8">
       {/* 1. Concise, Organic Hero Section */}
-      <section className="pt-2 pb-6">
+      <section className="pt-4 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Clear Value Proposition */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#EBF1EC] text-[#1E3A2F] text-xs font-medium">
+          <div className="lg:col-span-7 space-y-5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#EBF1EC] text-[#1E3A2F] text-xs font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2D5A43]" />
-              <span>Thoughtful Business Automation</span>
+              <span>Intelligent Inbound & Appointment Coordination</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1A1D1C] leading-[1.18] text-balance">
-              Spend less time chasing enquiries.
+            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold tracking-tight text-[#1A1D1C] leading-[1.15] text-balance">
+              Spend less time chasing enquiries. Keep schedules full.
             </h1>
 
             <p className="text-base sm:text-lg text-[#4E5854] leading-relaxed max-w-xl text-balance">
-              BookFlow helps businesses organise customer enquiries, follow-ups, and appointment requests in one simple workflow.
+              FlowPilot AI connects customer WhatsApp messaging, live calendar scheduling, and automated reminders in one unified, human-supervised workflow.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
-                onClick={guidedTour.startTour}
-                className="px-5 py-2.5 rounded-lg bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-sm shadow-xs transition-colors"
+                onClick={() => setIsInterestModalOpen(true)}
+                className="px-5 py-2.5 rounded-lg bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-semibold text-sm shadow-xs transition-colors flex items-center gap-2 group"
               >
-                Explore the demo
+                <span>Book a Demo</span>
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
+              </button>
+
+              <button
+                onClick={() => {
+                  const el = document.getElementById('product-video-demos');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-4 py-2.5 rounded-lg border border-[#C8DFCD] bg-[#F1F7F2] hover:bg-[#E3EEE5] text-[#1E3A2F] font-semibold text-sm transition-colors flex items-center gap-2"
+              >
+                <Play className="w-3.5 h-3.5 fill-[#1E3A2F] text-[#1E3A2F]" />
+                <span>Watch Video Demos</span>
+              </button>
+
+              <button
+                onClick={() => openAgentWidget('whatsapp')}
+                className="px-4 py-2.5 rounded-lg border border-[#25D366]/40 bg-[#E7FFDB] hover:bg-[#D5F5C4] text-[#075E54] font-semibold text-sm transition-colors flex items-center gap-2 shadow-2xs"
+              >
+                <MessageSquare className="w-3.5 h-3.5 text-[#075E54]" />
+                <span>Test WhatsApp / Call Agent</span>
+              </button>
+
+              <button
+                onClick={guidedTour.startTour}
+                className="px-4 py-2.5 rounded-lg border border-[#D8D2C5] bg-white hover:bg-[#FAF8F5] text-[#2D3833] font-medium text-sm transition-colors"
+              >
+                Interactive Tour
               </button>
 
               <button
                 onClick={() => setActiveTab('workflows')}
-                className="px-4 py-2.5 rounded-lg border border-[#D8D2C5] bg-white hover:bg-[#F4EFE7] text-[#2D3833] font-medium text-sm transition-colors"
+                className="text-xs font-semibold text-[#1E3A2F] hover:underline px-2 py-2 flex items-center gap-1"
               >
-                See how it works
+                <span>See how it works</span>
+                <ExternalLink className="w-3 h-3" />
               </button>
             </div>
 
-            <div className="pt-3 text-xs text-[#6F7C77] flex items-center gap-3">
+            <div className="pt-2 text-xs text-[#6F7C77] flex items-center gap-3 flex-wrap">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#2D5A43]" />
-                <span>Zero setup required</span>
+                <span>Zero configuration required</span>
               </span>
               <span className="text-[#C6BEB2]">·</span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#2D5A43]" />
-                <span>Local browser sandbox</span>
+                <span>Client-side private sandbox</span>
+              </span>
+              <span className="text-[#C6BEB2]">·</span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#2D5A43]" />
+                <span>Human staff in the loop</span>
               </span>
             </div>
           </div>
 
           {/* Right Column: Authentic Product Interface Preview */}
           <div className="lg:col-span-5">
-            <div className="bg-white border border-[#E3DDD3] rounded-xl p-5 shadow-xs space-y-3.5">
+            <div className="bg-white border border-[#E3DDD3] rounded-2xl p-5 shadow-xs space-y-3.5">
               <div className="flex items-center justify-between pb-3 border-b border-[#EFEBE4]">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-[#1E3A2F]" />
                   <span className="text-xs font-semibold text-[#1A1D1C]">Live Workflow Preview</span>
                 </div>
-                <span className="text-[11px] font-mono text-[#6A7873] bg-[#F5F2EB] px-2 py-0.5 rounded">
+                <span className="text-[11px] font-mono text-[#2D5A43] bg-[#EBF1EC] px-2 py-0.5 rounded font-semibold">
                   INBOUND TRIAGE
                 </span>
               </div>
@@ -155,11 +223,11 @@ export const OverviewView: React.FC = () => {
               {/* Step 1: Customer enquiry */}
               <div className="p-3 rounded-lg bg-[#FAF8F5] border border-[#EBE6DD] space-y-1">
                 <div className="flex items-center justify-between text-[11px] text-[#697671]">
-                  <span className="font-medium text-[#2E3A35]">Customer Enquiry (Website)</span>
-                  <span>2 mins ago</span>
+                  <span className="font-semibold text-[#2E3A35]">Customer WhatsApp Enquiry</span>
+                  <span className="font-mono text-[10px]">2 mins ago</span>
                 </div>
                 <p className="text-xs text-[#1A1D1C] italic">
-                  "Hi, could I request an appointment for a health check with Dr. Jenkins next Tuesday morning?"
+                  "Hi! Do you have any appointments available with Dr. Jenkins this Thursday for a routine health check?"
                 </p>
               </div>
 
@@ -167,10 +235,10 @@ export const OverviewView: React.FC = () => {
               <div className="p-3 rounded-lg bg-[#EBF1EC] border border-[#D2E2D6] space-y-1">
                 <div className="flex items-center justify-between text-[11px] text-[#2D5A43]">
                   <span className="font-semibold">Automated Response</span>
-                  <span className="text-[10px] uppercase font-mono">Sent in 4s</span>
+                  <span className="text-[10px] uppercase font-mono font-bold">Sent in 4s</span>
                 </div>
                 <p className="text-xs text-[#23352D] leading-relaxed">
-                  "Thank you! We've recorded your preference for Tuesday morning. Our intake coordinator will call to confirm."
+                  "Hello! Dr. Jenkins has Thursday 9:30 AM or 11:15 AM available. We've placed a provisional hold on 9:30 AM for you."
                 </p>
               </div>
 
@@ -178,20 +246,20 @@ export const OverviewView: React.FC = () => {
               <div className="p-3 rounded-lg bg-[#FFF9EE] border border-[#F0E2C8] space-y-1">
                 <div className="flex items-center justify-between text-[11px] text-[#8C5E09]">
                   <span className="font-semibold">Action Created for Front Desk</span>
-                  <span className="font-mono text-[10px]">High Priority</span>
+                  <span className="font-mono text-[10px] font-bold">High Priority</span>
                 </div>
                 <p className="text-xs text-[#523A0B]">
-                  Task: Review Dr. Jenkins Tuesday roster and verify insurance network.
+                  Task: Review Dr. Jenkins Thursday roster and verify patient intake details before final booking confirmation.
                 </p>
               </div>
 
               <div className="pt-1 flex items-center justify-between text-[11px] text-[#788581]">
                 <span>Status: <strong className="text-[#1E3A2F]">Contact Required</strong></span>
                 <button
-                  onClick={() => handleLaunchDemo('clinics')}
-                  className="text-xs font-medium text-[#1E3A2F] hover:underline flex items-center gap-1"
+                  onClick={() => openAgentWidget('whatsapp')}
+                  className="text-xs font-semibold text-[#1E3A2F] hover:underline flex items-center gap-1"
                 >
-                  <span>Test this flow</span>
+                  <span>Test this in WhatsApp</span>
                   <ArrowRight className="w-3 h-3" />
                 </button>
               </div>
@@ -200,22 +268,40 @@ export const OverviewView: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. Organise Content Around Business Needs (Compact Selector + One Clear Content Area) */}
-      <section className="bg-white border border-[#E3DDD3] rounded-xl p-6 sm:p-8 space-y-6 shadow-xs">
-        <div className="max-w-2xl space-y-1">
-          <h2 className="text-xl font-bold tracking-tight text-[#1A1D1C]">
+      {/* 2. The Connected FlowPilot AI Ecosystem */}
+      <EcosystemSection />
+
+      {/* 2b. Interactive Product Video Demos (Surgy Health style animated software player) */}
+      <div id="product-video-demos">
+        <ProductVideoDemosSection />
+      </div>
+
+      {/* 3. Product Showcase (Editorial Deep-Dive per Capability) */}
+      <ProductShowcase />
+
+      {/* 4. How It Works (Authentic 5-Stage Customer Journey) */}
+      <HowItWorksSection />
+
+      {/* 5. Tailored Business Need Selector (Compact Selector + One Clear Content Area) */}
+      <section className="bg-white border border-[#E3DDD3] rounded-2xl p-6 sm:p-10 space-y-6 shadow-xs">
+        <div className="max-w-2xl space-y-1.5">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#E7E2DA] text-xs font-semibold tracking-wider uppercase text-[#2D5A43]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1E3A2F]" />
+            <span>Vertical Adaptation</span>
+          </div>
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[#1A1D1C]">
             Tailored to how your business actually works
           </h2>
           <p className="text-xs sm:text-sm text-[#55615D]">
-            Select a business trade to see the specific enquiry, proposed workflow, and staff hand-off.
+            Select an industry below to examine the specific customer enquiry, automated response logic, and staff hand-off.
           </p>
         </div>
 
         {/* Compact Business Selector Tabs */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1.5 bg-[#FAF8F5] border border-[#E7E2DA] rounded-xl">
           <button
             onClick={() => setSelectedVertical('clinics')}
-            className={`flex items-center justify-center gap-2 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+            className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-medium transition-all ${
               selectedVertical === 'clinics'
                 ? 'bg-white text-[#1E3A2F] font-semibold shadow-xs border border-[#D9D3C7]'
                 : 'text-[#586460] hover:text-[#1A1D1C]'
@@ -227,7 +313,7 @@ export const OverviewView: React.FC = () => {
 
           <button
             onClick={() => setSelectedVertical('restaurants')}
-            className={`flex items-center justify-center gap-2 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+            className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-medium transition-all ${
               selectedVertical === 'restaurants'
                 ? 'bg-white text-[#1E3A2F] font-semibold shadow-xs border border-[#D9D3C7]'
                 : 'text-[#586460] hover:text-[#1A1D1C]'
@@ -239,7 +325,7 @@ export const OverviewView: React.FC = () => {
 
           <button
             onClick={() => setSelectedVertical('gyms')}
-            className={`flex items-center justify-center gap-2 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+            className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-medium transition-all ${
               selectedVertical === 'gyms'
                 ? 'bg-white text-[#1E3A2F] font-semibold shadow-xs border border-[#D9D3C7]'
                 : 'text-[#586460] hover:text-[#1A1D1C]'
@@ -251,7 +337,7 @@ export const OverviewView: React.FC = () => {
 
           <button
             onClick={() => setSelectedVertical('salons')}
-            className={`flex items-center justify-center gap-2 py-2 px-3 rounded-md text-xs font-medium transition-all ${
+            className={`flex items-center justify-center gap-2 py-2.5 px-3 rounded-lg text-xs font-medium transition-all ${
               selectedVertical === 'salons'
                 ? 'bg-white text-[#1E3A2F] font-semibold shadow-xs border border-[#D9D3C7]'
                 : 'text-[#586460] hover:text-[#1A1D1C]'
@@ -276,7 +362,7 @@ export const OverviewView: React.FC = () => {
 
             <button
               onClick={() => handleLaunchDemo(selectedVertical)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#1E3A2F] hover:bg-[#2A4E40] text-white text-xs font-medium transition-colors shrink-0"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#1E3A2F] hover:bg-[#2A4E40] text-white text-xs font-semibold transition-colors shrink-0"
             >
               <span>Try {currentVertical.businessName} demo</span>
               <ArrowRight className="w-3 h-3" />
@@ -285,7 +371,7 @@ export const OverviewView: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
             {/* Column 1: Customer Enquiry */}
-            <div className="p-4 rounded-lg bg-white border border-[#E5E0D6] space-y-2">
+            <div className="p-4 rounded-xl bg-white border border-[#E5E0D6] space-y-2">
               <span className="font-semibold text-[#1A1D1C] flex items-center gap-1.5">
                 <MessageSquare className="w-3.5 h-3.5 text-[#2D5A43]" />
                 <span>1. Common Customer Enquiry</span>
@@ -296,7 +382,7 @@ export const OverviewView: React.FC = () => {
             </div>
 
             {/* Column 2: Proposed Response */}
-            <div className="p-4 rounded-lg bg-white border border-[#E5E0D6] space-y-2">
+            <div className="p-4 rounded-xl bg-white border border-[#E5E0D6] space-y-2">
               <span className="font-semibold text-[#1A1D1C] flex items-center gap-1.5">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#2D5A43]" />
                 <span>2. Proposed Workflow</span>
@@ -307,7 +393,7 @@ export const OverviewView: React.FC = () => {
             </div>
 
             {/* Column 3: What Owner Sees Next */}
-            <div className="p-4 rounded-lg bg-white border border-[#E5E0D6] space-y-2">
+            <div className="p-4 rounded-xl bg-white border border-[#E5E0D6] space-y-2">
               <span className="font-semibold text-[#1A1D1C] flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-[#2D5A43]" />
                 <span>3. What Staff See Next</span>
@@ -326,7 +412,10 @@ export const OverviewView: React.FC = () => {
         </div>
       </section>
 
-      {/* 3. Simplified, Calm Dashboard Overview */}
+      {/* 6. Security and Reliability Safeguards */}
+      <SecurityReliabilitySection />
+
+      {/* 7. Simplified, Calm Dashboard Overview */}
       <section className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-2 border-b border-[#E7E2DA]">
           <div>
@@ -586,6 +675,63 @@ export const OverviewView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* 7b. Visitor Inquiry Desk Callout */}
+      <section className="bg-white border border-[#E7E2DA] rounded-xl p-6 sm:p-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#EBF1EC] text-[#1E3A2F] text-[11px] font-semibold tracking-wide uppercase font-mono">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Visitor Inquiry System</span>
+            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1A1D1C]">
+              Have a Question Before Trying the Demo?
+            </h2>
+            <p className="text-xs sm:text-sm text-[#55635F] leading-relaxed">
+              Ask our inquiry engine about calendar integrations, WhatsApp compliance, multi-provider rosters, or customized webhook dispatch. Get an instant verified technical resolution or submit a tracked ticket.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 w-full lg:w-auto shrink-0">
+            <button
+              onClick={() => setActiveTab('inquiries')}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-[#1E3A2F] hover:bg-[#274E3F] rounded-md transition-colors shadow-xs w-full sm:w-auto"
+            >
+              <span>Explore Visitor Inquiry Desk</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => openAgentWidget('whatsapp')}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-[#075E54] bg-[#E7FFDB] hover:bg-[#D4F5C3] border border-[#BDE8AB] rounded-md transition-colors w-full sm:w-auto"
+            >
+              <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+              <span>Ask Live WhatsApp Agent</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Quick query chips */}
+        <div className="mt-6 pt-4 border-t border-[#EAE5DC] flex flex-wrap items-center gap-2 text-xs">
+          <span className="text-[#737E7A] font-medium mr-1">Sample inquiries:</span>
+          {[
+            'Can FlowPilot use our existing WhatsApp business phone number?',
+            'How does 2-way Google & Outlook Calendar sync prevent double-booking?',
+            'What is the pricing tier for a 3-location clinic?',
+            'Can it route after-hours voice phone calls?'
+          ].map((prompt, idx) => (
+            <button
+              key={idx}
+              onClick={() => openInquiryWithQuestion(prompt)}
+              className="px-2.5 py-1 rounded bg-[#FAF8F5] hover:bg-[#EAE5DC] border border-[#DDD5C7] text-[#3D4744] hover:text-[#1A1D1C] transition-colors text-left"
+            >
+              "{prompt}"
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. Final Conversion CTA Section */}
+      <FinalCtaSection />
     </div>
   );
 };

@@ -82,6 +82,7 @@ export type NavigationTab =
   | 'pipeline'
   | 'workflows'
   | 'impact'
+  | 'inquiries'
   | 'about';
 
 export interface ImpactParameters {
@@ -91,3 +92,35 @@ export interface ImpactParameters {
   monthlySoftwareCost: number;
   hourlyLaborCost: number;
 }
+
+export type InquiryStatus = 'Received' | 'Triage Complete' | 'Resolution Provided' | 'Follow-up Scheduled';
+
+export type InquiryTopic =
+  | 'pricing'
+  | 'whatsapp'
+  | 'calendar'
+  | 'voice_call'
+  | 'setup'
+  | 'security'
+  | 'custom_workflow';
+
+export interface VisitorInquiry {
+  id: string; // e.g. INQ-4819
+  visitorName: string;
+  email: string;
+  phone?: string;
+  businessName?: string;
+  category: BusinessCategory | 'other';
+  topic: InquiryTopic | 'general';
+  subject: string;
+  question: string;
+  urgency: 'exploring' | 'next_30_days' | 'urgent';
+  status: InquiryStatus;
+  automatedAnswer: string;
+  assignedSpecialist: string;
+  createdAt: string;
+  estimatedResponseTime: string;
+  technicalBadge: string;
+  followUpNotes?: string[];
+}
+

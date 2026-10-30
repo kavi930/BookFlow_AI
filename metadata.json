@@ -1,5 +1,5 @@
 {
-  "name": "BookFlow AI",
+  "name": "FlowPilot AI",
   "description": "Client-facing SaaS demo showcasing automated AI enquiry management, lead qualification, and staff follow-ups for clinics, restaurants, gyms, and salons.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

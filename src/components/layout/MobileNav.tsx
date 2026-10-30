@@ -9,7 +9,8 @@ import {
   Info,
   X,
   Play,
-  RotateCcw
+  RotateCcw,
+  HelpCircle
 } from 'lucide-react';
 import { useDemo } from '../../context/DemoContext';
 import { NavigationTab } from '../../types';
@@ -20,7 +21,14 @@ interface MobileNavProps {
 }
 
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
-  const { activeTab, setActiveTab, resetDemoData, guidedTour, setIsInterestModalOpen } = useDemo();
+  const {
+    activeTab,
+    setActiveTab,
+    resetDemoData,
+    guidedTour,
+    setIsInterestModalOpen,
+    openAgentWidget
+  } = useDemo();
 
   if (!isOpen) return null;
 
@@ -31,8 +39,10 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     { id: 'pipeline', label: 'Lead Pipeline', icon: <Users className="w-4 h-4" />, desc: 'CRM lead tracking & status' },
     { id: 'workflows', label: 'Workflows', icon: <Workflow className="w-4 h-4" />, desc: 'Step-by-step automation flows' },
     { id: 'impact', label: 'Business Impact', icon: <TrendingUp className="w-4 h-4" />, desc: 'Interactive ROI & time savings' },
-    { id: 'about', label: 'About BookFlow', icon: <Info className="w-4 h-4" />, desc: 'Philosophy & architecture' }
+    { id: 'inquiries', label: 'Inquiry Desk', icon: <HelpCircle className="w-4 h-4" />, desc: 'Ask questions & track resolution tickets' },
+    { id: 'about', label: 'About FlowPilot', icon: <Info className="w-4 h-4" />, desc: 'Philosophy & architecture' }
   ];
+
 
   const handleSelect = (tab: NavigationTab) => {
     setActiveTab(tab);
@@ -56,7 +66,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
               <div className="w-6 h-6 rounded bg-[#1E3A2F] flex items-center justify-center font-bold text-white text-xs">
                 B
               </div>
-              <span className="font-bold text-sm text-[#1A1D1C]">BookFlow AI</span>
+              <span className="font-bold text-sm text-[#1A1D1C]">FlowPilot AI</span>
             </div>
             <button
               onClick={onClose}
@@ -92,6 +102,17 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className="pt-6 border-t border-[#E7E2DA] space-y-2.5">
+          <button
+            onClick={() => {
+              openAgentWidget('whatsapp');
+              onClose();
+            }}
+            className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#E7FFDB] border border-[#BDE8AB] text-xs font-semibold text-[#075E54] hover:bg-[#D4F5C3] transition-colors"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+            <span>Launch WhatsApp / Call Agent</span>
+          </button>
+
           <button
             onClick={() => {
               guidedTour.startTour();
