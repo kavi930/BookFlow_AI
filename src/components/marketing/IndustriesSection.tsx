@@ -169,18 +169,19 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
   const current = industries.find((i) => i.id === activeTab) || industries[0];
 
   return (
-    <section id="industries" className="py-20 sm:py-28 bg-[#FAF8F5] border-b border-[#E7E2DA]">
+    <section id="industries" className="py-20 sm:py-28 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-        {/* Header - Zero pill, clean text kicker */}
+        {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-3">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#2D5A43]">
-            Tailored Industry Workflows
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold tracking-wide">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <span>Tailored Industry Workflows</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1A1D1C] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Select Your Industry to Explore Custom Workflows
           </h2>
-          <p className="text-sm sm:text-base text-[#52605B] leading-relaxed max-w-2xl mx-auto">
-            Choose a sector below to see how FlowPilot AI coordinates customer enquiries, booking requests, and automated follow-ups for your specific operational rules.
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Choose a sector below to see how BookFlow_AI coordinates customer enquiries, booking requests, and automated follow-ups for your specific operational rules.
           </p>
         </div>
 
@@ -196,45 +197,45 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                   setActiveTab(ind.id);
                   if (onSelectIndustry) onSelectIndustry(ind.id);
                 }}
-                className={`p-6 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E3A2F] ${
+                className={`p-6 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 ${
                   isSelected
-                    ? 'bg-white border-[#1E3A2F] shadow-md ring-2 ring-[#1E3A2F]/10'
-                    : 'bg-white/80 border-[#E7E2DA] hover:border-[#CCDCD0] hover:bg-white'
+                    ? 'bg-white border-blue-600 shadow-lg shadow-blue-500/10 ring-2 ring-blue-600/20'
+                    : 'bg-white border-slate-200 hover:border-blue-300 hover:shadow-md'
                 }`}
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                        isSelected ? 'bg-[#1E3A2F] text-white' : 'bg-[#EBF1EC] text-[#2D5A43]'
+                        isSelected ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm' : 'bg-blue-50 text-blue-600'
                       }`}
                     >
                       {ind.icon}
                     </div>
-                    <span className="text-[11px] font-mono uppercase text-[#717E79]">
+                    <span className="text-[11px] font-mono uppercase text-slate-400">
                       {ind.tag}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-[#1A1D1C]">{ind.title}</h3>
-                    <p className="text-xs text-[#52605B] mt-1.5 leading-relaxed line-clamp-3">
+                    <h3 className="text-lg font-bold text-slate-900">{ind.title}</h3>
+                    <p className="text-xs text-slate-600 mt-1.5 leading-relaxed line-clamp-3">
                       {ind.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-4 border-t border-[#EFEBE4] flex items-center justify-between text-xs">
+                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span
                     className={`font-semibold ${
-                      isSelected ? 'text-[#1E3A2F]' : 'text-[#717E79]'
+                      isSelected ? 'text-blue-600' : 'text-slate-500'
                     }`}
                   >
                     {isSelected ? 'Viewing Live Preview' : 'Select to inspect'}
                   </span>
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
-                      isSelected ? 'text-[#1E3A2F] translate-x-1' : 'text-[#8C9C95]'
+                      isSelected ? 'text-blue-600 translate-x-1' : 'text-slate-400'
                     }`}
                   />
                 </div>
@@ -244,15 +245,15 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
         </div>
 
         {/* Dynamic Workflow Preview Pane for the Selected Industry */}
-        <div className="bg-white rounded-3xl border border-[#E7E2DA] p-6 sm:p-10 shadow-sm space-y-8">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EFEBE4]">
+        <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2D5A43]">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-blue-600">
                 <span>{current.title} Workflow Model</span>
                 <span aria-hidden="true">·</span>
                 <span>Fictional Sample Case</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#1A1D1C]">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                 Automated operations for {current.sampleScenario.client} ({current.sampleScenario.city})
               </h3>
             </div>
@@ -269,9 +270,9 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                     badge: current.videoBadge
                   })
                 }
-                className="px-4 py-2 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EFE9] border border-[#DCD6CC] text-[#2F3A36] text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
               >
-                <Play className="w-3.5 h-3.5 fill-current text-[#2D5A43]" />
+                <Play className="w-3.5 h-3.5 fill-current text-blue-600" />
                 <span>Watch Real-World Video</span>
               </button>
 
@@ -279,7 +280,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
                 <button
                   type="button"
                   onClick={onBookAuditClick}
-                  className="px-4 py-2 rounded-xl bg-[#1E3A2F] hover:bg-[#26493B] text-white text-xs font-semibold shadow-xs transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white text-xs font-semibold shadow-sm hover:shadow-md hover:shadow-blue-500/25 transition-all cursor-pointer flex items-center gap-1.5"
                 >
                   <span>Audit This Workflow</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -290,69 +291,69 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({
 
           {/* 3-Core Workflows breakdown */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2DA] space-y-2">
-              <span className="text-[11px] font-mono uppercase font-bold text-[#2D5A43] block">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span className="text-[11px] font-mono uppercase font-bold text-blue-600 block">
                 01 · Intake & Enquiry
               </span>
-              <p className="text-xs text-[#1A1D1C] font-medium leading-relaxed">
+              <p className="text-xs text-slate-800 font-medium leading-relaxed">
                 {current.coreWorkflows.enquiry}
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2DA] space-y-2">
-              <span className="text-[11px] font-mono uppercase font-bold text-[#2D5A43] block">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span className="text-[11px] font-mono uppercase font-bold text-blue-600 block">
                 02 · Booking & Schedule
               </span>
-              <p className="text-xs text-[#1A1D1C] font-medium leading-relaxed">
+              <p className="text-xs text-slate-800 font-medium leading-relaxed">
                 {current.coreWorkflows.booking}
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E7E2DA] space-y-2">
-              <span className="text-[11px] font-mono uppercase font-bold text-[#2D5A43] block">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+              <span className="text-[11px] font-mono uppercase font-bold text-blue-600 block">
                 03 · Follow-Up & Retention
               </span>
-              <p className="text-xs text-[#1A1D1C] font-medium leading-relaxed">
+              <p className="text-xs text-slate-800 font-medium leading-relaxed">
                 {current.coreWorkflows.followup}
               </p>
             </div>
           </div>
 
           {/* Live Simulated Conversation & Action Panel */}
-          <div className="rounded-2xl border border-[#CCDCD0] bg-[#FAF8F5] p-5 sm:p-6 space-y-4">
-            <div className="flex items-center justify-between text-xs pb-3 border-b border-[#E7E2DA]">
-              <span className="font-bold text-[#1A1D1C] flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-[#2D5A43]" />
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-6 space-y-4">
+            <div className="flex items-center justify-between text-xs pb-3 border-b border-slate-200">
+              <span className="font-bold text-slate-900 flex items-center gap-2">
+                <MessageSquare className="w-4 h-4 text-emerald-600" />
                 <span>Simulated WhatsApp Dialogue & Roster Synchronization</span>
               </span>
-              <span className="text-[10px] font-mono uppercase bg-[#EBF1EC] text-[#1E3A2F] px-2 py-0.5 rounded font-bold">
+              <span className="text-[10px] font-mono uppercase bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-bold">
                 FICTIONAL SAMPLE DATA
               </span>
             </div>
 
             <div className="space-y-3">
               {/* Customer message */}
-              <div className="bg-white border border-[#E7E2DA] p-3.5 rounded-2xl rounded-tl-sm max-w-lg text-xs space-y-1 shadow-2xs">
-                <span className="text-[10px] font-mono text-[#717E79] block">Incoming Customer Enquiry</span>
-                <p className="text-[#1A1D1C] font-sans leading-relaxed">{current.sampleScenario.incoming}</p>
+              <div className="bg-white border border-slate-200 p-3.5 rounded-2xl rounded-tl-sm max-w-lg text-xs space-y-1 shadow-2xs">
+                <span className="text-[10px] font-mono text-slate-400 block">Incoming Customer Enquiry</span>
+                <p className="text-slate-800 font-sans leading-relaxed">{current.sampleScenario.incoming}</p>
               </div>
 
               {/* Bot / Automation Response */}
-              <div className="bg-[#EBF1EC] border border-[#CCDCD0] p-3.5 rounded-2xl rounded-tr-sm max-w-lg ml-auto text-xs space-y-1 shadow-2xs">
-                <div className="flex items-center justify-between text-[10px] text-[#2D5A43] font-semibold">
-                  <span>FlowPilot AI Supervised Agent</span>
+              <div className="bg-emerald-50 border border-emerald-200 p-3.5 rounded-2xl rounded-tr-sm max-w-lg ml-auto text-xs space-y-1 shadow-2xs">
+                <div className="flex items-center justify-between text-[10px] text-emerald-700 font-semibold">
+                  <span>BookFlow_AI Supervised Agent</span>
                   <span>Instant Response</span>
                 </div>
-                <p className="text-[#1E3A2F] font-sans leading-relaxed">{current.sampleScenario.automatedResponse}</p>
+                <p className="text-emerald-950 font-sans leading-relaxed">{current.sampleScenario.automatedResponse}</p>
               </div>
             </div>
 
-            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-[#52605B] border-t border-[#EFEBE4]">
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-600 border-t border-slate-200">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#2D5A43] shrink-0" />
-                <span>Enforced Operational Rule: <strong>{current.sampleScenario.bufferRule}</strong></span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Enforced Operational Rule: <strong className="text-slate-900">{current.sampleScenario.bufferRule}</strong></span>
               </div>
-              <span className="font-mono text-[11px] text-[#1E3A2F] font-bold">{current.sampleScenario.status}</span>
+              <span className="font-mono text-[11px] text-blue-600 font-bold">{current.sampleScenario.status}</span>
             </div>
           </div>
         </div>

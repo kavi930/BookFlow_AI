@@ -40,7 +40,7 @@ export const HowItWorksSection: React.FC = () => {
       customerExperience:
         '"Hi, I need to book a dental consultation for next Thursday morning if Dr. Vance is available."',
       backendAction:
-        'FlowPilot AI captures message payload, identifies the customer phone/channel, and parses intent (service: Consultation, requested time: Thursday AM).',
+        'BookFlow_AI captures message payload, identifies the customer phone/channel, and parses intent (service: Consultation, requested time: Thursday AM).',
       badge: 'Multichannel Ingestion',
       icon: <MessageSquare className="w-4 h-4 text-[#1E3A2F]" />,
       timeframe: 'Immediate (< 2s)'
@@ -64,7 +64,7 @@ export const HowItWorksSection: React.FC = () => {
       title: 'Provisional Hold & Details Capture',
       shortSummary: 'Temporary slot reservation without double-booking',
       detail:
-        'Once the client chooses 9:15 AM, FlowPilot AI places a provisional 15-minute hold on the practitioner roster and collects intake notes.',
+        'Once the client chooses 9:15 AM, BookFlow_AI places a provisional 15-minute hold on the practitioner roster and collects intake notes.',
       customerExperience:
         'Client selects 9:15 AM and confirms their full name and contact email for the clinic record.',
       backendAction:
@@ -92,7 +92,7 @@ export const HowItWorksSection: React.FC = () => {
       title: 'Context-Aware Follow-Up & Review',
       shortSummary: 'Automated 24h reminders and post-visit loops',
       detail:
-        'Prior to the appointment, FlowPilot sends a friendly reminder with directions. Following the appointment, it triggers a feedback request and rebooking reminder.',
+        'Prior to the appointment, BookFlow_AI sends a friendly reminder with directions. Following the appointment, it triggers a feedback request and rebooking reminder.',
       customerExperience:
         '24h reminder: "See you tomorrow at 9:15 AM! Reply RESCHEDULE if your plans changed." + post-visit review link.',
       backendAction:
@@ -115,7 +115,7 @@ export const HowItWorksSection: React.FC = () => {
             <span>Operational Architecture</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1D1C]">
-            How FlowPilot coordinates the entire journey.
+            How BookFlow_AI coordinates the entire journey.
           </h2>
           <p className="text-xs sm:text-sm text-[#52605B] leading-relaxed">
             Follow a customer enquiry from first contact to appointment confirmation and post-visit follow-up.
@@ -233,7 +233,7 @@ export const HowItWorksSection: React.FC = () => {
             <div className="flex items-center justify-between text-[11px] pb-2 border-b border-[#EFEBE4]">
               <span className="font-semibold text-[#1A1D1C] flex items-center gap-1.5">
                 <FileText className="w-3.5 h-3.5 text-[#2D5A43]" />
-                <span>FlowPilot Backend Process</span>
+                <span>BookFlow_AI Backend Process</span>
               </span>
               <span className="font-mono text-[10px] text-[#2D5A43] bg-[#EBF1EC] px-1.5 py-0.5 rounded font-semibold">
                 AUTOMATED SYNC

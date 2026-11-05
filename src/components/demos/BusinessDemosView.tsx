@@ -628,7 +628,7 @@ export const BusinessDemosView: React.FC = () => {
                   </span>
                   <div className="p-3.5 bg-[#E7FFDB] border border-[#BCE8A9] rounded-xl text-xs text-[#103D27] leading-relaxed space-y-1.5 shadow-2xs">
                     <div className="flex items-center justify-between text-[10px] font-mono text-[#075E54] font-semibold border-b border-[#BCE8A9]/60 pb-1">
-                      <span>FlowPilot WhatsApp Bot</span>
+                      <span>BookFlow_AI WhatsApp Bot</span>
                       <span>Just now · ✓✓</span>
                     </div>
                     <p className="font-semibold text-[#0A2E1C]">

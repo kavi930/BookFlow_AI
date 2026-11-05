@@ -373,7 +373,7 @@ export const SolutionsSection: React.FC<SolutionsSectionProps> = ({
                         <span className="font-mono text-[#2D5A43] font-semibold">Encrypted Protocol</span>
                       </div>
                       <div className="bg-[#DCF8C6]/60 border border-emerald-200/60 p-3 rounded-xl text-xs space-y-1 text-slate-800 max-w-md">
-                        <div className="font-bold text-emerald-900 text-[11px]">FlowPilot Supervised Agent</div>
+                        <div className="font-bold text-emerald-900 text-[11px]">BookFlow_AI Supervised Agent</div>
                         <p>
                           "Hi Emma, your appointment request for Friday at 10:00 AM has been received and verified against Dr. Sarah's live schedule. Would you like to confirm this slot?"
                         </p>

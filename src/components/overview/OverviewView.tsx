@@ -142,7 +142,7 @@ export const OverviewView: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-[#4E5854] leading-relaxed max-w-xl text-balance">
-              FlowPilot AI connects customer WhatsApp messaging, live calendar scheduling, and automated reminders in one unified, human-supervised workflow.
+              BookFlow_AI connects customer WhatsApp messaging, live calendar scheduling, and automated reminders in one unified, human-supervised workflow.
             </p>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -268,7 +268,7 @@ export const OverviewView: React.FC = () => {
         </div>
       </section>
 
-      {/* 2. The Connected FlowPilot AI Ecosystem */}
+      {/* 2. The Connected BookFlow_AI Ecosystem */}
       <EcosystemSection />
 
       {/* 2b. Interactive Product Video Demos (Surgy Health style animated software player) */}
@@ -714,7 +714,7 @@ export const OverviewView: React.FC = () => {
         <div className="mt-6 pt-4 border-t border-[#EAE5DC] flex flex-wrap items-center gap-2 text-xs">
           <span className="text-[#737E7A] font-medium mr-1">Sample inquiries:</span>
           {[
-            'Can FlowPilot use our existing WhatsApp business phone number?',
+            'Can BookFlow_AI use our existing WhatsApp business phone number?',
             'How does 2-way Google & Outlook Calendar sync prevent double-booking?',
             'What is the pricing tier for a 3-location clinic?',
             'Can it route after-hours voice phone calls?'

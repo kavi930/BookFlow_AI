@@ -96,10 +96,10 @@ const MILESTONES: Milestone[] = [
     label: 'Live Demo',
     title: 'Live demo invitation',
     timestamp: '00:08',
-    voiceText: 'FlowPilot AI ka live demo abhi book karein.',
+    voiceText: 'BookFlow_AI ka live demo abhi book karein.',
     subtitles: {
-      hinglish: 'FlowPilot AI ka live demo abhi book karein.',
-      english: 'Book your live FlowPilot AI demonstration today.'
+      hinglish: 'BookFlow_AI ka live demo abhi book karein.',
+      english: 'Book your live BookFlow_AI demonstration today.'
     }
   }
 ];
@@ -371,38 +371,38 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
   return (
     <section
       id="clinic-walkthrough"
-      className="py-16 sm:py-24 bg-white border-b border-[#E7E2DA] overflow-hidden"
+      className="py-16 sm:py-24 bg-white border-b border-slate-200 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF1EC] border border-[#CCDCD0] text-[#1E3A2F] text-xs font-semibold tracking-wide">
-            <Stethoscope className="w-3.5 h-3.5 text-[#2D5A43]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold tracking-wide shadow-xs">
+            <Stethoscope className="w-3.5 h-3.5 text-blue-600" />
             <span>Interactive Healthcare Walkthrough</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1A1D1C] leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Clinic Appointment Booking in 4 Steps
           </h2>
 
-          <p className="text-base sm:text-lg text-[#52605B] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             Experience our 9-second automated patient scheduling workflow built for Indian clinics, diagnostic centers, and multi-specialty practices.
           </p>
         </div>
 
         {/* Video / Animated Walkthrough Main Container */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative rounded-2xl bg-[#141715] border border-[#E7E2DA] shadow-2xl overflow-hidden flex flex-col">
+          <div className="relative rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
             {/* Top SaaS Window Header */}
-            <div className="bg-[#141715] px-4 py-3 border-b border-stone-800 flex items-center justify-between text-white text-xs">
+            <div className="bg-slate-900 px-4 py-3 border-b border-slate-800 flex items-center justify-between text-white text-xs">
               <div className="flex items-center gap-3">
                 <div className="flex gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                 </div>
-                <div className="flex items-center gap-2 text-stone-300 font-mono text-[11px] sm:text-xs">
-                  <span className="text-[#81C784] font-semibold">FlowPilot AI</span>
+                <div className="flex items-center gap-2 text-slate-300 font-mono text-[11px] sm:text-xs">
+                  <span className="text-cyan-400 font-bold">BookFlow_AI</span>
                   <span>/</span>
                   <span className="truncate">Apollo Care Clinic · Dr. Ananya Sharma</span>
                 </div>
@@ -410,14 +410,14 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
 
               {/* Top controls: Walkthrough vs Video Clip */}
               <div className="flex items-center gap-2">
-                <div className="flex items-center bg-[#222925] p-0.5 rounded-lg text-xs">
+                <div className="flex items-center bg-slate-800 p-0.5 rounded-lg text-xs">
                   <button
                     type="button"
                     onClick={() => setActiveMode('walkthrough')}
                     className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
                       activeMode === 'walkthrough'
-                        ? 'bg-[#1E3A2F] text-white shadow-xs'
-                        : 'text-stone-400 hover:text-white'
+                        ? 'bg-blue-600 text-white shadow-xs'
+                        : 'text-slate-400 hover:text-white'
                     }`}
                   >
                     Walkthrough
@@ -427,8 +427,8 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                     onClick={() => setActiveMode('video')}
                     className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer flex items-center gap-1 ${
                       activeMode === 'video'
-                        ? 'bg-[#1E3A2F] text-white shadow-xs'
-                        : 'text-stone-400 hover:text-white'
+                        ? 'bg-blue-600 text-white shadow-xs'
+                        : 'text-slate-400 hover:text-white'
                     }`}
                   >
                     <Play className="w-3 h-3 fill-current" />
@@ -436,8 +436,8 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   </button>
                 </div>
 
-                <span className="inline-flex items-center gap-1.5 bg-[#1E3A2F]/50 border border-[#2D5A43] text-[#A5D6A7] text-[10px] font-mono uppercase px-2 py-1 rounded-md">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#81C784] animate-pulse" />
+                <span className="inline-flex items-center gap-1.5 bg-blue-950/80 border border-blue-500/40 text-blue-300 text-[10px] font-mono uppercase px-2 py-1 rounded-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>SIMULATED DEMO</span>
                 </span>
               </div>
@@ -453,8 +453,8 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   {/* Corner branding watermark */}
                   <div className="absolute top-3.5 left-4 z-20 flex items-center gap-2 pointer-events-none">
                     <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[11px] font-semibold flex items-center gap-1.5 shadow-sm">
-                      <span className="w-2 h-2 rounded-full bg-[#81C784] animate-pulse" />
-                      <span>FlowPilot AI Clinic Workflow</span>
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>BookFlow_AI Clinic Workflow</span>
                     </span>
                   </div>
 
@@ -574,7 +574,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                     </div>
                   </div>
 
-                  {/* FlowPilot Automation Rule Note */}
+                  {/* BookFlow_AI Automation Rule Note */}
                   <div className="bg-white rounded-lg px-3 py-2 text-[11px] text-[#52605B] flex items-center justify-between border border-[#E7E2DA]">
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-3.5 h-3.5 text-[#2D5A43] shrink-0" />
@@ -786,7 +786,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                     </h3>
 
                     <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                      Transform your clinic front desk with FlowPilot AI. Automatically handle appointment inquiries, prevent calendar clashes, and send automated WhatsApp reminders across India.
+                      Transform your clinic front desk with BookFlow_AI. Automatically handle appointment inquiries, prevent calendar clashes, and send automated WhatsApp reminders across India.
                     </p>
                   </div>
 
@@ -796,9 +796,9 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                       <button
                         type="button"
                         onClick={onBookAuditClick}
-                        className="px-6 py-3.5 rounded-xl bg-[#1E3A2F] hover:bg-[#26493B] text-white font-bold text-sm shadow-lg shadow-[#1E3A2F]/30 transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784]"
+                        className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-sm shadow-lg shadow-blue-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                       >
-                        <span>FlowPilot AI ka Live Demo Book Karein</span>
+                        <span>BookFlow_AI ka Live Demo Book Karein</span>
                         <ArrowRight className="w-4 h-4" />
                       </button>
 
@@ -908,7 +908,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   title="Click or drag to scrub walkthrough"
                 >
                   <div
-                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-[#1E3A2F] via-[#2D5A43] to-[#81C784] rounded-full transition-[width] duration-75 shadow-[0_0_12px_rgba(129,199,132,0.4)]"
+                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-400 rounded-full transition-[width] duration-75 shadow-[0_0_12px_rgba(59,130,246,0.5)]"
                     style={{ width: `${(currentTime / TOTAL_DURATION) * 100}%` }}
                   />
                   {/* Visual marker notches on timeline */}
@@ -922,7 +922,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] font-mono text-stone-400">
-                  <span className="text-[#81C784] font-semibold">{formatTime(currentTime)}</span>
+                  <span className="text-cyan-400 font-semibold">{formatTime(currentTime)}</span>
                   <span className="text-stone-500">Duration: 00:09</span>
                 </div>
               </div>
@@ -938,33 +938,33 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                       key={milestone.id}
                       type="button"
                       onClick={() => handleSeek(milestone.time)}
-                      className={`p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer text-xs border relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784] ${
+                      className={`p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer text-xs border relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 ${
                         isActive
-                          ? 'bg-gradient-to-b from-[#1E3A2F] via-[#193025] to-[#12231A] border-2 border-[#81C784] text-white font-bold shadow-[0_0_20px_rgba(129,199,132,0.25)] ring-1 ring-[#81C784]/60 -translate-y-0.5'
+                          ? 'bg-gradient-to-b from-blue-900 via-indigo-950 to-slate-950 border-2 border-blue-400 text-white font-bold shadow-[0_0_20px_rgba(59,130,246,0.35)] ring-1 ring-blue-400/60 -translate-y-0.5'
                           : isPassed
-                          ? 'bg-[#121B16] border-[#25392D] text-[#CBE0D3] hover:border-[#385644] hover:bg-[#16231C] hover:text-white'
-                          : 'bg-[#0E1310] border-stone-800/80 text-stone-400 hover:text-stone-200 hover:border-stone-700 hover:bg-[#121814]'
+                          ? 'bg-slate-900/90 border-slate-700 text-slate-200 hover:border-blue-400/60 hover:bg-slate-800 hover:text-white'
+                          : 'bg-slate-950 border-slate-800/80 text-slate-400 hover:text-slate-200 hover:border-slate-700 hover:bg-slate-900'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-1">
-                        <span className={`text-[10px] font-mono font-bold block ${isActive ? 'text-[#81C784]' : 'text-stone-400'}`}>
+                        <span className={`text-[10px] font-mono font-bold block ${isActive ? 'text-cyan-400' : 'text-slate-400'}`}>
                           0{idx + 1} · {milestone.timestamp}
                         </span>
                         {isActive ? (
                           <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#81C784] opacity-80" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#81C784]" />
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-80" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
                           </span>
                         ) : isPassed ? (
-                          <span className="text-[10px] text-[#81C784] font-bold">✓</span>
+                          <span className="text-[10px] text-emerald-400 font-bold">✓</span>
                         ) : (
-                          <span className="text-[9px] text-stone-600 font-mono">STEP</span>
+                          <span className="text-[9px] text-slate-600 font-mono">STEP</span>
                         )}
                       </div>
-                      <span className={`text-xs font-bold truncate block mt-1 leading-tight ${isActive ? 'text-white' : 'text-stone-200'}`}>
+                      <span className={`text-xs font-bold truncate block mt-1 leading-tight ${isActive ? 'text-white' : 'text-slate-200'}`}>
                         {milestone.label}
                       </span>
-                      <span className="text-[10px] text-stone-400 font-normal truncate block mt-0.5 hidden sm:block">
+                      <span className="text-[10px] text-slate-400 font-normal truncate block mt-0.5 hidden sm:block">
                         {idx === 0 && 'Doctor profile'}
                         {idx === 1 && '15m buffer rule'}
                         {idx === 2 && 'Patient details'}
@@ -982,12 +982,12 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={togglePlay}
-                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-[#1E3A2F] hover:bg-[#26493B] text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784] shadow-xs"
+                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white transition-all cursor-pointer flex items-center gap-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 shadow-sm"
                     aria-label={isPlaying ? 'Pause walkthrough' : 'Play walkthrough'}
                   >
                     {isPlaying ? (
                       <>
-                        <Pause className="w-4 h-4 text-[#81C784]" />
+                        <Pause className="w-4 h-4 text-cyan-300" />
                         <span>Pause</span>
                       </>
                     ) : (
@@ -1001,7 +1001,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={handleRestart}
-                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs"
+                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs"
                     title="Restart from beginning"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
@@ -1014,7 +1014,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={() => setShowTranscript(!showTranscript)}
-                    className="px-2.5 py-2 rounded-lg text-xs font-medium text-stone-300 hover:text-white bg-stone-900 border border-stone-800 hover:bg-stone-800 transition-colors cursor-pointer"
+                    className="px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-800 hover:bg-slate-800 transition-colors cursor-pointer"
                   >
                     {showTranscript ? 'Hide Transcript' : 'Transcript'}
                   </button>
@@ -1046,26 +1046,26 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={onBookAuditClick}
-                    className="px-4 py-2 rounded-lg bg-[#1E3A2F] hover:bg-[#284E3B] border border-[#81C784]/40 text-white font-bold text-xs shadow-sm hover:shadow-[#1E3A2F]/40 transition-all flex items-center gap-1.5 cursor-pointer ml-1"
+                    className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 border border-blue-400/40 text-white font-bold text-xs shadow-md shadow-blue-500/25 transition-all flex items-center gap-1.5 cursor-pointer ml-1"
                   >
                     <span>Book Your Live Demo</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#81C784]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-cyan-300" />
                   </button>
                 </div>
               </div>
 
               {/* Accessible Transcript Drawer */}
               {showTranscript && (
-                <div className="pt-3 border-t border-stone-800 text-xs text-stone-300 space-y-2">
-                  <span className="text-[11px] font-mono uppercase text-[#A5D6A7] block font-semibold">
+                <div className="pt-3 border-t border-slate-800 text-xs text-slate-300 space-y-2">
+                  <span className="text-[11px] font-mono uppercase text-cyan-400 block font-semibold">
                     Hindi-English Audio Transcript & Timeline
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
                     {MILESTONES.map((m) => (
-                      <div key={m.id} className="p-2 bg-stone-900 rounded-lg border border-stone-800">
-                        <span className="font-mono text-[#81C784] font-bold mr-2">{m.timestamp}</span>
+                      <div key={m.id} className="p-2 bg-slate-900 rounded-lg border border-slate-800">
+                        <span className="font-mono text-cyan-400 font-bold mr-2">{m.timestamp}</span>
                         <span className="text-white font-medium">{m.title}: </span>
-                        <span className="text-stone-300 italic">"{m.subtitles.hinglish}"</span>
+                        <span className="text-slate-300 italic">"{m.subtitles.hinglish}"</span>
                       </div>
                     ))}
                   </div>
@@ -1077,42 +1077,42 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
 
         {/* 4 Steps Feature Grid Breakdown below video */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-          <div className="bg-[#FAF8F5] border border-[#E7E2DA] rounded-2xl p-6 space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-[#EBF1EC] text-[#1E3A2F] font-bold text-xs flex items-center justify-center">
+          <div className="bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-6 space-y-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center border border-blue-100">
               01
             </div>
-            <h3 className="text-sm font-bold text-[#1A1D1C]">Multi-Channel Patient Intake</h3>
-            <p className="text-xs text-[#5D6B66] leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900">Multi-Channel Patient Intake</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               Accepts booking requests via website chat, WhatsApp, or Google Business profile 24/7.
             </p>
           </div>
 
-          <div className="bg-[#FAF8F5] border border-[#E7E2DA] rounded-2xl p-6 space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-[#EBF1EC] text-[#1E3A2F] font-bold text-xs flex items-center justify-center">
+          <div className="bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-6 space-y-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center border border-blue-100">
               02
             </div>
-            <h3 className="text-sm font-bold text-[#1A1D1C]">Doctor Buffer Enforcement</h3>
-            <p className="text-xs text-[#5D6B66] leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900">Doctor Buffer Enforcement</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               Applies 15-minute sanitization gaps and practitioner specialization filters automatically.
             </p>
           </div>
 
-          <div className="bg-[#FAF8F5] border border-[#E7E2DA] rounded-2xl p-6 space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-[#EBF1EC] text-[#1E3A2F] font-bold text-xs flex items-center justify-center">
+          <div className="bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-6 space-y-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center border border-blue-100">
               03
             </div>
-            <h3 className="text-sm font-bold text-[#1A1D1C]">Pre-Visit Health Screening</h3>
-            <p className="text-xs text-[#5D6B66] leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900">Pre-Visit Health Screening</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               Gathers symptoms, fasting status, and Indian phone numbers (+91) before confirming calendar slots.
             </p>
           </div>
 
-          <div className="bg-[#FAF8F5] border border-[#E7E2DA] rounded-2xl p-6 space-y-3">
-            <div className="w-8 h-8 rounded-lg bg-[#EBF1EC] text-[#1E3A2F] font-bold text-xs flex items-center justify-center">
+          <div className="bg-white border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all rounded-2xl p-6 space-y-3">
+            <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 font-bold text-xs flex items-center justify-center border border-blue-100">
               04
             </div>
-            <h3 className="text-sm font-bold text-[#1A1D1C]">Automated WhatsApp Reminders</h3>
-            <p className="text-xs text-[#5D6B66] leading-relaxed">
+            <h3 className="text-sm font-bold text-slate-900">Automated WhatsApp Reminders</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               Sends automated visit reminders 24 hours and 2 hours prior to cut clinic no-shows.
             </p>
           </div>

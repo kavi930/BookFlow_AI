@@ -47,15 +47,15 @@ export const VIDEO_DEMOS: VideoDemoItem[] = [
   {
     id: 'whatsapp-frontdesk',
     title: 'Frontdesk AI: Inbound WhatsApp to Booking',
-    tagline: 'See how FlowPilot turns casual WhatsApp inquiries into verified calendar bookings in 24 seconds.',
+    tagline: 'See how BookFlow_AI turns casual WhatsApp inquiries into verified calendar bookings in 24 seconds.',
     category: 'WhatsApp Automation',
     icon: <MessageSquare className="w-4 h-4 text-[#25D366]" />,
     durationSeconds: 24,
     sandboxTab: 'assistant',
     chapters: [
       { id: 'w1', title: 'Inbound Inquiry', timestamp: '00:00', startSecond: 0, description: 'Customer reaches out on WhatsApp requesting a Thursday consultation.' },
-      { id: 'w2', title: 'Real-Time Schedule Check', timestamp: '00:06', startSecond: 6, description: 'FlowPilot queries provider calendar and returns real openings.' },
-      { id: 'w3', title: 'Provisional Slot Lock', timestamp: '00:12', startSecond: 12, description: 'Client selects 9:30 AM; FlowPilot locks slot with buffer interval.' },
+      { id: 'w2', title: 'Real-Time Schedule Check', timestamp: '00:06', startSecond: 6, description: 'BookFlow_AI queries provider calendar and returns real openings.' },
+      { id: 'w3', title: 'Provisional Slot Lock', timestamp: '00:12', startSecond: 12, description: 'Client selects 9:30 AM; BookFlow_AI locks slot with buffer interval.' },
       { id: 'w4', title: 'CRM & Staff Dispatch', timestamp: '00:18', startSecond: 18, description: 'Dispatches lead to staff triage queue and sends instant confirmation.' }
     ]
   },
@@ -178,10 +178,10 @@ export const ProductVideoDemosSection: React.FC = () => {
             <span>Interactive Product Demonstrations</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1D1C]">
-            Watch FlowPilot in Action
+            Watch BookFlow_AI in Action
           </h2>
           <p className="text-xs sm:text-sm text-[#525E5A] leading-relaxed">
-            Examine how FlowPilot AI coordinates customer inquiries, real-time calendar availability, ambient voice transcription, and CRM pipeline handoffs in live simulated software runs.
+            Examine how BookFlow_AI coordinates customer inquiries, real-time calendar availability, ambient voice transcription, and CRM pipeline handoffs in live simulated software runs.
           </p>
         </div>
 
@@ -238,7 +238,7 @@ export const ProductVideoDemosSection: React.FC = () => {
             <span className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]" />
             <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
             <span className="ml-3 font-mono text-[11px] text-[#717E79] hidden sm:inline">
-              FlowPilot Studio · Player v2.4
+              BookFlow_AI Studio · Player v2.4
             </span>
           </div>
 
@@ -325,7 +325,7 @@ export const ProductVideoDemosSection: React.FC = () => {
                       <div className="p-3 rounded-xl rounded-tr-none bg-[#E7FFDB] text-xs text-[#0F2F20] shadow-2xs border border-[#BDE8AB] space-y-1.5">
                         <div className="flex items-center gap-1 text-[10px] font-bold text-[#075E54]">
                           <Sparkles className="w-3 h-3" />
-                          <span>FlowPilot Auto-Schedule</span>
+                          <span>BookFlow_AI Auto-Schedule</span>
                         </div>
                         <p>
                           "Hello Julian! Dr. Jenkins has two verified openings this Thursday: <strong>9:30 AM</strong> or <strong>11:15 AM</strong>. Which slot suits you best?"
@@ -529,7 +529,7 @@ export const ProductVideoDemosSection: React.FC = () => {
                 <div className="flex items-center justify-between pb-3 border-b border-[#E7E2DA]">
                   <div className="flex items-center gap-2">
                     <Users className="w-4 h-4 text-[#8B5CF6]" />
-                    <span className="font-semibold text-xs text-[#1A1D1C]">FlowPilot CRM Pipeline Triage</span>
+                    <span className="font-semibold text-xs text-[#1A1D1C]">BookFlow_AI CRM Pipeline Triage</span>
                   </div>
                   <span className="text-[11px] font-mono text-[#8B5CF6] bg-[#F5F3FF] px-2 py-0.5 rounded font-bold">
                     PIPELINE DISPATCH

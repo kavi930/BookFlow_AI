@@ -49,7 +49,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
             Engineered for clarity. Designed for real workflows.
           </h2>
           <p className="text-base sm:text-lg text-[#52605B] leading-relaxed">
-            Discover how FlowPilot AI replaces fragmented messaging, missed calls, and manual calendars with an integrated, verified workflow.
+            Discover how BookFlow_AI replaces fragmented messaging, missed calls, and manual calendars with an integrated, verified workflow.
           </p>
         </div>
 
@@ -292,7 +292,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
                       "Hi David! Dr. Morales has <strong>9:30 AM</strong> and <strong>11:00 AM</strong> open this Thursday. Both slots include routine vitals and charting. Would you like me to hold one?"
                     </p>
                     <span className="text-[9px] text-[#C0D2C8] block font-mono text-right">
-                      10:14 AM · FlowPilot Assistant
+                      10:14 AM · BookFlow_AI Assistant
                     </span>
                   </div>
                 </div>
@@ -355,7 +355,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
             </h3>
 
             <p className="text-sm sm:text-base text-[#52605B] leading-relaxed">
-              Prospective clients expect answers immediately. FlowPilot parses inbound inquiries on WhatsApp, checks operating hours and service requirements, and coordinates bookings with natural language.
+              Prospective clients expect answers immediately. BookFlow_AI parses inbound inquiries on WhatsApp, checks operating hours and service requirements, and coordinates bookings with natural language.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-[#4E5854]">
@@ -402,7 +402,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
             </h3>
 
             <p className="text-sm sm:text-base text-[#52605B] leading-relaxed">
-              FlowPilot syncs bi-directionally with Google Calendar and Microsoft Outlook in production. Changes made on personal or staff calendars immediately block external availability, protecting your time and preventing scheduling overlaps.
+              BookFlow_AI syncs bi-directionally with Google Calendar and Microsoft Outlook in production. Changes made on personal or staff calendars immediately block external availability, protecting your time and preventing scheduling overlaps.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-[#4E5854]">
@@ -607,7 +607,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
             </h3>
 
             <p className="text-sm sm:text-base text-[#52605B] leading-relaxed">
-              Unprepared clients and missed appointments erode business revenue. FlowPilot sends timed reminders with clear instructions (e.g., fasting requirements or patch test notes) and one-click rescheduling options.
+              Unprepared clients and missed appointments erode business revenue. BookFlow_AI sends timed reminders with clear instructions (e.g., fasting requirements or patch test notes) and one-click rescheduling options.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-[#4E5854]">
@@ -654,7 +654,7 @@ export const ProductShowcaseSection: React.FC<ProductShowcaseSectionProps> = ({
             </h3>
 
             <p className="text-sm sm:text-base text-[#52605B] leading-relaxed">
-              When enquiries are scattered across personal inboxes and phone logs, follow-ups get missed. FlowPilot brings every prospect, unconfirmed request, and scheduled appointment into a structured pipeline.
+              When enquiries are scattered across personal inboxes and phone logs, follow-ups get missed. BookFlow_AI brings every prospect, unconfirmed request, and scheduled appointment into a structured pipeline.
             </p>
 
             <div className="space-y-3 pt-2 text-xs sm:text-sm text-[#4E5854]">

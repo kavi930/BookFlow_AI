@@ -14,7 +14,7 @@ export const FinalCtaSection: React.FC = () => {
       <div className="relative z-10 max-w-3xl mx-auto text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#284E3F] border border-[#3A6B56] text-xs font-medium text-[#C8E0D2]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#6EE7B7]" />
-          <span>Experience FlowPilot AI in Action</span>
+          <span>Experience BookFlow_AI in Action</span>
         </div>
 
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">

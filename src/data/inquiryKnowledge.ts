@@ -23,7 +23,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'Commercial Model, Tiers & Implementation Costs',
     shortSummary: 'Straightforward monthly licensing with no per-conversation gouging or lock-in contracts.',
     detailedResolution:
-      'FlowPilot AI operates on a predictable monthly subscription in Indian Rupees (INR) structured around active monthly enquiry volume rather than penalizing you for talking to customers. Standard plans start at ₹4,999/mo for single-location clinics, restaurants, and salons handling up to 500 automated conversations per month. Multi-branch practices and high-volume gyms utilize the Professional tier (₹9,999/mo) which includes voice call screening, multi-staff calendar routing, and custom CRM webhook dispatch. GST invoices provided with zero termination penalties or hidden data egress fees.',
+      'BookFlow_AI operates on a predictable monthly subscription in Indian Rupees (INR) structured around active monthly enquiry volume rather than penalizing you for talking to customers. Standard plans start at ₹4,999/mo for single-location clinics, restaurants, and salons handling up to 500 automated conversations per month. Multi-branch practices and high-volume gyms utilize the Professional tier (₹9,999/mo) which includes voice call screening, multi-staff calendar routing, and custom CRM webhook dispatch. GST invoices provided with zero termination penalties or hidden data egress fees.',
     technicalSpecs: {
       badge: 'Transparent INR SaaS',
       protocol: 'Razorpay / UPI / Monthly or Annual (-20%)',
@@ -31,7 +31,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
       compliance: 'SOC 2 Type II partner billing'
     },
     sampleQuestions: [
-      'How much does FlowPilot AI cost per month?',
+      'How much does BookFlow_AI cost per month?',
       'Are there setup fees or onboarding charges?',
       'Can we cancel or pause during low seasons?'
     ],
@@ -43,7 +43,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'WhatsApp Business API & Customer Communication',
     shortSummary: 'Native Meta Cloud API integration with your existing business telephone number.',
     detailedResolution:
-      'FlowPilot AI connects directly to the official Meta Cloud WhatsApp Business API. You do not need to purchase a secondary phone number or discard your established brand contact; we facilitate number migration or connect via standard Cloud API credentials. The system supports 24/7 conversational availability, interactive quick-reply buttons, service catalogs, appointment booking carousels, and seamless human operator takeover whenever complex or sensitive inquiries occur.',
+      'BookFlow_AI connects directly to the official Meta Cloud WhatsApp Business API. You do not need to purchase a secondary phone number or discard your established brand contact; we facilitate number migration or connect via standard Cloud API credentials. The system supports 24/7 conversational availability, interactive quick-reply buttons, service catalogs, appointment booking carousels, and seamless human operator takeover whenever complex or sensitive inquiries occur.',
     technicalSpecs: {
       badge: 'Meta Cloud API v19.0',
       protocol: 'Webhooks + REST API',
@@ -63,7 +63,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'Two-Way Calendar Sync & Real-Time Availability Checking',
     shortSummary: 'Prevents double-bookings by checking actual provider schedules in real-time.',
     detailedResolution:
-      'Rather than presenting static booking forms that result in scheduling conflicts, FlowPilot queries your live calendar API in real-time before offering available slots to clients. We support Google Calendar (Google Workspace), Microsoft 365 / Outlook, Apple iCloud Calendar, as well as specialized practice management tools like Cliniko, Mindbody, Fresha, and Toast via secure webhooks. Whenever a booking is confirmed, calendar holds are created immediately with customized buffer intervals.',
+      'Rather than presenting static booking forms that result in scheduling conflicts, BookFlow_AI queries your live calendar API in real-time before offering available slots to clients. We support Google Calendar (Google Workspace), Microsoft 365 / Outlook, Apple iCloud Calendar, as well as specialized practice management tools like Cliniko, Mindbody, Fresha, and Toast via secure webhooks. Whenever a booking is confirmed, calendar holds are created immediately with customized buffer intervals.',
     technicalSpecs: {
       badge: 'Real-Time Bi-Directional',
       protocol: 'OAuth 2.0 / CalDAV / Google & Microsoft APIs',
@@ -71,7 +71,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
       compliance: 'Read/Write scoped tokens, no raw password storage'
     },
     sampleQuestions: [
-      'Does FlowPilot work with our Google Workspace calendar?',
+      'Does BookFlow_AI work with our Google Workspace calendar?',
       'How does the system prevent double-booking our providers?',
       'Can staff members maintain individual schedules and break buffers?'
     ],
@@ -83,7 +83,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'Voice Call Agent, Automated Reception & After-Hours Intake',
     shortSummary: 'Natural voice answering with intelligent transcription, DTMF keypad support, and call forwarding.',
     detailedResolution:
-      'For businesses receiving high inbound phone call volume during treatment hours or dinner rushes, FlowPilot provides a low-latency voice intake agent. Callers can verify opening hours, ask specific service questions, schedule a consultation, or request an urgent receptionist callback. The voice agent automatically transcribes caller requests, creates structured CRM pipeline records, and can dispatch instant SMS confirmations directly to the caller’s mobile.',
+      'For businesses receiving high inbound phone call volume during treatment hours or dinner rushes, BookFlow_AI provides a low-latency voice intake agent. Callers can verify opening hours, ask specific service questions, schedule a consultation, or request an urgent receptionist callback. The voice agent automatically transcribes caller requests, creates structured CRM pipeline records, and can dispatch instant SMS confirmations directly to the caller’s mobile.',
     technicalSpecs: {
       badge: 'Neural Speech Engine',
       protocol: 'WebRTC / SIP Trunking / Web Speech API',
@@ -91,7 +91,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
       compliance: 'Zero voice recording retention without explicit caller consent'
     },
     sampleQuestions: [
-      'Can FlowPilot answer our front-desk phone when staff are busy?',
+      'Can BookFlow_AI answer our front-desk phone when staff are busy?',
       'How does the voice agent handle background noise or accents?',
       'Can urgent calls be forwarded immediately to a manager’s mobile?'
     ],
@@ -123,7 +123,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'Data Privacy, Security Architecture & Regulatory Compliance',
     shortSummary: 'Hermetic data isolation, end-to-end encryption, and strict GDPR/HIPAA alignment.',
     detailedResolution:
-      'FlowPilot AI does not train public foundation models on private client records or customer messages. All customer inquiries, contact details, and booking logs are encrypted at rest using AES-256 and transmitted exclusively over TLS 1.3. For clinics, medical screening workflows are kept strictly non-diagnostic to ensure compliance with healthcare safety boundaries. Automated data retention and deletion schedules can be configured based on your jurisdiction.',
+      'BookFlow_AI does not train public foundation models on private client records or customer messages. All customer inquiries, contact details, and booking logs are encrypted at rest using AES-256 and transmitted exclusively over TLS 1.3. For clinics, medical screening workflows are kept strictly non-diagnostic to ensure compliance with healthcare safety boundaries. Automated data retention and deletion schedules can be configured based on your jurisdiction.',
     technicalSpecs: {
       badge: 'Zero AI Model Training',
       protocol: 'AES-256 / TLS 1.3 / Strict RBAC',
@@ -143,7 +143,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
     title: 'Custom Automation Workflows & Webhook Dispatch',
     shortSummary: 'Deep integration with Make.com, Zapier, Webhooks, and proprietary ERPs.',
     detailedResolution:
-      'Every event in FlowPilot—from an incoming WhatsApp message to a completed booking or cancellation—emits clean, standardized JSON webhooks. This enables custom integrations with your existing Point-of-Sale (Toast, Square, Clover), CRM (HubSpot, Salesforce), or automation hubs (Make.com, Zapier). Custom conditional routing rules can be tailored to dispatch SMS alerts to managers when high-value VIP leads submit requests.',
+      'Every event in BookFlow_AI—from an incoming WhatsApp message to a completed booking or cancellation—emits clean, standardized JSON webhooks. This enables custom integrations with your existing Point-of-Sale (Toast, Square, Clover), CRM (HubSpot, Salesforce), or automation hubs (Make.com, Zapier). Custom conditional routing rules can be tailored to dispatch SMS alerts to managers when high-value VIP leads submit requests.',
     technicalSpecs: {
       badge: 'Extensible Webhooks',
       protocol: 'HMAC-SHA256 Signed JSON Webhooks',
@@ -151,7 +151,7 @@ export const INQUIRY_ARTICLES: InquiryArticle[] = [
       compliance: 'Automated retry mechanism with exponential backoff'
     },
     sampleQuestions: [
-      'Can FlowPilot send leads to our existing CRM or Slack channel?',
+      'Can BookFlow_AI send leads to our existing CRM or Slack channel?',
       'Does it work with Make.com or Zapier automations?',
       'Can custom booking deposit rules be triggered before confirmation?'
     ],
@@ -170,11 +170,11 @@ export const INITIAL_VISITOR_INQUIRIES: VisitorInquiry[] = [
     topic: 'calendar',
     subject: 'Multi-practitioner Google Calendar sync and patient intake screening',
     question:
-      'We have 4 physicians and 2 nurse practitioners with distinct room assignments. Can FlowPilot check individual doctor calendars in real-time and ensure patients select only available routine checkup slots without medical advice risks?',
+      'We have 4 physicians and 2 nurse practitioners with distinct room assignments. Can BookFlow_AI check individual doctor calendars in real-time and ensure patients select only available routine checkup slots without medical advice risks?',
     urgency: 'next_30_days',
     status: 'Resolution Provided',
     automatedAnswer:
-      'Yes, FlowPilot fully supports multi-provider calendar routing. Each clinician links their specific Google Workspace or Cliniko calendar. The intake engine filters available times by physician specialty and applies standard 15-minute sanitization buffers between appointments. All conversational intake adheres to non-diagnostic administrative screening.',
+      'Yes, BookFlow_AI fully supports multi-provider calendar routing. Each clinician links their specific Google Workspace or Cliniko calendar. The intake engine filters available times by physician specialty and applies standard 15-minute sanitization buffers between appointments. All conversational intake adheres to non-diagnostic administrative screening.',
     assignedSpecialist: 'Rachel Vance (Healthcare Solutions)',
     createdAt: '2026-10-22 14:30',
     estimatedResponseTime: 'Resolution Provided',
@@ -198,7 +198,7 @@ export const INITIAL_VISITOR_INQUIRIES: VisitorInquiry[] = [
     urgency: 'urgent',
     status: 'Follow-up Scheduled',
     automatedAnswer:
-      'Absolutely. For salon workflows, FlowPilot prompts the client for hair length and service goal, asks for an optional reference photo, and flags high-lift chemical treatments for mandatory 48-hour patch test verification. The appointment is logged as "Contact Required" so senior colorists approve the time allocation before final confirmation.',
+      'Absolutely. For salon workflows, BookFlow_AI prompts the client for hair length and service goal, asks for an optional reference photo, and flags high-lift chemical treatments for mandatory 48-hour patch test verification. The appointment is logged as "Contact Required" so senior colorists approve the time allocation before final confirmation.',
     assignedSpecialist: 'Marcus Sterling (Hospitality & Lifestyle)',
     createdAt: '2026-10-23 09:15',
     estimatedResponseTime: 'Follow-up Call: Today at 3:00 PM EST',
@@ -247,7 +247,7 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
     return {
       headline: 'Simple, Transparent Subscription Pricing in INR',
       answer:
-        'FlowPilot AI starts at ₹4,999/month for single locations (handling up to 500 automated conversations) and ₹9,999/month for multi-provider or high-volume facilities with voice screening. All plans include 24/7 WhatsApp automation, real-time calendar synchronization, and lead pipeline tracking with zero contract lock-ins.',
+        'BookFlow_AI starts at ₹4,999/month for single locations (handling up to 500 automated conversations) and ₹9,999/month for multi-provider or high-volume facilities with voice screening. All plans include 24/7 WhatsApp automation, real-time calendar synchronization, and lead pipeline tracking with zero contract lock-ins.',
       matchedTopic: 'pricing',
       technicalBadge: 'Predictable Monthly INR SaaS · No Per-Message Fees',
       suggestedAction: 'You can test the interactive ROI & labor savings calculator in the Business Impact tab.',
@@ -259,7 +259,7 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
     return {
       headline: 'Official WhatsApp Business Cloud API Integration',
       answer:
-        'FlowPilot connects directly to your verified Meta Business account and existing phone number. Customers message you naturally on WhatsApp, where FlowPilot checks real-time availability, answers routine questions, collects appointment preferences, and notifies your staff immediately.',
+        'BookFlow_AI connects directly to your verified Meta Business account and existing phone number. Customers message you naturally on WhatsApp, where BookFlow_AI checks real-time availability, answers routine questions, collects appointment preferences, and notifies your staff immediately.',
       matchedTopic: 'whatsapp',
       technicalBadge: 'Meta Cloud API v19.0 · 24/7 Availability',
       suggestedAction: 'Try the live WhatsApp conversation agent using the floating widget in the bottom right corner.',
@@ -271,7 +271,7 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
     return {
       headline: 'Bi-Directional Calendar Synchronization & Conflict Prevention',
       answer:
-        'FlowPilot links directly with Google Calendar, Microsoft Outlook / 365, and industry practice management tools. Before offering appointment slots to clients, the engine queries your live calendar in real-time, respecting custom buffer times and provider working hours to eliminate double-bookings.',
+        'BookFlow_AI links directly with Google Calendar, Microsoft Outlook / 365, and industry practice management tools. Before offering appointment slots to clients, the engine queries your live calendar in real-time, respecting custom buffer times and provider working hours to eliminate double-bookings.',
       matchedTopic: 'calendar',
       technicalBadge: 'Bi-Directional CalSync · <120ms Conflict Engine',
       suggestedAction: 'Explore the Business Demos view to see how slots are generated for clinics, salons, and gyms.',
@@ -283,7 +283,7 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
     return {
       headline: 'Voice Call Agent & After-Hours Phone Intake',
       answer:
-        'When front-desk staff are occupied or during after-hours, FlowPilot’s voice agent answers incoming calls, transcribes caller needs, verifies basic service details, and automatically logs the request into your lead pipeline with an immediate SMS confirmation to the caller.',
+        'When front-desk staff are occupied or during after-hours, BookFlow_AI’s voice agent answers incoming calls, transcribes caller needs, verifies basic service details, and automatically logs the request into your lead pipeline with an immediate SMS confirmation to the caller.',
       matchedTopic: 'voice_call',
       technicalBadge: 'Low-Latency Neural Speech · DTMF & Call Forwarding',
       suggestedAction: 'Switch to the "Call Agent" tab in the interactive widget to test interactive audio calls.',
@@ -319,7 +319,7 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
     return {
       headline: 'Universal Webhooks, Make.com & Practice Management Integrations',
       answer:
-        'FlowPilot dispatches standardized JSON webhooks on every booking or inquiry update. It connects effortlessly to Make.com, Zapier, HubSpot, Slack, Toast POS, Mindbody, and Cliniko without requiring custom server infrastructure.',
+        'BookFlow_AI dispatches standardized JSON webhooks on every booking or inquiry update. It connects effortlessly to Make.com, Zapier, HubSpot, Slack, Toast POS, Mindbody, and Cliniko without requiring custom server infrastructure.',
       matchedTopic: 'custom_workflow',
       technicalBadge: 'HMAC Webhooks · Make.com Ready · REST API',
       suggestedAction: 'Check out the Workflows tab to view the step-by-step automation execution trace.',
@@ -332,9 +332,9 @@ export function generateInstantAnswer(query: string, category?: BusinessCategory
   return {
     headline: 'Tailored Automation for Appointment-Driven Businesses',
     answer:
-      `FlowPilot AI helps ${categoryLabel} businesses coordinate incoming customer inquiries across WhatsApp, phone calls, and web forms into confirmed bookings. Every request is verified against real provider schedules, saved into your CRM pipeline, and answered instantly without front-desk fatigue.`,
+      `BookFlow_AI helps ${categoryLabel} businesses coordinate incoming customer inquiries across WhatsApp, phone calls, and web forms into confirmed bookings. Every request is verified against real provider schedules, saved into your CRM pipeline, and answered instantly without front-desk fatigue.`,
     matchedTopic: 'custom_workflow',
-    technicalBadge: 'FlowPilot Unified Coordination Engine',
+    technicalBadge: 'BookFlow_AI Unified Coordination Engine',
     suggestedAction: 'Submit a specific question below or click any of the curated topics to explore technical details.',
     confidence: 0.8
   };

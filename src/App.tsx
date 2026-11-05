@@ -67,7 +67,7 @@ function MainAppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1D1C] flex flex-col font-sans selection:bg-[#1E3A2F]/15 selection:text-[#1E3A2F]">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600/15 selection:text-blue-700">
       {/* 1. Persistent Unobtrusive Disclaimer Banner */}
       <DisclaimerBanner />
 
@@ -93,7 +93,7 @@ function MainAppContent() {
         <Sidebar />
 
         {/* Primary Viewport */}
-        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full bg-[#FAF8F5]">
+        <main className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full bg-slate-50">
           {activeTab === 'overview' && <OverviewView />}
           {activeTab === 'demos' && <BusinessDemosView />}
           {activeTab === 'assistant' && <AIAssistantView />}
@@ -104,37 +104,37 @@ function MainAppContent() {
           {activeTab === 'about' && <AboutView />}
 
           {/* Clean Quiet Footer */}
-          <footer className="mt-16 pt-6 border-t border-[#E7E2DA] text-xs text-[#6C7A75] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <footer className="mt-16 pt-6 border-t border-slate-200 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-[#1A1D1C]">FlowPilot AI</span>
-              <span className="text-[#C6BEB2]">·</span>
+              <span className="font-semibold text-slate-900">BookFlow_AI</span>
+              <span className="text-slate-300">·</span>
               <span>Local Demonstration Sandbox</span>
-              <span className="text-[#C6BEB2]">·</span>
-              <span className="font-mono text-[#2D5A43] text-[10px]">FICTIONAL DATA</span>
+              <span className="text-slate-300">·</span>
+              <span className="font-mono text-blue-600 font-semibold text-[10px]">FICTIONAL DATA</span>
             </div>
 
-            <div className="flex items-center gap-4 text-[#55635F]">
+            <div className="flex items-center gap-4 text-slate-600">
               <button
                 onClick={handleReturnToMarketing}
-                className="hover:text-[#1E3A2F] transition-colors font-medium cursor-pointer"
+                className="hover:text-blue-600 transition-colors font-medium cursor-pointer"
               >
                 Marketing Website
               </button>
               <button
                 onClick={() => setActiveTab('about')}
-                className="hover:text-[#1E3A2F] transition-colors cursor-pointer"
+                className="hover:text-blue-600 transition-colors cursor-pointer"
               >
                 About Platform
               </button>
               <button
                 onClick={() => setIsInterestModalOpen(true)}
-                className="hover:text-[#1E3A2F] transition-colors cursor-pointer"
+                className="hover:text-blue-600 transition-colors cursor-pointer"
               >
                 Discuss Solution
               </button>
               <button
                 onClick={resetDemoData}
-                className="hover:text-[#1E3A2F] transition-colors cursor-pointer"
+                className="hover:text-blue-600 transition-colors cursor-pointer"
               >
                 Reset Demo
               </button>

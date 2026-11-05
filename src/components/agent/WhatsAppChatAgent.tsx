@@ -294,7 +294,7 @@ export const WhatsAppChatAgent: React.FC<{ compact?: boolean }> = ({ compact = f
             </div>
             <div className="flex items-center gap-1.5 text-[11px] text-[#A3D3C9]">
               <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-              <span>FlowPilot AI Assistant · Online</span>
+              <span>BookFlow_AI Assistant · Online</span>
             </div>
           </div>
         </div>

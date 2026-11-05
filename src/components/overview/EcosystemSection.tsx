@@ -93,7 +93,7 @@ export const EcosystemSection: React.FC = () => {
       <div className="max-w-3xl space-y-2">
         <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#E7E2DA] text-xs font-semibold tracking-wider uppercase text-[#2D5A43]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#6D28D9]" />
-          <span>The FlowPilot AI Ecosystem</span>
+          <span>The BookFlow_AI Ecosystem</span>
         </div>
 
         <h2
@@ -187,7 +187,7 @@ export const EcosystemSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Center Column: Central FlowPilot AI Platform Card (4 cols) */}
+          {/* Center Column: Central BookFlow_AI Platform Card (4 cols) */}
           <div className="md:col-span-4 flex flex-col justify-center items-center">
             <div className="w-full bg-[#FAF8F5] border-2 border-[#1E3A2F] rounded-2xl p-6 shadow-sm text-center space-y-4 relative">
               {/* Central Badge */}
@@ -202,7 +202,7 @@ export const EcosystemSection: React.FC = () => {
                   <Layers className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-lg font-extrabold text-[#1A1D1C] tracking-tight">
-                  FlowPilot AI Platform
+                  BookFlow_AI Platform
                 </h3>
                 <p className="text-xs text-[#52605B] max-w-xs mx-auto leading-relaxed">
                   The central coordination engine uniting your communication channels, staff schedules, and CRM records.
@@ -359,7 +359,7 @@ export const EcosystemSection: React.FC = () => {
             Ready to streamline customer communication?
           </div>
           <div className="text-xs text-[#5B6863]">
-            Experience how FlowPilot AI coordinates enquiries, calendar availability, and staff hand-offs.
+            Experience how BookFlow_AI coordinates enquiries, calendar availability, and staff hand-offs.
           </div>
         </div>
 

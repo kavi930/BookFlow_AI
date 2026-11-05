@@ -34,7 +34,7 @@ export const SecurityReliabilitySection: React.FC = () => {
       title: 'Non-Clinical Triage Guardrails',
       category: 'Healthcare Safety',
       description:
-        'When operating in healthcare and clinical modes, FlowPilot AI enforces strict non-diagnostic boundaries. It never recommends treatments, interprets symptoms, or provides medical advice.',
+        'When operating in healthcare and clinical modes, BookFlow_AI enforces strict non-diagnostic boundaries. It never recommends treatments, interprets symptoms, or provides medical advice.',
       points: [
         'Immediate escalation prompt for red-flag acute symptoms (chest pain, breathing difficulty)',
         'Clear emergency hotline referral (999 / 911 / 112)',
@@ -198,7 +198,7 @@ export const SecurityReliabilitySection: React.FC = () => {
           <div className="p-4 rounded-lg bg-white border border-[#E3DDD3] flex items-start gap-3 text-xs text-[#4F5D58]">
             <HelpCircle className="w-4 h-4 text-[#8C5E09] shrink-0 mt-0.5" />
             <p>
-              <strong className="text-[#1A1D1C]">Production Deployment Note:</strong> When connected to live clinic EHRs or salon POS systems in production environments, FlowPilot integrates via encrypted scoped OAuth connectors, maintaining complete tenant isolation and audit logs.
+              <strong className="text-[#1A1D1C]">Production Deployment Note:</strong> When connected to live clinic EHRs or salon POS systems in production environments, BookFlow_AI integrates via encrypted scoped OAuth connectors, maintaining complete tenant isolation and audit logs.
             </p>
           </div>
         </div>

@@ -31,7 +31,7 @@ export const ProductShowcase: React.FC = () => {
           Engineered for operational clarity.
         </h2>
         <p className="text-sm sm:text-base text-[#52605B] leading-relaxed max-w-2xl">
-          Discover how FlowPilot AI replaces fragmented messaging and manual scheduling with an integrated, reliable system.
+          Discover how BookFlow_AI replaces fragmented messaging and manual scheduling with an integrated, reliable system.
         </p>
       </div>
 
@@ -54,7 +54,7 @@ export const ProductShowcase: React.FC = () => {
                 <strong className="text-[#1A1D1C]">The Problem:</strong> Customers reach out after hours, on weekends, or during lunch rushes. When replies take hours, over 60% of prospective clients contact a competitor instead.
               </p>
               <p>
-                <strong className="text-[#1A1D1C]">How FlowPilot Works:</strong> Inbound messages are parsed in real time. The system validates operating hours, matches requested services, checks non-emergency safety rules, and asks clarifying questions immediately.
+                <strong className="text-[#1A1D1C]">How BookFlow_AI Works:</strong> Inbound messages are parsed in real time. The system validates operating hours, matches requested services, checks non-emergency safety rules, and asks clarifying questions immediately.
               </p>
               <p>
                 <strong className="text-[#1A1D1C]">Practical Benefit:</strong> Immediate engagement in under 15 seconds, converting casual inquiries into qualified appointments with zero manual front-desk typing.
@@ -192,7 +192,7 @@ export const ProductShowcase: React.FC = () => {
                 <strong className="text-[#1A1D1C]">The Problem:</strong> Back-and-forth emails proposing dates result in double-bookings, missed buffer times, or clients dropping out mid-thread.
               </p>
               <p>
-                <strong className="text-[#1A1D1C]">How FlowPilot Works:</strong> Checks provider rosters and service durations (30 min routine consult vs 3-hour balayage). Applies necessary setup and buffer windows before proposing valid appointment slots.
+                <strong className="text-[#1A1D1C]">How BookFlow_AI Works:</strong> Checks provider rosters and service durations (30 min routine consult vs 3-hour balayage). Applies necessary setup and buffer windows before proposing valid appointment slots.
               </p>
               <p>
                 <strong className="text-[#1A1D1C]">Practical Benefit:</strong> 100% schedule alignment, eliminating administrative phone calls and protecting team breaks.
@@ -231,7 +231,7 @@ export const ProductShowcase: React.FC = () => {
                 <strong className="text-[#1A1D1C]">The Problem:</strong> Clients forget appointments, arrive without required documentation, or skip patch tests, resulting in lost revenue and empty chairs.
               </p>
               <p>
-                <strong className="text-[#1A1D1C]">How FlowPilot Works:</strong> Sends structured appointment confirmations with specific preparation guidelines (e.g. fasting blood tests, patch-test warnings). Queues automated 24-hour reminders with one-click rescheduling options.
+                <strong className="text-[#1A1D1C]">How BookFlow_AI Works:</strong> Sends structured appointment confirmations with specific preparation guidelines (e.g. fasting blood tests, patch-test warnings). Queues automated 24-hour reminders with one-click rescheduling options.
               </p>
               <p>
                 <strong className="text-[#1A1D1C]">Practical Benefit:</strong> Reduces client no-shows by up to 40% and ensures clients arrive informed and on time.
@@ -380,7 +380,7 @@ export const ProductShowcase: React.FC = () => {
                 <strong className="text-[#1A1D1C]">The Problem:</strong> When customer enquiries sit in personal inboxes or WhatsApp chats, business owners have no visibility into lead velocity, unanswered requests, or staff workloads.
               </p>
               <p>
-                <strong className="text-[#1A1D1C]">How FlowPilot Works:</strong> Centralizes every enquiry into an organized CRM pipeline with status indicators (New, Contact Required, Follow-up, Completed) and automates staff task handoffs.
+                <strong className="text-[#1A1D1C]">How BookFlow_AI Works:</strong> Centralizes every enquiry into an organized CRM pipeline with status indicators (New, Contact Required, Follow-up, Completed) and automates staff task handoffs.
               </p>
               <p>
                 <strong className="text-[#1A1D1C]">Practical Benefit:</strong> Accurate staffing capacity planning, zero missed opportunities, and clear visibility into reclaimed labor hours.

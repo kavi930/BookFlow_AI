@@ -381,7 +381,7 @@ export function DemoProvider({ children }: { children: React.ReactNode }) {
       setGuidedTourActive(false);
       addToast({
         title: 'Walkthrough Completed',
-        message: 'You have explored all 6 stages of the FlowPilot AI demo!',
+        message: 'You have explored all 6 stages of the BookFlow_AI demo!',
         type: 'success'
       });
     }

@@ -189,7 +189,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
           onClick={togglePlay}
           className="absolute inset-0 bg-black/30 backdrop-blur-xs flex items-center justify-center cursor-pointer z-20"
         >
-          <div className="w-14 h-14 rounded-full bg-[#1E3A2F]/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform">
+          <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 hover:scale-110 hover:shadow-blue-500/60 transition-all">
             <Play className="w-6 h-6 fill-white ml-0.5" />
           </div>
         </div>
@@ -201,7 +201,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
           <button
             type="button"
             onClick={togglePlay}
-            className="p-1 rounded text-white hover:text-[#81C784] transition-colors cursor-pointer"
+            className="p-1 rounded text-white hover:text-blue-400 transition-colors cursor-pointer"
             aria-label={isPlaying ? 'Pause video' : 'Play video'}
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-white" />}
@@ -211,7 +211,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
             <button
               type="button"
               onClick={handleRestart}
-              className="p-1 rounded text-white hover:text-[#81C784] transition-colors cursor-pointer"
+              className="p-1 rounded text-white hover:text-blue-400 transition-colors cursor-pointer"
               aria-label="Restart video"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -219,7 +219,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
           )}
 
           {caption && (
-            <span className="text-[11px] text-[#CCDCD0] hidden sm:inline truncate max-w-xs drop-shadow-xs">
+            <span className="text-[11px] text-slate-300 hidden sm:inline truncate max-w-xs drop-shadow-xs">
               {caption}
             </span>
           )}
@@ -230,7 +230,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
             <button
               type="button"
               onClick={toggleMute}
-              className="p-1 rounded text-white hover:text-[#81C784] transition-colors cursor-pointer"
+              className="p-1 rounded text-white hover:text-blue-400 transition-colors cursor-pointer"
               aria-label={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
@@ -238,7 +238,7 @@ export const CinematicVideoPlayer: React.FC<CinematicVideoPlayerProps> = ({
           )}
 
           {isPlaceholder && (
-            <span className="text-[9px] font-mono text-[#EBF1EC] bg-white/20 px-1.5 py-0.5 rounded">
+            <span className="text-[9px] font-mono text-blue-100 bg-blue-600/60 px-1.5 py-0.5 rounded">
               VISUAL ASSET
             </span>
           )}

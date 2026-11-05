@@ -48,20 +48,20 @@ export const InterestModal: React.FC = () => {
       />
 
       {/* Modal Card */}
-      <div className="relative bg-white border border-[#E3DDD3] rounded-xl shadow-2xl max-w-lg w-full p-6 z-10 space-y-4">
-        <div className="flex items-start justify-between pb-3 border-b border-[#EFEBE4]">
+      <div className="relative bg-white border border-slate-200 rounded-2xl shadow-2xl max-w-lg w-full p-6 z-10 space-y-4">
+        <div className="flex items-start justify-between pb-3 border-b border-slate-100">
           <div>
-            <div className="flex items-center gap-1.5 text-[#2D5A43] text-xs font-semibold mb-0.5">
+            <div className="flex items-center gap-1.5 text-blue-600 text-xs font-semibold mb-0.5">
               <Building2 className="w-3.5 h-3.5" />
               <span>PROJECT SCOPING</span>
             </div>
-            <h2 id="modal-title" className="text-lg font-bold text-[#1A1D1C]">
+            <h2 id="modal-title" className="text-lg font-bold text-slate-900">
               Discuss an Automation Solution
             </h2>
           </div>
           <button
             onClick={handleClose}
-            className="text-[#717E79] hover:text-[#1A1D1C] p-1 rounded-md hover:bg-[#FAF8F5] transition-colors"
+            className="text-slate-400 hover:text-slate-700 p-1 rounded-md hover:bg-slate-100 transition-colors cursor-pointer"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -70,31 +70,31 @@ export const InterestModal: React.FC = () => {
 
         {submitted ? (
           <div className="py-6 text-center space-y-3">
-            <div className="w-12 h-12 bg-[#EBF1EC] border border-[#CCDCD0] rounded-full flex items-center justify-center mx-auto text-[#1E3A2F]">
+            <div className="w-12 h-12 bg-emerald-50 border border-emerald-200 rounded-full flex items-center justify-center mx-auto text-emerald-600">
               <CheckCircle2 className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-base font-semibold text-[#1A1D1C]">
+              <h3 className="text-base font-semibold text-slate-900">
                 Demo Interest Recorded
               </h3>
-              <p className="text-xs text-[#52605B] mt-1 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs text-slate-600 mt-1 max-w-sm mx-auto leading-relaxed">
                 In a production deployment, this enquiry would automatically generate a client onboarding dossier and notify your account lead.
               </p>
             </div>
-            <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg text-xs text-[#52605B] max-w-sm mx-auto">
+            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600 max-w-sm mx-auto">
               Notice: This is a client-side demo form. No real contact data was transmitted over the internet.
             </div>
             <button
               onClick={handleClose}
-              className="px-4 py-2 bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium rounded-lg text-xs transition-colors"
+              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl text-xs hover:from-blue-700 hover:to-indigo-700 shadow-sm shadow-blue-500/25 cursor-pointer transition-colors"
             >
               Back to Demo
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
-            <div className="bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg p-2.5 text-xs text-[#4F5B57] flex items-start gap-2">
-              <AlertCircle className="w-4 h-4 shrink-0 text-[#2D5A43] mt-0.5" />
+            <div className="bg-blue-50/70 border border-blue-200/80 rounded-xl p-2.5 text-xs text-blue-900 flex items-start gap-2">
+              <AlertCircle className="w-4 h-4 shrink-0 text-blue-600 mt-0.5" />
               <p className="leading-snug">
                 This is a local demonstration form. Submitting will not send emails or contact external services.
               </p>
@@ -102,7 +102,7 @@ export const InterestModal: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold text-[#2F3A36] mb-1">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Your Name
                 </label>
                 <input
@@ -111,12 +111,12 @@ export const InterestModal: React.FC = () => {
                   placeholder="e.g. Jordan Miller"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none"
+                  className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block font-semibold text-[#2F3A36] mb-1">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Business Name
                 </label>
                 <input
@@ -125,14 +125,14 @@ export const InterestModal: React.FC = () => {
                   placeholder="e.g. Summit Health & Wellness"
                   value={formData.businessName}
                   onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
-                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none"
+                  className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none transition-all"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold text-[#2F3A36] mb-1">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Contact Email
                 </label>
                 <input
@@ -141,18 +141,18 @@ export const InterestModal: React.FC = () => {
                   placeholder="jordan@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none"
+                  className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block font-semibold text-[#2F3A36] mb-1">
+                <label className="block font-semibold text-slate-700 mb-1">
                   Industry Vertical
                 </label>
                 <select
                   value={formData.industry}
                   onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                  className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none"
+                  className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none transition-all"
                 >
                   <option value="clinics">Clinic / Medical Practice</option>
                   <option value="restaurants">Restaurant / Hospitality</option>
@@ -164,13 +164,13 @@ export const InterestModal: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-semibold text-[#2F3A36] mb-1">
+              <label className="block font-semibold text-slate-700 mb-1">
                 Estimated Monthly Inquiries
               </label>
               <select
                 value={formData.monthlyInquiries}
                 onChange={(e) => setFormData({ ...formData, monthlyInquiries: e.target.value })}
-                className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none transition-all"
               >
                 <option value="50–150">50 – 150 inquiries / month</option>
                 <option value="150–500">150 – 500 inquiries / month</option>
@@ -180,28 +180,28 @@ export const InterestModal: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-semibold text-[#2F3A36] mb-1">
+              <label className="block font-semibold text-slate-700 mb-1">
                 Primary Automation Need
               </label>
               <textarea
                 rows={2}
                 value={formData.primaryGoal}
                 onChange={(e) => setFormData({ ...formData, primaryGoal: e.target.value })}
-                className="w-full bg-[#FAF8F5] border border-[#DCD6CC] focus:border-[#1E3A2F] focus:ring-1 focus:ring-[#1E3A2F] rounded-md px-3 py-1.5 text-xs text-[#1A1D1C] outline-none resize-none"
+                className="w-full bg-slate-50 border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 rounded-lg px-3 py-1.5 text-xs text-slate-900 outline-none resize-none transition-all"
               />
             </div>
 
-            <div className="pt-2 flex items-center justify-end gap-2 border-t border-[#EFEBE4]">
+            <div className="pt-2 flex items-center justify-end gap-2 border-t border-slate-100">
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-3.5 py-1.5 rounded-md border border-[#DCD6CC] hover:bg-[#FAF8F5] text-xs text-[#55635F] transition-colors"
+                className="px-3.5 py-1.5 rounded-lg border border-slate-300 hover:bg-slate-100 text-xs text-slate-600 transition-colors cursor-pointer"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="flex items-center gap-1.5 px-4 py-1.5 rounded-md bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-xs shadow-xs transition-colors"
+                className="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium text-xs shadow-md shadow-blue-500/25 transition-all cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Submit Demo Interest</span>

@@ -158,7 +158,7 @@ export const VisitorInquiryView: React.FC = () => {
               <span>Visitor Inquiry Desk & Knowledge Base</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1A1D1C]">
-              Ask Anything About FlowPilot AI
+              Ask Anything About BookFlow_AI
             </h1>
             <p className="text-sm sm:text-base text-[#525E5A] leading-relaxed">
               Explore immediate architectural answers, examine calendar and WhatsApp integration specifications, or submit a custom inquiry to receive a tracked resolution and review it live in your CRM pipeline.
@@ -253,7 +253,7 @@ export const VisitorInquiryView: React.FC = () => {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Ask anything (e.g. Does FlowPilot prevent double-booking? Can we use our existing WhatsApp number? How much does it cost?)"
+                placeholder="Ask anything (e.g. Does BookFlow_AI prevent double-booking? Can we use our existing WhatsApp number? How much does it cost?)"
                 className="w-full pl-12 pr-4 py-3.5 text-sm sm:text-base bg-[#FAF8F5] border border-[#DCD5C9] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1E3A2F] focus:border-[#1E3A2F] text-[#1A1D1C] placeholder:text-[#8D9995]"
               />
               {searchQuery && (
@@ -345,7 +345,7 @@ export const VisitorInquiryView: React.FC = () => {
                 <span>Zero Hallucinations</span>
               </div>
               <p className="text-xs text-[#525E5A] leading-relaxed">
-                FlowPilot’s responses are grounded strictly in your live business rules, verified prices, and real staff availability calendars.
+                BookFlow_AI’s responses are grounded strictly in your live business rules, verified prices, and real staff availability calendars.
               </p>
             </div>
 
@@ -355,7 +355,7 @@ export const VisitorInquiryView: React.FC = () => {
                 <span>Real-Time Calendar Holds</span>
               </div>
               <p className="text-xs text-[#525E5A] leading-relaxed">
-                Before confirming any customer slot, FlowPilot locks time directly in Google Calendar or Outlook to prevent accidental double-booking.
+                Before confirming any customer slot, BookFlow_AI locks time directly in Google Calendar or Outlook to prevent accidental double-booking.
               </p>
             </div>
 
@@ -630,7 +630,7 @@ export const VisitorInquiryView: React.FC = () => {
                 required
                 value={formSubject}
                 onChange={(e) => setFormSubject(e.target.value)}
-                placeholder="e.g. Can we connect FlowPilot to both our Google Calendar and Cliniko system?"
+                placeholder="e.g. Can we connect BookFlow_AI to both our Google Calendar and Cliniko system?"
                 className="w-full px-3 py-2 text-sm bg-[#FAF8F5] border border-[#DCD5C9] rounded-md focus:outline-none focus:ring-1 focus:ring-[#1E3A2F] text-[#1A1D1C]"
               />
             </div>

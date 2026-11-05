@@ -652,7 +652,7 @@ export const VoiceCallAgent: React.FC<{ compact?: boolean }> = ({ compact = fals
               className="px-6 py-2.5 rounded-full bg-[#10B981] hover:bg-[#059669] text-white font-semibold text-xs transition-all flex items-center gap-2 shadow-md active:scale-95"
             >
               <Phone className="w-4 h-4" />
-              <span>Call FlowPilot AI Agent</span>
+              <span>Call BookFlow_AI Agent</span>
             </button>
           )}
         </div>

@@ -53,7 +53,7 @@ export const MarketingLandingPage: React.FC<MarketingLandingPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1D1C] flex flex-col font-sans selection:bg-[#1E3A2F]/15 selection:text-[#1E3A2F]">
+    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600/15 selection:text-blue-700">
       {/* 1. Header and Navigation */}
       <MarketingNavbar
         onBookAuditClick={handleScrollToAudit}

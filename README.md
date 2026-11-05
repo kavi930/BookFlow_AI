@@ -1,6 +1,6 @@
-# FlowPilot AI — SaaS Marketing Website
+# BookFlow_AI — SaaS Marketing Website
 
-A clean, premium, responsive SaaS marketing website and interactive product demonstration for **FlowPilot AI**, an intelligent appointment scheduling and customer workflow platform for clinics, diagnostic centres, restaurants, gyms, salons, and appointment-based businesses.
+A clean, premium, responsive SaaS marketing website and interactive product demonstration for **BookFlow_AI**, an intelligent appointment scheduling and customer workflow platform for clinics, diagnostic centres, restaurants, gyms, salons, and appointment-based businesses.
 
 ---
 
@@ -12,7 +12,7 @@ The website is crafted with a clean, understated aesthetic inspired by leading c
 - **Design Constitution**: Complies with anti-slop rules—zero fake stat pills, single-level elevations, accessible focus rings, and full `prefers-reduced-motion` compliance.
 
 ### Page Sections:
-1. **Header (`MarketingNavbar.tsx`)**: Slim, sticky navigation with FlowPilot AI wordmark, links to Product, Solutions, How It Works, Contact, and a primary "Book a Demo" CTA. Includes an accessible slide-down mobile menu.
+1. **Header (`MarketingNavbar.tsx`)**: Slim, sticky navigation with BookFlow_AI wordmark, links to Product, Solutions, How It Works, Contact, and a primary "Book a Demo" CTA. Includes an accessible slide-down mobile menu.
 2. **Hero Section (`HeroSection.tsx`)**: 
    - Headline: *"Less time managing. More time growing."*
    - Supporting text: *"Automate bookings, customer conversations, reminders, and everyday business workflows—all in one connected experience."*
@@ -30,7 +30,7 @@ The website is crafted with a clean, understated aesthetic inspired by leading c
    - 4-step booking lifecycle progression.
    - Interactive WhatsApp prompt simulator with instant replies.
    - Timed pre-visit push notification dispatch.
-5. **Video Showcase (`VideoShowcaseSection.tsx`)**: Dedicated "See FlowPilot AI in action" section with player controls, scrubber bar, speed selection (1x / 1.5x), chapter markers, and prototype simulation.
+5. **Video Showcase (`VideoShowcaseSection.tsx`)**: Dedicated "See BookFlow_AI in action" section with player controls, scrubber bar, speed selection (1x / 1.5x), chapter markers, and prototype simulation.
 6. **How It Works (`HowItWorksSection.tsx`)**: Clear, human 3-step workflow explaining the customer journey from inquiry to confirmation.
 7. **Solutions by Business Type (`SolutionsSection.tsx`)**: Focused, practical use cases for Clinics, Restaurants, Gyms, and Salons with simulated dialogues and enforced guardrails.
 8. **Trust & Security (`TrustSecuritySection.tsx`)**: Factual architectural principles: server-side credential isolation, HMAC webhook verification, and data minimization without unsubstantiated certification claims.

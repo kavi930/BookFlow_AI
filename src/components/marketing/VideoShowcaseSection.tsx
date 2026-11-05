@@ -137,7 +137,7 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
       time: 0,
       label: 'Clinic Appointment Intro',
       narration: '"Clinic appointment booking dekhiye..."',
-      description: 'The presenter introduces the streamlined FlowPilot AI booking interface on a clinic desktop.'
+      description: 'The presenter introduces the streamlined BookFlow_AI booking interface on a clinic desktop.'
     },
     {
       time: 2,
@@ -160,24 +160,24 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
     {
       time: 8,
       label: 'Live Demo Invitation',
-      narration: '"FlowPilot AI ka live demo abhi book karein."',
+      narration: '"BookFlow_AI ka live demo abhi book karein."',
       description: 'Invite to schedule a personalized walkthrough for your practice or appointment business.'
     }
   ];
 
   return (
-    <section id="video-showcase" className="py-16 sm:py-24 bg-white border-b border-[#E7E2DA]">
+    <section id="video-showcase" className="py-16 sm:py-24 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-semibold tracking-wider text-[#2D5A43] uppercase block font-mono">
+          <span className="text-xs font-semibold tracking-wider text-blue-600 uppercase block font-mono">
             Product Video Demonstration
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1D1C]">
-            Watch FlowPilot AI in action.
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+            Watch BookFlow_AI in action.
           </h2>
-          <p className="text-base sm:text-lg text-[#52605B] leading-relaxed">
-            See how effortless appointment scheduling is with FlowPilot AI: date selection, verified time slots, visitor details, and instant confirmation in seconds.
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            See how effortless appointment scheduling is with BookFlow_AI: date selection, verified time slots, visitor details, and instant confirmation in seconds.
           </p>
         </div>
 
@@ -210,18 +210,18 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                       onError={() => setHasError(true)}
                       onClick={togglePlay}
                       className="w-full h-full object-cover cursor-pointer"
-                      aria-label="FlowPilot AI Product Video Demonstration"
+                      aria-label="BookFlow_AI Product Video Demonstration"
                     />
                   ) : (
                     <div className="relative w-full h-full">
                       <img
                         src={posterSrc}
-                        alt="FlowPilot AI Product Demonstration"
+                        alt="BookFlow_AI Product Demonstration"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/40" />
                       <div className="absolute bottom-16 left-4 right-4 text-center">
-                        <span className="inline-block px-2.5 py-1 rounded bg-[#1E3A2F]/90 text-white text-[10px] font-mono font-semibold">
+                        <span className="inline-block px-2.5 py-1 rounded bg-slate-900/90 text-white text-[10px] font-mono font-semibold">
                           Cinematic Demo Preview · 9s Loop
                         </span>
                       </div>
@@ -234,7 +234,7 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                       onClick={togglePlay}
                       className="absolute inset-0 bg-black/40 backdrop-blur-xs flex items-center justify-center cursor-pointer z-20"
                     >
-                      <div className="w-16 h-16 rounded-full bg-[#1E3A2F]/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 transition-transform">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-blue-500/40 hover:scale-105 transition-transform">
                         <Play className="w-8 h-8 fill-white ml-1" />
                       </div>
                     </div>
@@ -253,12 +253,12 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                     >
                       {isMuted ? (
                         <>
-                          <VolumeX className="w-3.5 h-3.5 text-[#E57373]" />
+                          <VolumeX className="w-3.5 h-3.5 text-rose-400" />
                           <span className="text-[10px] font-medium text-white">Unmute Sound</span>
                         </>
                       ) : (
                         <>
-                          <Volume2 className="w-3.5 h-3.5 text-[#81C784]" />
+                          <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
                           <span className="text-[10px] font-medium text-white">Sound On</span>
                         </>
                       )}
@@ -268,7 +268,7 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                   {/* Watermark Tag */}
                   <div className="absolute top-8 left-3 z-20 pointer-events-none">
                     <span className="px-2 py-0.5 rounded-md bg-black/50 backdrop-blur-md text-[10px] font-mono text-white/90 border border-white/10">
-                      FlowPilot AI · Demo
+                      BookFlow_AI · Demo
                     </span>
                   </div>
                 </div>
@@ -355,8 +355,8 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                 <h3 className="text-2xl sm:text-3xl font-bold text-[#1A1D1C]">
                   Clinic Appointment Booking in 4 Steps
                 </h3>
-                <p className="text-sm text-[#52605B] leading-relaxed">
-                  As shown in the video demonstration, FlowPilot AI provides a frictionless booking journey designed for healthcare clinics, dental offices, and medical practices.
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  As shown in the video demonstration, BookFlow_AI provides a frictionless booking journey designed for healthcare clinics, dental offices, and medical practices.
                 </p>
               </div>
 
@@ -373,15 +373,15 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                       onClick={() => jumpToSecond(step.time)}
                       className={`p-3.5 rounded-xl border transition-all cursor-pointer flex items-start gap-3.5 ${
                         isActive
-                          ? 'bg-white border-[#1E3A2F] shadow-xs ring-1 ring-[#1E3A2F]'
-                          : 'bg-white/70 border-[#E5E0D6] hover:bg-white hover:border-[#D5CEC2]'
+                          ? 'bg-white border-blue-600 shadow-xs ring-1 ring-blue-600'
+                          : 'bg-white/80 border-slate-200 hover:bg-white hover:border-slate-300'
                       }`}
                     >
                       <div
                         className={`w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5 transition-colors ${
                           isActive
-                            ? 'bg-[#1E3A2F] text-white'
-                            : 'bg-[#EBF1EC] text-[#2D5A43]'
+                            ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xs'
+                            : 'bg-blue-50 text-blue-700'
                         }`}
                       >
                         0{idx + 1}
@@ -389,19 +389,19 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
 
                       <div className="flex-1 space-y-0.5">
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-bold text-xs sm:text-sm text-[#1A1D1C]">
+                          <span className="font-bold text-xs sm:text-sm text-slate-900">
                             {step.label}
                           </span>
-                          <span className="font-mono text-[10px] text-[#2D5A43] bg-[#EBF1EC] px-1.5 py-0.5 rounded">
+                          <span className="font-mono text-[10px] text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded font-semibold">
                             {formatTime(step.time)}
                           </span>
                         </div>
 
-                        <p className="text-xs font-medium text-[#2D5A43] italic">
+                        <p className="text-xs font-medium text-blue-600 italic">
                           {step.narration}
                         </p>
 
-                        <p className="text-xs text-[#52605B] pt-0.5 leading-relaxed">
+                        <p className="text-xs text-slate-600 pt-0.5 leading-relaxed">
                           {step.description}
                         </p>
                       </div>
@@ -414,9 +414,9 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href="#demo-request"
-                  className="px-6 py-3 rounded-lg bg-[#1E3A2F] hover:bg-[#284E3F] text-white font-medium text-sm shadow-xs transition-colors flex items-center justify-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E3A2F]"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium text-sm shadow-md shadow-blue-500/25 transition-all flex items-center justify-center gap-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
                 >
-                  <span>FlowPilot AI ka Live Demo Book Karein</span>
+                  <span>BookFlow_AI ka Live Demo Book Karein</span>
                   <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
                 </a>
 
@@ -426,7 +426,7 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
                     const el = document.getElementById('solutions');
                     el?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="px-4 py-3 rounded-lg border border-[#D8D2C5] bg-white hover:bg-[#F5F2EB] text-[#2D3833] font-medium text-xs sm:text-sm text-center transition-colors cursor-pointer"
+                  className="px-4 py-3 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 font-medium text-xs sm:text-sm text-center transition-colors cursor-pointer shadow-xs"
                 >
                   Explore Clinic & Other Workflows
                 </button>
@@ -436,14 +436,14 @@ export const VideoShowcaseSection: React.FC<VideoShowcaseSectionProps> = ({
         </div>
 
         {/* Quiet Architecture Note */}
-        <div className="p-4 bg-[#FAF8F5] border border-[#E7E2DA] rounded-xl text-xs text-[#52605B] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-600 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#2D5A43] shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
             <span>
-              <strong>Authentic Product Walkthrough:</strong> Video recorded using FlowPilot AI’s appointment booking calendar and patient intake workflow.
+              <strong>Authentic Product Walkthrough:</strong> Video recorded using BookFlow_AI’s appointment booking calendar and patient intake workflow.
             </span>
           </div>
-          <span className="font-mono text-[10px] text-[#2D5A43] font-semibold whitespace-nowrap">
+          <span className="font-mono text-[10px] text-blue-700 bg-blue-100/70 px-2 py-0.5 rounded font-semibold whitespace-nowrap">
             LOCAL ASSET EMBEDDED
           </span>
         </div>

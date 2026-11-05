@@ -96,34 +96,34 @@ export const BusinessImpactView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 max-w-6xl mx-auto text-[#1A1D1C]">
+    <div className="space-y-8 max-w-6xl mx-auto text-slate-900">
       {/* View Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-[#E7E2DA]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2 border-b border-slate-200">
         <div>
-          <h1 className="text-2xl font-bold text-[#1A1D1C] tracking-tight">
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
             Interactive ROI & Time Calculator
           </h1>
-          <p className="text-xs sm:text-sm text-[#5D6B66] mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
             Estimate potential operational hours and labor costs saved based on your monthly inquiry volume.
           </p>
         </div>
 
         <button
           onClick={handleResetDefaults}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-[#FAF8F5] border border-[#DCD6CC] text-xs text-[#52605B] hover:text-[#1A1D1C] rounded-lg transition-colors shrink-0 shadow-xs"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-slate-50 border border-slate-300 text-xs text-slate-700 hover:text-slate-900 rounded-lg transition-colors shrink-0 shadow-xs cursor-pointer"
         >
-          <RotateCcw className="w-3.5 h-3.5 text-[#73827D]" />
+          <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
           <span>Reset Assumptions</span>
         </button>
       </div>
 
       {/* Preset Profiles Selector */}
-      <section aria-label="Industry benchmark assumptions" className="bg-white border border-[#E3DDD3] rounded-xl p-5 space-y-3 shadow-xs">
+      <section aria-label="Industry benchmark assumptions" className="bg-white border border-slate-200 rounded-2xl p-5 space-y-3 shadow-xs">
         <div className="flex items-center justify-between text-xs">
-          <span className="font-semibold text-[#1A1D1C]">
+          <span className="font-semibold text-slate-900">
             Industry Benchmark Profiles
           </span>
-          <span className="text-[11px] text-[#6E7D77]">
+          <span className="text-[11px] text-slate-500">
             Click to load sample volume & timing baselines
           </span>
         </div>
@@ -133,13 +133,13 @@ export const BusinessImpactView: React.FC = () => {
             <button
               key={preset.category}
               onClick={() => handleApplyPreset(preset)}
-              className="text-left p-3 rounded-lg bg-[#FAF8F5] hover:bg-[#F3EFE9] border border-[#E7E2DA] hover:border-[#D5CFC5] transition-colors group"
+              className="text-left p-3 rounded-xl bg-slate-50 hover:bg-blue-50/60 border border-slate-200 hover:border-blue-300 transition-all group cursor-pointer"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#1A1D1C] group-hover:text-[#1E3A2F]">
+                <span className="text-xs font-bold text-slate-900 group-hover:text-blue-600">
                   {preset.category}
                 </span>
-                <span className="text-[10px] font-mono text-[#2D5A43] font-semibold">
+                <span className="text-[10px] font-mono text-blue-700 bg-blue-100/60 px-1.5 py-0.5 rounded font-semibold">
                   {preset.enquiriesPerMonth} / mo
                 </span>
               </div>
@@ -248,7 +248,7 @@ export const BusinessImpactView: React.FC = () => {
               />
               <div className="flex justify-between text-[10px] text-[#717E79] font-mono">
                 <span>20% (basic FAQ only)</span>
-                <span>65% (typical FlowPilot triage)</span>
+                <span>65% (typical BookFlow_AI triage)</span>
                 <span>95% (full automation)</span>
               </div>
             </div>
@@ -307,7 +307,7 @@ export const BusinessImpactView: React.FC = () => {
                   />
                 </div>
                 <p className="text-[10px] text-[#7A8783]">
-                  Monthly FlowPilot AI plan in INR.
+                  Monthly BookFlow_AI plan in INR.
                 </p>
               </div>
             </div>
@@ -317,69 +317,69 @@ export const BusinessImpactView: React.FC = () => {
         {/* Calculated Results (5 cols) */}
         <div className="lg:col-span-5 space-y-4">
           <div className="bg-white border border-[#E3DDD3] rounded-xl p-6 space-y-5 shadow-xs">
-            <div className="flex items-center justify-between pb-3 border-b border-[#EFEBE4]">
-              <span className="text-xs font-semibold text-[#1A1D1C]">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <span className="text-xs font-semibold text-slate-900">
                 Estimated Return on Investment
               </span>
-              <span className="text-[10px] font-mono text-[#7C8B85]">
+              <span className="text-[10px] font-mono text-slate-400 font-semibold">
                 HYPOTHETICAL MODEL
               </span>
             </div>
 
             {/* Primary Net Savings Callout */}
-            <div className="p-5 bg-[#EBF1EC] border border-[#CCDCD0] rounded-xl space-y-1">
-              <span className="text-xs font-semibold text-[#1E3A2F]">
+            <div className="p-5 bg-gradient-to-br from-blue-50 to-indigo-50/60 border border-blue-200 rounded-xl space-y-1 shadow-xs">
+              <span className="text-xs font-semibold text-blue-800">
                 Estimated Net Monthly Value
               </span>
-              <div className="text-3xl font-extrabold text-[#1E3A2F] font-mono tabular-nums">
+              <div className="text-3xl font-extrabold text-blue-700 font-mono tabular-nums">
                 ₹{netMonthlyValue.toLocaleString()}
-                <span className="text-xs font-normal text-[#4F5D58] font-sans ml-1">
+                <span className="text-xs font-normal text-slate-500 font-sans ml-1">
                   / month
                 </span>
               </div>
-              <div className="text-xs text-[#2D5A43] font-mono pt-1">
+              <div className="text-xs text-emerald-700 font-mono font-medium pt-1">
                 Annualized Est: ₹{annualNetValue.toLocaleString()} / year
               </div>
             </div>
 
             {/* Secondary Output Metrics */}
             <div className="space-y-2.5 text-xs">
-              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[#3D4744]">
-                  <Clock className="w-4 h-4 text-[#2D5A43]" />
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between">
+                <div className="flex items-center gap-2 text-slate-700">
+                  <Clock className="w-4 h-4 text-blue-600" />
                   <span>Monthly Staff Hours Saved:</span>
                 </div>
-                <span className="text-[#1A1D1C] font-bold font-mono text-sm tabular-nums">
+                <span className="text-slate-900 font-bold font-mono text-sm tabular-nums">
                   {monthlyHoursSaved} hrs
                 </span>
               </div>
 
-              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[#3D4744]">
-                  <CheckCircle2 className="w-4 h-4 text-[#2D5A43]" />
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between">
+                <div className="flex items-center gap-2 text-slate-700">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   <span>Staff Minutes Reclaimed:</span>
                 </div>
-                <span className="text-[#1A1D1C] font-bold font-mono text-sm tabular-nums">
+                <span className="text-slate-900 font-bold font-mono text-sm tabular-nums">
                   {monthlyMinutesSaved.toLocaleString()} mins
                 </span>
               </div>
 
-              <div className="p-3 bg-[#FAF8F5] border border-[#E7E2DA] rounded-lg flex items-center justify-between">
-                <div className="flex items-center gap-2 text-[#3D4744]">
-                  <span className="w-4 h-4 rounded-full bg-[#1E3A2F] text-white flex items-center justify-center text-[10px] font-bold">
+              <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-center justify-between">
+                <div className="flex items-center gap-2 text-slate-700">
+                  <span className="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">
                     ₹
                   </span>
                   <span>Gross Labor Value Saved:</span>
                 </div>
-                <span className="text-[#1A1D1C] font-bold font-mono text-sm tabular-nums">
+                <span className="text-slate-900 font-bold font-mono text-sm tabular-nums">
                   ₹{monthlyLaborValueSaved.toLocaleString()}
                 </span>
               </div>
             </div>
 
             {/* Formula Transparency Card */}
-            <div className="pt-2 border-t border-[#EFEBE4] space-y-1 text-[11px] text-[#697672] font-mono">
-              <span className="text-[#2D3833] font-semibold block font-sans">
+            <div className="pt-2 border-t border-slate-100 space-y-1 text-[11px] text-slate-500 font-mono">
+              <span className="text-slate-800 font-semibold block font-sans">
                 Transparent Formula Logic:
               </span>
               <div>• Automated inquiries: {params.enquiriesPerMonth} × {params.automationHandlingPercent}% = {automatedEnquiries}</div>

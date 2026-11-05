@@ -68,7 +68,7 @@ export const AnimatedDemonstrationsSection: React.FC = () => {
             <span>Interactive Product Demonstrations</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1A1D1C]">
-            Experience FlowPilot AI in action.
+            Experience BookFlow_AI in action.
           </h2>
           <p className="text-base sm:text-lg text-[#52605B] leading-relaxed">
             Test the live interactions below. Select slots, trigger automated responses, progress booking states, and inspect notification dispatches in real time.
@@ -137,7 +137,7 @@ export const AnimatedDemonstrationsSection: React.FC = () => {
                   Select an available slot to trigger a provisional lock.
                 </h3>
                 <p className="text-xs sm:text-sm text-[#52605B] leading-relaxed">
-                  When a customer picks an appointment slot, FlowPilot locks it for 15 minutes and appends the necessary sanitization buffer so no double-booking can occur while they enter their details.
+                  When a customer picks an appointment slot, BookFlow_AI locks it for 15 minutes and appends the necessary sanitization buffer so no double-booking can occur while they enter their details.
                 </p>
                 <div className="pt-2 text-xs text-[#52605B] space-y-2">
                   <div className="flex items-center gap-2">
@@ -300,7 +300,7 @@ export const AnimatedDemonstrationsSection: React.FC = () => {
                   Test realistic customer conversation scenarios.
                 </h3>
                 <p className="text-xs sm:text-sm text-[#52605B] leading-relaxed">
-                  Click a customer question prompt to watch how FlowPilot provides immediate answers, checks clinic rules, and holds calendar slots.
+                  Click a customer question prompt to watch how BookFlow_AI provides immediate answers, checks clinic rules, and holds calendar slots.
                 </p>
 
                 <div className="space-y-2 pt-2">
@@ -403,7 +403,7 @@ export const AnimatedDemonstrationsSection: React.FC = () => {
                   Simulate timely SMS & WhatsApp alerts for appointments.
                 </h3>
                 <p className="text-xs sm:text-sm text-[#52605B] leading-relaxed">
-                  FlowPilot automatically dispatches reminders before the visit with pre-visit instructions (fasting, parking, arrival code) and 1-tap confirmation.
+                  BookFlow_AI automatically dispatches reminders before the visit with pre-visit instructions (fasting, parking, arrival code) and 1-tap confirmation.
                 </p>
 
                 <div className="pt-2 flex items-center gap-2">
