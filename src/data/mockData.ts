@@ -85,9 +85,9 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     ],
     sampleLeadDefaults: {
       service: 'Standard Dining Reservation',
-      sampleName: 'Sophia Lin',
-      sampleEmail: 'sophia.lin@sample-demo.test',
-      samplePhone: '(555) 345-6789',
+      sampleName: 'Priya Sharma',
+      sampleEmail: 'priya.sharma@sample-demo.test',
+      samplePhone: '+91 98450 12345',
       sampleNotes: 'Table for anniversary dinner. Request quiet corner booth if possible.'
     }
   },
@@ -186,10 +186,10 @@ export const BUSINESS_PROFILES: Record<BusinessCategory, BusinessProfile> = {
     ],
     sampleLeadDefaults: {
       service: 'Dimensional Balayage & Gloss',
-      sampleName: 'Avery Morgan',
-      sampleEmail: 'avery.m@sample-demo.test',
-      samplePhone: '(555) 567-8902',
-      sampleNotes: 'First time coloring dark blonde hair. Interested in subtle honey highlights.'
+      sampleName: 'Ananya Iyer',
+      sampleEmail: 'ananya.iyer@sample-demo.test',
+      samplePhone: '+91 98112 34567',
+      sampleNotes: 'First time coloring dark hair. Interested in subtle honey balayage highlights.'
     }
   }
 };
@@ -199,7 +199,7 @@ export const INITIAL_LEADS: LeadRecord[] = [
     id: 'LEAD-101',
     leadName: 'David K. Henderson',
     contactEmail: 'david.h@sample-demo.test',
-    contactPhone: '(555) 812-4091',
+    contactPhone: '+91 98765 43210',
     category: 'clinics',
     requestedService: 'Annual Preventive Screening',
     enquiryDate: '2026-10-19',
@@ -213,9 +213,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-102',
-    leadName: 'Camilla Valenzuela',
-    contactEmail: 'camilla.v@sample-demo.test',
-    contactPhone: '(555) 671-8823',
+    leadName: 'Priya Sharma',
+    contactEmail: 'priya.s@sample-demo.test',
+    contactPhone: '+91 98450 12345',
     category: 'restaurants',
     requestedService: 'Private Mezzanine Dining (8–18 Guests)',
     enquiryDate: '2026-10-20',
@@ -230,9 +230,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-103',
-    leadName: 'Liam Chen',
-    contactEmail: 'liam.c@sample-demo.test',
-    contactPhone: '(555) 940-1129',
+    leadName: 'Arjun Mehta',
+    contactEmail: 'arjun.m@sample-demo.test',
+    contactPhone: '+91 98201 54321',
     category: 'gyms',
     requestedService: 'Complimentary 3-Day Trial Pass',
     enquiryDate: '2026-10-18',
@@ -247,9 +247,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-104',
-    leadName: 'Nadia Rostova',
-    contactEmail: 'nadia.r@sample-demo.test',
-    contactPhone: '(555) 438-9901',
+    leadName: 'Ananya Iyer',
+    contactEmail: 'ananya.i@sample-demo.test',
+    contactPhone: '+91 98112 34567',
     category: 'salons',
     requestedService: 'Dimensional Balayage & Gloss',
     enquiryDate: '2026-10-17',
@@ -264,9 +264,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-105',
-    leadName: 'Rachel O’Connor',
-    contactEmail: 'rachel.oc@sample-demo.test',
-    contactPhone: '(555) 319-7754',
+    leadName: 'Sneha Kulkarni',
+    contactEmail: 'sneha.k@sample-demo.test',
+    contactPhone: '+91 98334 11223',
     category: 'clinics',
     requestedService: 'General Consultation',
     enquiryDate: '2026-10-20',
@@ -280,9 +280,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-106',
-    leadName: 'Dr. Gregory Thorne',
-    contactEmail: 'gregory.t@sample-demo.test',
-    contactPhone: '(555) 551-9233',
+    leadName: 'Vikram Malhotra',
+    contactEmail: 'vikram.m@sample-demo.test',
+    contactPhone: '+91 98220 99887',
     category: 'restaurants',
     requestedService: 'Chef’s Tasting Counter (5-Course)',
     enquiryDate: '2026-10-19',
@@ -299,7 +299,7 @@ export const INITIAL_LEADS: LeadRecord[] = [
     id: 'LEAD-107',
     leadName: 'Maya Patel',
     contactEmail: 'maya.p@sample-demo.test',
-    contactPhone: '(555) 203-7711',
+    contactPhone: '+91 98190 44556',
     category: 'gyms',
     requestedService: 'Personal Coaching Assessment (1:1)',
     enquiryDate: '2026-10-16',
@@ -314,9 +314,9 @@ export const INITIAL_LEADS: LeadRecord[] = [
   },
   {
     id: 'LEAD-108',
-    leadName: 'Hannah Kim',
-    contactEmail: 'hannah.k@sample-demo.test',
-    contactPhone: '(555) 672-1099',
+    leadName: 'Rhea Sen',
+    contactEmail: 'rhea.s@sample-demo.test',
+    contactPhone: '+91 98711 77665',
     category: 'salons',
     requestedService: 'Botanical Scalp & Steam Therapy',
     enquiryDate: '2026-10-20',

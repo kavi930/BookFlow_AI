@@ -446,15 +446,73 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
             {/* Interactive Screen Display (Aspect 16/9) */}
             <div className="relative aspect-video w-full bg-[#FAF8F5] flex flex-col justify-between overflow-hidden">
               {activeMode === 'video' ? (
-                <div className="relative w-full h-full bg-black flex items-center justify-center">
+                <div className="relative w-full h-full bg-[#070B09] flex items-center justify-center overflow-hidden group select-none">
+                  {/* Cinematic emerald ambient backglow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(45,90,67,0.4)_0%,transparent_72%)] pointer-events-none z-0" />
+
+                  {/* Corner branding watermark */}
+                  <div className="absolute top-3.5 left-4 z-20 flex items-center gap-2 pointer-events-none">
+                    <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-white font-mono text-[11px] font-semibold flex items-center gap-1.5 shadow-sm">
+                      <span className="w-2 h-2 rounded-full bg-[#81C784] animate-pulse" />
+                      <span>FlowPilot AI Clinic Workflow</span>
+                    </span>
+                  </div>
+
+                  {/* Top-right active milestone tracker pill */}
+                  <div className="absolute top-3.5 right-4 z-20 pointer-events-none">
+                    <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-[#81C784]/30 text-[#A5D6A7] font-mono text-[11px] font-semibold flex items-center gap-1.5 shadow-sm">
+                      <span className="text-[#81C784] font-bold">0{activeIndex + 1}/05</span>
+                      <span>·</span>
+                      <span className="text-white">{MILESTONES[activeIndex].label}</span>
+                    </span>
+                  </div>
+
+                  {/* The actual video element */}
                   <video
-                    src="/assets/aistudio/gemini_generated_video_e6044bf1_b4af1371.mp4"
+                    ref={videoRef}
+                    src="/assets/aistudio/clinic-appointment-booking-demo_9fbec01f.mp4"
                     poster="/src/assets/images/solutions_clinic_practice_1792996519101.jpg"
-                    controls
                     muted={isMuted}
                     playsInline
-                    className="w-full h-full object-contain"
+                    preload="auto"
+                    onTimeUpdate={(e) => {
+                      const t = e.currentTarget.currentTime;
+                      setCurrentTime(t);
+                    }}
+                    onPlay={() => setIsPlaying(true)}
+                    onPause={() => setIsPlaying(false)}
+                    onEnded={() => {
+                      setIsPlaying(false);
+                      setCurrentTime(TOTAL_DURATION);
+                    }}
+                    onClick={togglePlay}
+                    className="w-full h-full object-contain relative z-10 cursor-pointer shadow-2xl transition-all duration-300"
                   />
+
+                  {/* Center Play Overlay when paused or ended */}
+                  {!isPlaying && (
+                    <div
+                      onClick={togglePlay}
+                      className="absolute inset-0 z-30 flex flex-col items-center justify-center bg-black/35 backdrop-blur-[2px] cursor-pointer transition-all duration-200 hover:bg-black/25"
+                    >
+                      <div className="relative group/btn flex items-center justify-center">
+                        {/* Outer ambient glow pulse */}
+                        <div className="absolute -inset-3 rounded-full bg-[#81C784]/25 blur-xl animate-pulse" />
+                        <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-[#1E3A2F] via-[#2D5A43] to-[#1E3A2F] border-2 border-[#81C784] text-white flex items-center justify-center shadow-[0_0_35px_rgba(45,90,67,0.7)] group-hover/btn:scale-110 group-hover/btn:shadow-[0_0_50px_rgba(129,199,132,0.8)] transition-all duration-300">
+                          <Play className="w-8 h-8 fill-white translate-x-0.5 text-white" />
+                        </div>
+                      </div>
+
+                      <div className="mt-4 flex flex-col items-center gap-1">
+                        <span className="px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md border border-white/20 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg">
+                          Click to Play 9-Second Clinic Booking Demo
+                        </span>
+                        <span className="text-[11px] font-mono text-[#A5D6A7] bg-[#14231B]/80 px-2 py-0.5 rounded border border-[#2D5A43]/60">
+                          {isMuted ? 'Muted by default · Click Unmute below for Hindi-English audio' : 'Hindi-English voiceover active'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <>
@@ -784,34 +842,63 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
               )}
             </div>
 
-            {/* Live Subtitles & Hindi-English Captions Bar */}
-            <div className="bg-[#141715] border-t border-stone-800 px-4 py-3 flex items-center justify-between text-xs gap-4">
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="w-2 h-2 rounded-full bg-[#81C784] animate-pulse shrink-0" />
+            {/* Live Subtitles & Hindi-English Captions Bar (Selector 2) */}
+            <div className="relative bg-gradient-to-r from-[#0C120F] via-[#14231B] to-[#0C120F] border-t border-[#233A2D] px-4 sm:px-6 py-3.5 flex items-center justify-between text-xs gap-4 overflow-hidden shadow-inner">
+              {/* Illuminated top rim accent line */}
+              <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-[#81C784]/60 to-transparent pointer-events-none" />
+
+              <div className="flex items-center gap-3.5 min-w-0">
+                {/* Audio visualizer wave */}
+                <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#192B21] border border-[#2E4A3A] shrink-0 shadow-xs">
+                  <div className="flex items-end gap-0.5 h-3.5 w-3.5 justify-center">
+                    <span className={`w-0.5 rounded-full bg-[#81C784] transition-all duration-150 ${isPlaying && !isMuted ? 'h-3 animate-pulse' : 'h-1.5 opacity-60'}`} />
+                    <span className={`w-0.5 rounded-full bg-[#81C784] transition-all duration-150 ${isPlaying && !isMuted ? 'h-3.5 animate-bounce' : 'h-2.5 opacity-80'}`} />
+                    <span className={`w-0.5 rounded-full bg-[#81C784] transition-all duration-150 ${isPlaying && !isMuted ? 'h-2 animate-pulse' : 'h-1 opacity-50'}`} />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase text-[#A5D6A7] font-bold tracking-wider hidden sm:inline">
+                    {isPlaying && !isMuted ? 'Narration' : isMuted ? 'Audio Muted' : 'Voiceover'}
+                  </span>
+                </div>
+
                 <div className="min-w-0">
-                  <p className="text-white font-medium text-xs sm:text-sm truncate">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono uppercase font-bold text-[#81C784] tracking-wider">
+                      Step 0{activeIndex + 1} of 5
+                    </span>
+                    <span className="text-stone-600">·</span>
+                    <span className="text-[10px] font-mono text-stone-400 uppercase tracking-wider">
+                      {currentMilestone.title}
+                    </span>
+                  </div>
+                  <p className="text-white font-bold text-sm sm:text-base leading-snug tracking-tight truncate mt-0.5">
                     "{currentMilestone.subtitles.hinglish}"
                   </p>
-                  <p className="text-[11px] text-stone-400 truncate">
+                  <p className="text-[11px] sm:text-xs text-[#A1B5AC] truncate mt-0.5">
                     {currentMilestone.subtitles.english}
                   </p>
                 </div>
               </div>
 
-              {/* Sound status feedback */}
-              {audioFeedback && (
-                <span className="text-[10px] font-mono text-[#A5D6A7] bg-[#1E3A2F]/60 border border-[#2D5A43] px-2 py-0.5 rounded shrink-0 hidden md:inline">
-                  {audioFeedback}
-                </span>
-              )}
+              {/* Sound status feedback & timer badge */}
+              <div className="flex items-center gap-2 shrink-0">
+                {audioFeedback ? (
+                  <span className="text-[10px] font-mono text-[#A5D6A7] bg-[#1E3A2F]/80 border border-[#2D5A43] px-2.5 py-1 rounded-md font-semibold hidden md:inline">
+                    {audioFeedback}
+                  </span>
+                ) : (
+                  <span className="text-[11px] font-mono text-[#81C784] bg-black/40 border border-[#263D30] px-2.5 py-1 rounded-md font-bold hidden sm:inline">
+                    {currentMilestone.timestamp} / 00:09
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Scrubbable 9-Second Timeline & Controls Ribbon */}
-            <div className="bg-[#0E1110] p-4 border-t border-stone-800 space-y-3">
+            <div className="bg-[#0B0F0D] p-4 sm:p-5 border-t border-stone-800/90 space-y-3.5">
               {/* Progress Slider */}
               <div className="space-y-1.5">
                 <div
-                  className="relative h-2 w-full bg-stone-800 rounded-full cursor-pointer overflow-hidden group"
+                  className="relative h-2 w-full bg-stone-800 rounded-full cursor-pointer overflow-hidden group shadow-inner"
                   onClick={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const clickX = e.clientX - rect.left;
@@ -821,27 +908,27 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   title="Click or drag to scrub walkthrough"
                 >
                   <div
-                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-[#1E3A2F] via-[#2D5A43] to-[#81C784] rounded-full transition-[width] duration-75"
+                    className="absolute top-0 bottom-0 left-0 bg-gradient-to-r from-[#1E3A2F] via-[#2D5A43] to-[#81C784] rounded-full transition-[width] duration-75 shadow-[0_0_12px_rgba(129,199,132,0.4)]"
                     style={{ width: `${(currentTime / TOTAL_DURATION) * 100}%` }}
                   />
                   {/* Visual marker notches on timeline */}
                   {MILESTONES.map((m) => (
                     <div
                       key={m.id}
-                      className="absolute top-0 bottom-0 w-0.5 bg-stone-700/80 pointer-events-none"
+                      className="absolute top-0 bottom-0 w-0.5 bg-stone-600/80 pointer-events-none"
                       style={{ left: `${(m.time / TOTAL_DURATION) * 100}%` }}
                     />
                   ))}
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] font-mono text-stone-400">
-                  <span>{formatTime(currentTime)}</span>
-                  <span className="text-stone-500">Total: 00:09</span>
+                  <span className="text-[#81C784] font-semibold">{formatTime(currentTime)}</span>
+                  <span className="text-stone-500">Duration: 00:09</span>
                 </div>
               </div>
 
-              {/* Milestone Step Buttons (5 timeline markers) */}
-              <div className="grid grid-cols-5 gap-1.5 pt-1">
+              {/* Milestone Step Buttons (5 timeline markers - Selector 4 and 3) */}
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 pt-1">
                 {MILESTONES.map((milestone, idx) => {
                   const isActive = activeIndex === idx;
                   const isPassed = currentTime >= milestone.time;
@@ -851,46 +938,62 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                       key={milestone.id}
                       type="button"
                       onClick={() => handleSeek(milestone.time)}
-                      className={`py-1.5 px-1 sm:px-2 rounded-lg text-left transition-all cursor-pointer text-xs border ${
+                      className={`p-2.5 rounded-xl text-left transition-all duration-200 cursor-pointer text-xs border relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784] ${
                         isActive
-                          ? 'bg-[#1E3A2F]/60 border-[#81C784] text-white font-bold shadow-xs'
+                          ? 'bg-gradient-to-b from-[#1E3A2F] via-[#193025] to-[#12231A] border-2 border-[#81C784] text-white font-bold shadow-[0_0_20px_rgba(129,199,132,0.25)] ring-1 ring-[#81C784]/60 -translate-y-0.5'
                           : isPassed
-                          ? 'bg-stone-900 border-stone-800 text-stone-300 hover:border-stone-700'
-                          : 'bg-stone-950 border-stone-900 text-stone-500 hover:text-stone-400'
+                          ? 'bg-[#121B16] border-[#25392D] text-[#CBE0D3] hover:border-[#385644] hover:bg-[#16231C] hover:text-white'
+                          : 'bg-[#0E1310] border-stone-800/80 text-stone-400 hover:text-stone-200 hover:border-stone-700 hover:bg-[#121814]'
                       }`}
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] font-mono text-[#A5D6A7] block">
-                          {milestone.timestamp}
+                      <div className="flex items-center justify-between gap-1">
+                        <span className={`text-[10px] font-mono font-bold block ${isActive ? 'text-[#81C784]' : 'text-stone-400'}`}>
+                          0{idx + 1} · {milestone.timestamp}
                         </span>
-                        {isPassed && <span className="text-[9px] text-emerald-400">✓</span>}
+                        {isActive ? (
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#81C784] opacity-80" />
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#81C784]" />
+                          </span>
+                        ) : isPassed ? (
+                          <span className="text-[10px] text-[#81C784] font-bold">✓</span>
+                        ) : (
+                          <span className="text-[9px] text-stone-600 font-mono">STEP</span>
+                        )}
                       </div>
-                      <span className="text-[11px] font-medium truncate block mt-0.5">
+                      <span className={`text-xs font-bold truncate block mt-1 leading-tight ${isActive ? 'text-white' : 'text-stone-200'}`}>
                         {milestone.label}
+                      </span>
+                      <span className="text-[10px] text-stone-400 font-normal truncate block mt-0.5 hidden sm:block">
+                        {idx === 0 && 'Doctor profile'}
+                        {idx === 1 && '15m buffer rule'}
+                        {idx === 2 && 'Patient details'}
+                        {idx === 3 && 'Slot hold lock'}
+                        {idx === 4 && 'Live invitation'}
                       </span>
                     </button>
                   );
                 })}
               </div>
 
-              {/* Accessible Controls Bar (Play/Pause, Unmute Sound, Restart) */}
-              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 border-t border-stone-800/80">
+              {/* Accessible Controls Bar (Play/Pause, Unmute Sound, Restart, CTA) */}
+              <div className="pt-2.5 flex flex-wrap items-center justify-between gap-3 border-t border-stone-800/80">
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
                     onClick={togglePlay}
-                    className="p-2 rounded-lg bg-[#1E3A2F] hover:bg-[#26493B] text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784]"
+                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-[#1E3A2F] hover:bg-[#26493B] text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#81C784] shadow-xs"
                     aria-label={isPlaying ? 'Pause walkthrough' : 'Play walkthrough'}
                   >
                     {isPlaying ? (
                       <>
-                        <Pause className="w-4 h-4" />
-                        <span className="hidden sm:inline">Pause</span>
+                        <Pause className="w-4 h-4 text-[#81C784]" />
+                        <span>Pause</span>
                       </>
                     ) : (
                       <>
-                        <Play className="w-4 h-4 fill-white" />
-                        <span className="hidden sm:inline">Play</span>
+                        <Play className="w-4 h-4 fill-white text-white" />
+                        <span>Play</span>
                       </>
                     )}
                   </button>
@@ -898,7 +1001,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={handleRestart}
-                    className="p-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1 text-xs"
+                    className="p-2 sm:px-3 sm:py-2 rounded-lg bg-stone-900 hover:bg-stone-800 border border-stone-800 text-stone-300 hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 text-xs"
                     title="Restart from beginning"
                   >
                     <RotateCcw className="w-3.5 h-3.5" />
@@ -911,7 +1014,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={() => setShowTranscript(!showTranscript)}
-                    className="px-2.5 py-1.5 rounded-lg text-xs font-medium text-stone-300 hover:text-white bg-stone-800 hover:bg-stone-700 transition-colors cursor-pointer"
+                    className="px-2.5 py-2 rounded-lg text-xs font-medium text-stone-300 hover:text-white bg-stone-900 border border-stone-800 hover:bg-stone-800 transition-colors cursor-pointer"
                   >
                     {showTranscript ? 'Hide Transcript' : 'Transcript'}
                   </button>
@@ -919,7 +1022,7 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                   <button
                     type="button"
                     onClick={toggleMute}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 cursor-pointer border ${
+                    className={`px-3 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 cursor-pointer border ${
                       isMuted
                         ? 'bg-amber-500/10 border-amber-500/30 text-amber-300 hover:bg-amber-500/20'
                         : 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20'
@@ -934,9 +1037,19 @@ export const ClinicWalkthroughSection: React.FC<ClinicWalkthroughSectionProps> =
                     ) : (
                       <>
                         <Volume2 className="w-4 h-4 text-emerald-400 animate-pulse" />
-                        <span>Sound On (Hindi-English)</span>
+                        <span>Sound On</span>
                       </>
                     )}
+                  </button>
+
+                  {/* Prominent CTA below video */}
+                  <button
+                    type="button"
+                    onClick={onBookAuditClick}
+                    className="px-4 py-2 rounded-lg bg-[#1E3A2F] hover:bg-[#284E3B] border border-[#81C784]/40 text-white font-bold text-xs shadow-sm hover:shadow-[#1E3A2F]/40 transition-all flex items-center gap-1.5 cursor-pointer ml-1"
+                  >
+                    <span>Book Your Live Demo</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#81C784]" />
                   </button>
                 </div>
               </div>
